@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Liikumisaktiivsuse programmid"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "564d0506-ce6a-4f0a-957f-51ad413a3724"
+  }
+}

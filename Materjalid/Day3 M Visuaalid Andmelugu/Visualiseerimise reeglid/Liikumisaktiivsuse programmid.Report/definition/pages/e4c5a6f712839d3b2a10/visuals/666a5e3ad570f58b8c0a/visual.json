@@ -1,0 +1,129 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "666a5e3ad570f58b8c0a",
+  "position": {
+    "x": 976,
+    "y": 104,
+    "z": 301,
+    "height": 488,
+    "width": 904,
+    "tabOrder": 301
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Mida aruanne esile toob",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "14pt",
+                      "fontWeight": "bold",
+                      "color": "#1A3D40"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Olulised leiud toorandmetest:\n• 100 tegevusest 58 on töös, 23 alustamata, 19 tehtud.\n• 47 tegevust on suunal Loome aktiivseid struktuure;\n  aktiivse ühiskonna suunal on vaid 12.\n• Enim juhivad Transpordiamet, LHKK ja Kliimaministeerium.\n• Edenemise % on täidetud ainult 28 tegevusel.\n• Alguskuupäev puudub 38 tegevusel.\n\nMudel: üks fakt (fact_activity) ja dimid (kuupäev, suund, juhtorg).\nMitu partnerit, meedet, sihtrühma või indikaatorit on samal väljal.\nSeoseid mitu-mitmele ei ole.\n\nAllikad: app.liigume.ee/api (activities, organizations, policies).\nVärskendamine: Power BI Desktopis Home > Refresh, Anonymous.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "9pt",
+                      "fontWeight": "normal",
+                      "color": "#1A3D40"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

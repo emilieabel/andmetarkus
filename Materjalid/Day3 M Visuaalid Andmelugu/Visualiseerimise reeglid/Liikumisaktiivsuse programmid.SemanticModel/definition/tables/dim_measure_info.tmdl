@@ -1,0 +1,47 @@
+/// Mõõdikute kataloog INFO.VIEW.MEASURES abil: valem ja objekti kirjeldus.
+table dim_measure_info
+	lineageTag: 68f1e9d4-298c-4938-b990-037a9499cf82
+
+	/// Mõõdiku nimi.
+	column Mõõdik
+		dataType: string
+		lineageTag: 11722435-de92-4b62-92ef-8b06b250f41f
+		summarizeBy: none
+		sourceColumn: [Mõõdik]
+
+	/// Tekst, mis on mõõdiku objekti kirjeldusse pandud.
+	column Kirjeldus
+		dataType: string
+		lineageTag: 6bc600cc-24a2-4bea-9d2a-fcbbb7d349ee
+		summarizeBy: none
+		sourceColumn: [Kirjeldus]
+
+	/// Mõõdiku kaust (_Measures displayFolder).
+	column Kaust
+		dataType: string
+		lineageTag: fc6099a2-4d8d-4ab2-90fc-1e3d2b0f8e18
+		summarizeBy: none
+		sourceColumn: [Kaust]
+
+	/// DAX-valem INFO.VIEW.MEASURES veerust Expression.
+	column Valem
+		dataType: string
+		lineageTag: a7c8d9e0-f1a2-4b3c-8d4e-5f6a7b8c9d0e
+		summarizeBy: none
+		sourceColumn: [Valem]
+
+	partition dim_measure_info = calculated
+		mode: import
+		source =
+				SELECTCOLUMNS (
+				    FILTER (
+				        INFO.VIEW.MEASURES (),
+				        [Table] = "_Measures"
+				            && NOT [IsHidden]
+				    ),
+				    "Kaust", [DisplayFolder],
+				    "Mõõdik", [Name],
+				    "Kirjeldus", [Description],
+				    "Valem", [Expression]
+				)
+

@@ -1,0 +1,45 @@
+/// Neli WHO GAPPA suunda.
+table dim_direction
+	lineageTag: 2beeb180-69d2-49dd-b480-ea092ff6a0ba
+
+	column direction_id
+		dataType: int64
+		isHidden
+		isKey
+		lineageTag: c08c793a-cf6d-487d-bdb3-9983e714cc8e
+		summarizeBy: none
+		sourceColumn: direction_id
+
+	column 'Suuna kood'
+		dataType: int64
+		isHidden
+		lineageTag: 066342c4-a668-4622-b872-1c8c74efe45b
+		summarizeBy: none
+		sourceColumn: Suuna kood
+
+	/// Neli suunda: aktiivne ühiskond, keskkond, inimene, struktuurid.
+	column Suund
+		dataType: string
+		lineageTag: df7174b0-a4e8-46d7-956b-259bca3e4cc8
+		summarizeBy: none
+		sourceColumn: Suund
+		sortByColumn: 'Suuna kood'
+
+	column Kirjeldus
+		dataType: string
+		lineageTag: 0f417ae7-3360-425a-8825-5d2751ec86d2
+		summarizeBy: none
+		sourceColumn: Kirjeldus
+
+	partition dim_direction = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRecords(#"Policies Source"),
+				    Filtered = Table.SelectRows(Source, each [is_direction] = 1),
+				    Kept = Table.SelectColumns(Filtered, {"id", "policy_measure", "direction_code", "description"}),
+				    Renamed = Table.RenameColumns(Kept, {{"id", "direction_id"}, {"policy_measure", "Suund"}, {"direction_code", "Suuna kood"}, {"description", "Kirjeldus"}}),
+				    Typed = Table.TransformColumnTypes(Renamed, {{"direction_id", Int64.Type}, {"Suund", type text}, {"Suuna kood", Int64.Type}, {"Kirjeldus", type text}})
+				in
+				    Typed
+

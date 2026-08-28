@@ -1,0 +1,811 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.4.0/schema.json",
+  "displayName": "Bookmark 1",
+  "name": "d83918f4f78628f062d1",
+  "options": {
+    "targetVisualNames": []
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "a0e1c2b3d4f506172839",
+    "sections": {
+      "a0e1c2b3d4f506172839": {
+        "visualContainers": {
+          "2ad44df16de8539ef166": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "4ce2d262a63bd23c463c": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "4ad49552bb9608821a58",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_activity"
+                        }
+                      },
+                      "Property": "Tegevuse tüüp"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9554412e6dd5e11eace6",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Tegevuste arv"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "barChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Tegevuste arv"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_activity"
+                        }
+                      },
+                      "Property": "Tegevuse tüüp"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "4e386cfebab25ad7fc27": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "537c8f8fd487c465b639": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b37d4b98d89ccb253706",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Alustamata tegevused"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {}
+            }
+          },
+          "55b04e10184ab5df801a": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "bf2d6416ec1054c71b66",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_activity"
+                        }
+                      },
+                      "Property": "Kood"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "816583fedb4d05d89e38",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_activity"
+                        }
+                      },
+                      "Property": "Tegevus"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "cc0894a756e73c5c42f6",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_activity"
+                        }
+                      },
+                      "Property": "Staatus"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "48114e394a764fb3b6df",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_activity"
+                        }
+                      },
+                      "Property": "Juhtorganisatsioon"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0c278de1d77cff14c56e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_direction"
+                        }
+                      },
+                      "Property": "Suund"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3007560c5f8c10c3cc6d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Tegevuste arv"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            }
+          },
+          "629cd9ba03a3b84c19ea": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b6aa04f52d15eaefe1d8",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_direction"
+                        }
+                      },
+                      "Property": "Suund"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "61e71e669ce92cacd752",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Tegevuste arv"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "barChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Tegevuste arv"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_direction"
+                        }
+                      },
+                      "Property": "Suund"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "6e245f698c28701ea710": {
+            "singleVisual": {
+              "visualType": "pageNavigator",
+              "objects": {}
+            }
+          },
+          "7666dfff8acc86a12c9f": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e5d026d0b7b1508a13a0",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_activity"
+                        }
+                      },
+                      "Property": "Staatus"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_activity"
+                        }
+                      },
+                      "Property": "Staatus"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "7ce61e44ff1d6001fc32": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c5bad7349a11f9bc8bc0",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_activity"
+                        }
+                      },
+                      "Property": "Tegevuse tüüp"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_activity"
+                        }
+                      },
+                      "Property": "Tegevuse tüüp"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "7e125a83b660c4ae9c98": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "2bd5cb2c54777fe5335d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_date"
+                        }
+                      },
+                      "Property": "Aasta"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_date"
+                        }
+                      },
+                      "Property": "Aasta"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "87af3b49eef40d51309b": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "88ae465a671975e4f787": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "89cbf53a93bd7f5430e3": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "9150d58a1e8c6786e0e3": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e6b1570641eccb9e8243",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Tehtud tegevused"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {}
+            }
+          },
+          "92f5f8fd79f0a2f1f9ae": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "512e3c9f975fc6ec4091",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Töös tegevused"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {}
+            }
+          },
+          "a5e039dd7af23cc66334": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "ab40e687ca737ec3e66d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "aa78f9b5002816d15a99",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Tegevuste arv"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {}
+            }
+          },
+          "ac8573e7c5fc4f5984a5": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "2644cdbc9e6c2bedf369",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_date"
+                        }
+                      },
+                      "Property": "Aasta"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "581b68105a6b01f2e439",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Tegevuste arv"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_date"
+                        }
+                      },
+                      "Property": "Aasta"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_date"
+                        }
+                      },
+                      "Property": "Aasta"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "b5644addedc0eec7405d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "563bc0236c8ac2fc62f4",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_direction"
+                        }
+                      },
+                      "Property": "Suund"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_direction"
+                        }
+                      },
+                      "Property": "Suund"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "c57bd772f7bf3b621550": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "d8c65cf59cabd80717ee": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "81b12e4614babdde6b8a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_activity"
+                        }
+                      },
+                      "Property": "Staatus"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8dd4a364a4f50e150bcc",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Tegevuste arv"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "barChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Tegevuste arv"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_activity"
+                        }
+                      },
+                      "Property": "Staatus"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "ea038a6b92f7ef966be1": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e23970036b1e16b2060b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Tehtud %"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {}
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "visible": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

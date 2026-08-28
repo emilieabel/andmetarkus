@@ -1,0 +1,21 @@
+expression 'Activities Source' =
+		let
+		    Source = Json.Document(Web.Contents("https://app.liigume.ee/api/activities"))
+		in
+		    Source
+	lineageTag: e72dff24-5132-4573-a4f7-1d3182bcfa38
+
+expression 'Organizations Source' =
+		let
+		    Source = Json.Document(Web.Contents("https://app.liigume.ee/api/organizations"))
+		in
+		    Source
+	lineageTag: e2fe5f22-82f2-4fd8-a429-a9997173076f
+
+expression 'Policies Source' =
+		let
+		    Source = Json.Document(Web.Contents("https://app.liigume.ee/api/policies"))
+		in
+		    Source
+	lineageTag: 370bb974-c9d6-478b-a2d8-d121209c0001
+

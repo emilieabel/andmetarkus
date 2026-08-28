@@ -1,0 +1,275 @@
+/// Tegevuste fakt (tähe keskus): üks rida = üks tegevus. Mitu partnerit, meedet, sihtrühma ja indikaatorit on samal väljal, komadega.
+table fact_activity
+	lineageTag: 923f02dc-8ed2-4a84-a98e-69b032eb9637
+
+	column activity_id
+		dataType: int64
+		isHidden
+		isKey
+		lineageTag: 30ba41a8-d873-4981-a536-da2f487d2f55
+		summarizeBy: none
+		sourceColumn: activity_id
+
+	column lead_org_id
+		dataType: int64
+		isHidden
+		lineageTag: 2849420f-878a-4c21-a190-35cfd1d8c713
+		summarizeBy: none
+		sourceColumn: lead_org_id
+
+	column who_direction_id
+		dataType: int64
+		isHidden
+		lineageTag: 330bc3ed-776d-4b32-b75e-e5eb4d6f38d1
+		summarizeBy: none
+		sourceColumn: who_direction_id
+
+	column Alguskuupäev
+		dataType: dateTime
+		formatString: dd.MM.yyyy
+		lineageTag: cf843eef-60da-42f7-8cfc-891c81eff7fd
+		summarizeBy: none
+		sourceColumn: Alguskuupäev
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Lõppkuupäev
+		dataType: dateTime
+		formatString: dd.MM.yyyy
+		lineageTag: 69e2f769-0944-474d-b4d7-75be9e09c613
+		summarizeBy: none
+		sourceColumn: Lõppkuupäev
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Tegevuse seis: Pole alustatud, Töös või Tehtud.
+	column Staatus
+		dataType: string
+		lineageTag: e13376cf-aca0-46ee-8c43-6ae9f425f3cf
+		summarizeBy: none
+		sourceColumn: Staatus
+		sortByColumn: 'Staatuse järjekord'
+
+	/// Tegevuse valmidus 0-100. Paljudel ridadel väärtus puudub.
+	column 'Edenemine protsent'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5ae00f27-ee45-43cc-a054-525b9bc953d9
+		summarizeBy: none
+		sourceColumn: Edenemine protsent
+
+	column 'Partnerite arv'
+		dataType: int64
+		isHidden
+		lineageTag: 623693b1-9d20-4af8-8a1f-be74d3ee0d38
+		summarizeBy: sum
+		sourceColumn: Partnerite arv
+
+	column 'Meetmete arv'
+		dataType: int64
+		isHidden
+		lineageTag: cfd72ca1-9e49-43be-a72d-765b954fd112
+		summarizeBy: sum
+		sourceColumn: Meetmete arv
+
+	column 'Indikaatorite arv'
+		dataType: int64
+		isHidden
+		lineageTag: bd51fb9c-9e81-42f2-9002-fba01c548d
+		summarizeBy: sum
+		sourceColumn: Indikaatorite arv
+
+	column 'Uuringute arv'
+		dataType: int64
+		isHidden
+		lineageTag: cd2084eb-7860-431b-9beb-448f83c488bd
+		summarizeBy: sum
+		sourceColumn: Uuringute arv
+
+	column 'Sihtrühmade arv'
+		dataType: int64
+		isHidden
+		lineageTag: fb5a12be-fa8e-4dd5-880d-b251501546d2
+		summarizeBy: sum
+		sourceColumn: Sihtrühmade arv
+
+	column 'Kestus päevades'
+		dataType: int64
+		lineageTag: 56989bc6-4eb0-4fdd-993a-c68573a8fdd6
+		summarizeBy: none
+		sourceColumn: Kestus päevades
+
+	column 'Tegevuse nr'
+		dataType: int64
+		lineageTag: 62d0f94e-4e1a-49f4-9b9f-a70ea44a453a
+		summarizeBy: none
+		sourceColumn: Tegevuse nr
+
+	column Kood
+		dataType: string
+		lineageTag: cd97765e-9b4a-4496-8063-d2322eec7e39
+		summarizeBy: none
+		sourceColumn: Kood
+
+	/// Üks kirje tegevuskavas: projekt, programm või seadusemuudatus (activity).
+	column Tegevus
+		dataType: string
+		lineageTag: af3fc1e0-d3fe-4742-a7f4-92f212a11857
+		summarizeBy: none
+		sourceColumn: Tegevus
+
+	column Lühinimi
+		dataType: string
+		lineageTag: 6e271ee6-dc18-448e-a750-f895e92e2e03
+		summarizeBy: none
+		sourceColumn: Lühinimi
+
+	/// Eesti projektid ja programmid või teadus ja innovatsioon.
+	column 'Tegevuse tüüp'
+		dataType: string
+		lineageTag: 2badc81f-1c36-42b8-914c-6161191990e6
+		summarizeBy: none
+		sourceColumn: Tegevuse tüüp
+
+	column Periood
+		dataType: string
+		lineageTag: d63f1614-3322-450f-9d08-bf14b935f019
+		summarizeBy: none
+		sourceColumn: Periood
+
+	column 'Staatuse järjekord'
+		dataType: int64
+		isHidden
+		lineageTag: bc1bdcd9-7e27-4f14-a083-26e476f4c3d1
+		summarizeBy: none
+		sourceColumn: Staatuse järjekord
+
+	column Sihttulemus
+		dataType: string
+		lineageTag: 73ec595a-2462-44ba-a61f-1d597c48f776
+		summarizeBy: none
+		sourceColumn: Sihttulemus
+
+	/// Asutus, kes vastutab tegevuse elluviimise eest. Seos dim_organization kaudu (mitu-ühele).
+	column Juhtorganisatsioon
+		dataType: string
+		lineageTag: 1e80ac20-8b60-431b-850a-12adea908d01
+		summarizeBy: none
+		sourceColumn: Juhtorganisatsioon
+
+	column 'Juhtorg lühend'
+		dataType: string
+		lineageTag: 5ae3aaaf-8e21-45eb-8b63-a55ed28b6f9a
+		summarizeBy: none
+		sourceColumn: Juhtorg lühend
+
+	column 'Juhtorg tüüp'
+		dataType: string
+		lineageTag: aa4d9fc5-1451-43a7-a345-bbc5f0c173fc
+		summarizeBy: none
+		sourceColumn: Juhtorg tüüp
+
+	/// Partnerasutused ühel väljal, komadega. Unikaalset partnerit ei saa enam eraldi filtrida.
+	column Partnerid
+		dataType: string
+		lineageTag: 7c8a1f2e-3b4d-4e5f-9a0b-1c2d3e4f5a6b
+		summarizeBy: none
+		sourceColumn: Partnerid
+
+	/// Poliitikameetmed ühel väljal, komadega.
+	column Poliitikameetmed
+		dataType: string
+		lineageTag: 8d9b2e3f-4c5e-5f6a-0b1c-2d3e4f5a6b7c
+		summarizeBy: none
+		sourceColumn: Poliitikameetmed
+
+	/// Sihtrühmad ühel väljal, komadega.
+	column Sihtrühmad
+		dataType: string
+		lineageTag: 9e0c3f4a-5d6f-6a7b-1c2d-3e4f5a6b7c8d
+		summarizeBy: none
+		sourceColumn: Sihtrühmad
+
+	/// Indikaatorid ühel väljal (nimi ja staatus), semikooloniga.
+	column Indikaatorid
+		dataType: string
+		lineageTag: 0f1d4a5b-6e7a-7b8c-2d3e-4f5a6b7c8d9e
+		summarizeBy: none
+		sourceColumn: Indikaatorid
+
+	column 'Lõpetatud indikaatorite arv'
+		dataType: int64
+		isHidden
+		lineageTag: 1a2e5b6c-7f8b-8c9d-3e4f-5a6b7c8d9e0f
+		summarizeBy: sum
+		sourceColumn: Lõpetatud indikaatorite arv
+
+	hierarchy 'Tegevuse tüüp ja staatus'
+		lineageTag: 5bcbef92-b8b1-4faf-abd9-0ae1086379b1
+
+		level 'Tegevuse tüüp'
+			lineageTag: ba2f62a1-edd6-46b5-81df-b6679950a83d
+			column: 'Tegevuse tüüp'
+
+		level Staatus
+			lineageTag: 61ccd2b9-9d7c-45d5-a27b-31cacfaa3280
+			column: Staatus
+
+	partition fact_activity = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRecords(#"Activities Source"),
+				    Orgs = Table.Buffer(Table.FromRecords(#"Organizations Source")),
+				    Policies = Table.Buffer(Table.FromRecords(#"Policies Source")),
+				    OrgMap = Record.FromList(Orgs[name], List.Transform(Orgs[id], each Text.From(_))),
+				    PolicyMap = Record.FromList(
+				        List.Transform(Table.ToRecords(Policies), each (if [policy_code] = null or [policy_code] = "" then "" else [policy_code] & " ") & (if [policy_measure] = null then "" else [policy_measure])),
+				        List.Transform(Policies[id], each Text.From(_))
+				    ),
+				    LookupList = (ids as nullable list, map as record) as nullable text =>
+				        let
+				            raw = if ids = null then {} else ids,
+				            labels = List.Distinct(List.RemoveNulls(List.Transform(raw, each Record.FieldOrDefault(map, Text.From(_), null)))),
+				            out = if List.Count(labels) = 0 then null else Text.Combine(labels, ", ")
+				        in
+				            out,
+				    Joined = Table.NestedJoin(Source, {"lead_org_id"}, Orgs, {"id"}, "LeadOrg", JoinKind.LeftOuter),
+				    Expanded = Table.ExpandTableColumn(Joined, "LeadOrg", {"name", "abbreviation", "org_type"}, {"Juhtorganisatsioon", "Juhtorg lühend", "Juhtorg tüüp"}),
+				    AddPartnerid = Table.AddColumn(Expanded, "Partnerid", each LookupList([partner_ids], OrgMap), type text),
+				    AddMeetmed = Table.AddColumn(AddPartnerid, "Poliitikameetmed", each LookupList([policy_ids], PolicyMap), type text),
+				    AddSihtryhmad = Table.AddColumn(AddMeetmed, "Sihtrühmad", each
+				        let
+				            g = if [target_groups] = null then {} else List.Distinct(List.RemoveNulls([target_groups]))
+				        in
+				            if List.Count(g) = 0 then null else Text.Combine(g, ", "),
+				        type text),
+				    AddIndikaatorid = Table.AddColumn(AddSihtryhmad, "Indikaatorid", each
+				        let
+				            ind = if [indicators] = null then {} else [indicators],
+				            labels = List.RemoveNulls(List.Transform(ind, (r) =>
+				                if r = null then null
+				                else
+				                    let
+				                        n = try r[name] otherwise "",
+				                        s = try r[status] otherwise null
+				                    in
+				                        if n = "" then null else n & (if s = null or s = "" then "" else " (" & s & ")")
+				            ))
+				        in
+				            if List.Count(labels) = 0 then null else Text.Combine(labels, "; "),
+				        type text),
+				    Added = Table.AddColumn(AddIndikaatorid, "Partnerite arv", each List.Count(if [partner_ids] = null then {} else [partner_ids]), Int64.Type),
+				    Added2 = Table.AddColumn(Added, "Meetmete arv", each List.Count(if [policy_ids] = null then {} else [policy_ids]), Int64.Type),
+				    Added3 = Table.AddColumn(Added2, "Indikaatorite arv", each List.Count(if [indicators] = null then {} else [indicators]), Int64.Type),
+				    Added3b = Table.AddColumn(Added3, "Lõpetatud indikaatorite arv", each List.Count(List.Select(if [indicators] = null then {} else [indicators], (r) => r <> null and (try r[status] otherwise "") = "Lõpetatud")), Int64.Type),
+				    Added4 = Table.AddColumn(Added3b, "Uuringute arv", each List.Count(if [research_ids] = null then {} else [research_ids]), Int64.Type),
+				    Added5 = Table.AddColumn(Added4, "Sihtrühmade arv", each List.Count(if [target_groups] = null then {} else [target_groups]), Int64.Type),
+				    Added6 = Table.AddColumn(Added5, "Kestus päevades", each if [start_date] = null or [end_date] = null then null else Duration.Days(Date.From([end_date]) - Date.From([start_date])), Int64.Type),
+				    Kept = Table.SelectColumns(Added6, {"id", "nr", "code", "name", "name_short", "activity_type", "period", "start_date", "end_date", "status", "target_outcome", "who_direction_id", "lead_org_id", "Juhtorganisatsioon", "Juhtorg lühend", "Juhtorg tüüp", "Partnerid", "Poliitikameetmed", "Sihtrühmad", "Indikaatorid", "progress_pct", "Partnerite arv", "Meetmete arv", "Indikaatorite arv", "Lõpetatud indikaatorite arv", "Uuringute arv", "Sihtrühmade arv", "Kestus päevades"}),
+				    Renamed = Table.RenameColumns(Kept, {{"id", "activity_id"}, {"nr", "Tegevuse nr"}, {"code", "Kood"}, {"name", "Tegevus"}, {"name_short", "Lühinimi"}, {"activity_type", "Tegevuse tüüp"}, {"period", "Periood"}, {"start_date", "Alguskuupäev"}, {"end_date", "Lõppkuupäev"}, {"status", "Staatus"}, {"target_outcome", "Sihttulemus"}, {"progress_pct", "Edenemine protsent"}}),
+				    StatusOrder = Table.AddColumn(Renamed, "Staatuse järjekord", each if [Staatus] = "Pole alustatud" then 1 else if [Staatus] = "Töös" then 2 else if [Staatus] = "Tehtud" then 3 else 9, Int64.Type),
+				    Typed = Table.TransformColumnTypes(StatusOrder, {{"activity_id", Int64.Type}, {"Tegevuse nr", Int64.Type}, {"Kood", type text}, {"Tegevus", type text}, {"Lühinimi", type text}, {"Tegevuse tüüp", type text}, {"Periood", type text}, {"Alguskuupäev", type date}, {"Lõppkuupäev", type date}, {"Staatus", type text}, {"Staatuse järjekord", Int64.Type}, {"Sihttulemus", type text}, {"who_direction_id", Int64.Type}, {"lead_org_id", Int64.Type}, {"Juhtorganisatsioon", type text}, {"Juhtorg lühend", type text}, {"Juhtorg tüüp", type text}, {"Partnerid", type text}, {"Poliitikameetmed", type text}, {"Sihtrühmad", type text}, {"Indikaatorid", type text}, {"Edenemine protsent", Int64.Type}, {"Partnerite arv", Int64.Type}, {"Meetmete arv", Int64.Type}, {"Indikaatorite arv", Int64.Type}, {"Lõpetatud indikaatorite arv", Int64.Type}, {"Uuringute arv", Int64.Type}, {"Sihtrühmade arv", Int64.Type}, {"Kestus päevades", Int64.Type}})
+				in
+				    Typed
+

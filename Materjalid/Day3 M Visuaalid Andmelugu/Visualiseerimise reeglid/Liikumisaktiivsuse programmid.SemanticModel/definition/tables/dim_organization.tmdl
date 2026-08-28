@@ -1,0 +1,71 @@
+/// Juhtorganisatsioonid (mitu-ühele faktist). Partnerid on fact_activity[Partnerid] väljal, mitte selles tabelis.
+table dim_organization
+	lineageTag: 7689d36f-69c6-4a24-a73f-b68d9cb4c4a8
+
+	column organization_id
+		dataType: int64
+		isHidden
+		isKey
+		lineageTag: 15ad30ae-f5be-4ec0-a9ab-a9b705aa481d
+		summarizeBy: none
+		sourceColumn: organization_id
+
+	column parent_organization_id
+		dataType: int64
+		isHidden
+		lineageTag: d1e0bcff-d6c2-4ffc-b3cc-8416ced5bbdd
+		summarizeBy: none
+		sourceColumn: parent_organization_id
+
+	/// Asutuse nimi, näiteks Transpordiamet või Kultuuriministeerium.
+	column Organisatsioon
+		dataType: string
+		lineageTag: 63be6d70-d75c-449a-b16a-bf010c8a3d9a
+		summarizeBy: none
+		sourceColumn: Organisatsioon
+
+	column Lühend
+		dataType: string
+		lineageTag: f822e959-7108-41b2-be69-f7c8898c2dd2
+		summarizeBy: none
+		sourceColumn: Lühend
+
+	/// Liik: ministeerium, riigiamet, MTÜ, ülikool, KOV või muu.
+	column 'Organisatsiooni tüüp'
+		dataType: string
+		lineageTag: 0387436e-1376-4403-942e-884333711ec7
+		summarizeBy: none
+		sourceColumn: Organisatsiooni tüüp
+
+	/// Ülemasutus, kui see on teada (näiteks TAI -> Sotsiaalministeerium).
+	column Peaorganisatsioon
+		dataType: string
+		lineageTag: e357c813-013a-4b97-bdad-8b67c2757ff7
+		summarizeBy: none
+		sourceColumn: Peaorganisatsioon
+
+	hierarchy 'Organisatsiooni hierarhia'
+		lineageTag: 1246d944-f828-4b66-9c16-2297991cd61f
+
+		level 'Organisatsiooni tüüp'
+			lineageTag: e9878e52-0ca3-4ae6-9653-809bdf878311
+			column: 'Organisatsiooni tüüp'
+
+		level Organisatsioon
+			lineageTag: 395a1e41-c5df-406f-b900-595abc156edb
+			column: Organisatsioon
+
+	partition dim_organization = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRecords(#"Organizations Source"),
+				    Parents = Table.RenameColumns(Table.SelectColumns(Source, {"id", "name"}), {{"id", "parent_id"}, {"name", "Peaorganisatsioon"}}),
+				    Joined = Table.NestedJoin(Source, {"parent_organization_id"}, Parents, {"parent_id"}, "Parent", JoinKind.LeftOuter),
+				    Expanded = Table.ExpandTableColumn(Joined, "Parent", {"Peaorganisatsioon"}, {"Peaorganisatsioon"}),
+				    Kept = Table.SelectColumns(Expanded, {"id", "name", "abbreviation", "org_type", "parent_organization_id", "Peaorganisatsioon"}),
+				    Renamed = Table.RenameColumns(Kept, {{"id", "organization_id"}, {"name", "Organisatsioon"}, {"abbreviation", "Lühend"}, {"org_type", "Organisatsiooni tüüp"}}),
+				    Typed = Table.TransformColumnTypes(Renamed, {{"organization_id", Int64.Type}, {"Organisatsioon", type text}, {"Lühend", type text}, {"Organisatsiooni tüüp", type text}, {"parent_organization_id", Int64.Type}, {"Peaorganisatsioon", type text}})
+				in
+				    Typed
+

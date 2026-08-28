@@ -1,0 +1,157 @@
+/// Kõik DAX-mõõdikud ühes kohas.
+table _Measures
+	lineageTag: 2dc6d134-825c-430b-8f30-25b39783a61a
+
+	/// Filtrikontekstis olevate tegevuste arv.
+	measure 'Tegevuste arv' = COUNTROWS ( fact_activity )
+		formatString: #,##0
+		displayFolder: 1. Ülevaade
+		lineageTag: e2d11870-9a1c-4bc2-9962-b12d8d76741f
+
+	/// Staatusega Tehtud tegevuste arv.
+	measure 'Tehtud tegevused' =
+			CALCULATE (
+			    [Tegevuste arv],
+			    fact_activity[Staatus] = "Tehtud"
+			)
+		formatString: #,##0
+		displayFolder: 1. Ülevaade
+		lineageTag: 08bc9d05-aabc-495f-96f0-fd35154de6ee
+
+	/// Staatusega Töös tegevuste arv.
+	measure 'Töös tegevused' =
+			CALCULATE (
+			    [Tegevuste arv],
+			    fact_activity[Staatus] = "Töös"
+			)
+		formatString: #,##0
+		displayFolder: 1. Ülevaade
+		lineageTag: dbedd93e-0912-4f56-b27d-e3e9d8869f9b
+
+	/// Staatusega Pole alustatud tegevuste arv.
+	measure 'Alustamata tegevused' =
+			CALCULATE (
+			    [Tegevuste arv],
+			    fact_activity[Staatus] = "Pole alustatud"
+			)
+		formatString: #,##0
+		displayFolder: 1. Ülevaade
+		lineageTag: 47050f1b-0b65-4eb2-9994-03fd667ce9f8
+
+	/// Tehtud tegevuste osakaal kõigist tegevustest.
+	measure 'Tehtud %' = DIVIDE ( [Tehtud tegevused], [Tegevuste arv] )
+		formatString: 0.0%
+		displayFolder: 1. Ülevaade
+		lineageTag: 3aa46f3f-bbfe-47ea-9138-dd2ac375e36b
+
+	/// Keskmine edenemise protsent tegevustel, millel on edenemine täidetud. Jagatud 100-ga, et formaat 0.0% oleks õige.
+	measure 'Keskmine edenemine %' = DIVIDE ( AVERAGE ( fact_activity[Edenemine protsent] ), 100 )
+		formatString: 0.0%
+		displayFolder: 2. Edenemine
+		lineageTag: dee7e32e-8118-4271-ad94-e616ccb119a7
+
+	/// Filtrikontekstis olevate indikaatorite arv (tegevuse real kokku liidetud).
+	measure 'Indikaatorite arv' = SUM ( fact_activity[Indikaatorite arv] )
+		formatString: #,##0
+		displayFolder: 2. Edenemine
+		lineageTag: 8aa634a0-f038-421c-afe0-6df17bc6036d
+
+	/// Staatusega Lõpetatud indikaatorite arv (tegevuse real kokku liidetud).
+	measure 'Lõpetatud indikaatorid' = SUM ( fact_activity[Lõpetatud indikaatorite arv] )
+		formatString: #,##0
+		displayFolder: 2. Edenemine
+		lineageTag: 4e306a3a-01f9-449b-ad39-8696645a7d5a
+
+	/// Lõpetatud indikaatorite osakaal.
+	measure 'Lõpetatud indikaatorite %' = DIVIDE ( [Lõpetatud indikaatorid], [Indikaatorite arv] )
+		formatString: 0.0%
+		displayFolder: 2. Edenemine
+		lineageTag: 976de1aa-756b-4115-b679-6cbc8991f837
+
+	/// Unikaalsete juhtorganisatsioonide arv. Partnerid on tegevuse real ühel väljal, neid eraldi ei loeta.
+	measure 'Organisatsioonide arv' = DISTINCTCOUNT ( fact_activity[lead_org_id] )
+		formatString: #,##0
+		displayFolder: 3. Võrgustik
+		lineageTag: 99106581-e1de-4773-860e-8bef26e6d834
+
+	/// Unikaalsete juhtorganisatsioonide arv.
+	measure 'Juhtorganisatsioonide arv' = DISTINCTCOUNT ( fact_activity[lead_org_id] )
+		formatString: #,##0
+		displayFolder: 3. Võrgustik
+		lineageTag: 4daa1911-fc65-4761-9db9-7d8a2650a500
+
+	/// Partnerlussuhete arv (tegevustel märgitud partnerite koguarv).
+	measure 'Partnerluste arv' = SUM ( fact_activity[Partnerite arv] )
+		formatString: #,##0
+		displayFolder: 3. Võrgustik
+		lineageTag: 4e880189-b141-402d-a339-394c31828e82
+
+	/// Tegevustega seotud poliitikameetmete kirjeid (mitu meedet ühel real on kokku liidetud).
+	measure 'Poliitikameetmete arv' = SUM ( fact_activity[Meetmete arv] )
+		formatString: #,##0
+		displayFolder: 4. Poliitika
+		lineageTag: 3e4f68a8-b020-4a81-abce-d88f01d22750
+
+	/// Sihtrühmade kirjeid tegevustel (mitu sihtrühma ühel real on kokku liidetud).
+	measure 'Sihtrühmade arv' = SUM ( fact_activity[Sihtrühmade arv] )
+		formatString: #,##0
+		displayFolder: 4. Poliitika
+		lineageTag: e7852464-286e-4f54-b990-05812ef053a7
+
+	/// Tegevused, millel ei ole ühtegi partnerit.
+	measure 'Tegevused ilma partnerita' =
+			CALCULATE (
+			    [Tegevuste arv],
+			    fact_activity[Partnerite arv] = 0
+			)
+		formatString: #,##0
+		displayFolder: 5. Andmekvaliteet
+		lineageTag: d9626fad-5785-4683-8fd7-1389f0902f57
+
+	/// Tegevused, millel puudub alguskuupäev.
+	measure 'Tegevused ilma kuupäevata' =
+			CALCULATE (
+			    [Tegevuste arv],
+			    ISBLANK ( fact_activity[Alguskuupäev] )
+			)
+		formatString: #,##0
+		displayFolder: 5. Andmekvaliteet
+		lineageTag: c86fbd76-6562-4c6c-b776-65d891b87c84
+
+	/// Tegevused, millel puudub edenemise protsent.
+	measure 'Tegevused ilma edenemiseta' =
+			CALCULATE (
+			    [Tegevuste arv],
+			    ISBLANK ( fact_activity[Edenemine protsent] )
+			)
+		formatString: #,##0
+		displayFolder: 5. Andmekvaliteet
+		lineageTag: 3b677363-816e-4042-bb00-3a59d0967dcd
+
+	/// Tegevused, mille lõppkuupäev on möödas, kuid staatus ei ole Tehtud.
+	measure 'Tähtaeg ületatud' =
+			// Lõpp on möödas, kuid staatus ei ole Tehtud
+			CALCULATE (
+			    [Tegevuste arv],
+			    fact_activity[Lõppkuupäev] < TODAY (),
+			    fact_activity[Staatus] <> "Tehtud"
+			)
+		formatString: #,##0
+		displayFolder: 5. Andmekvaliteet
+		lineageTag: b56e641a-87c6-49e3-b520-9e3bad4564be
+
+	/// Keskmine tegevuse kestus päevades (algusest lõpuni).
+	measure 'Keskmine kestus päevades' = AVERAGE ( fact_activity[Kestus päevades] )
+		formatString: #,##0
+		displayFolder: 2. Edenemine
+		lineageTag: 08b95c22-a3d2-4ef1-bc83-c91c00d94d52
+
+	column Väärtus
+		isHidden
+		lineageTag: 9d4caf0f-a0c5-40e7-9087-bfbe893aed38
+		sourceColumn: [Väärtus]
+
+	partition _Measures = calculated
+		mode: import
+		source = ROW ( "Väärtus", BLANK () )
+

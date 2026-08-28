@@ -1,0 +1,73 @@
+/// Mudeli objektide kirjeldused INFO.VIEW.TABLES ja INFO.VIEW.COLUMNS abil.
+table dim_mudeli_objekt
+	lineageTag: c44dc0bf-8072-4844-a308-dd29f0aa9276
+
+	column Järjestus
+		dataType: string
+		isHidden
+		lineageTag: 41114b57-2869-4915-85af-2bf35eaa4e06
+		summarizeBy: none
+		sourceColumn: [Järjestus]
+
+	/// Mudeli objekti nimi.
+	column Objekt
+		dataType: string
+		lineageTag: 9f9d3416-64df-4f0c-afe9-a2dc0815734f
+		summarizeBy: none
+		sourceColumn: [Objekt]
+
+	/// Tabel, kuhu veerg kuulub.
+	column Mudelitabel
+		dataType: string
+		lineageTag: 24cbb407-200a-4f29-8367-6b4f2b8dfc2d
+		summarizeBy: none
+		sourceColumn: [Mudelitabel]
+
+	/// Tekst, mis on objekti kirjeldusse pandud.
+	column Kirjeldus
+		dataType: string
+		lineageTag: 7441f149-17f6-4946-9f78-e86fb0522ed4
+		summarizeBy: none
+		sourceColumn: [Kirjeldus]
+
+	/// Objekti tüüp: Tabel või Veerg.
+	column 'Objekti tüüp'
+		dataType: string
+		lineageTag: 5a6b7c8d-9e0f-4123-a456-7890abcdef12
+		summarizeBy: none
+		sourceColumn: [Objekti tüüp]
+
+	partition dim_mudeli_objekt = calculated
+		mode: import
+		source =
+				VAR Tbl =
+				    SELECTCOLUMNS (
+				        FILTER (
+				            INFO.VIEW.TABLES (),
+				            NOT [IsHidden]
+				                && NOT ISBLANK ( [Description] )
+				                && NOT ( [Name] IN { "dim_measure_info", "dim_mudeli_objekt", "_Measures" } )
+				        ),
+				        "Järjestus", "0|" & [Name],
+				        "Objekti tüüp", "Tabel",
+				        "Objekt", [Name],
+				        "Mudelitabel", [Name],
+				        "Kirjeldus", [Description]
+				    )
+				VAR Col =
+				    SELECTCOLUMNS (
+				        FILTER (
+				            INFO.VIEW.COLUMNS (),
+				            NOT [IsHidden]
+				                && NOT ISBLANK ( [Description] )
+				                && NOT ( [Table] IN { "dim_measure_info", "dim_mudeli_objekt", "_Measures" } )
+				        ),
+				        "Järjestus", "1|" & [Table] & "|" & [Name],
+				        "Objekti tüüp", "Veerg",
+				        "Objekt", [Name],
+				        "Mudelitabel", [Table],
+				        "Kirjeldus", [Description]
+				    )
+				RETURN
+				    UNION ( Tbl, Col )
+

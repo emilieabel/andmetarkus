@@ -1,0 +1,75 @@
+/// Kalendritabel; Auto Date/Time on välja lülitatud.
+table dim_date
+	lineageTag: dc35035c-39b2-4b01-88fa-9f3ddecce41d
+	dataCategory: Time
+
+	column Kuupäev
+		dataType: dateTime
+		isKey
+		formatString: dd.MM.yyyy
+		lineageTag: a4fa6bd5-8c75-4b56-8858-46950c995c65
+		summarizeBy: none
+		sourceColumn: [Kuupäev]
+
+	column Aasta = YEAR ( dim_date[Kuupäev] )
+		dataType: int64
+		formatString: 0
+		lineageTag: ab27e36e-76b0-454c-977e-e796eae0b6fb
+		summarizeBy: none
+
+	column 'Kuu nr' = MONTH ( dim_date[Kuupäev] )
+		dataType: int64
+		lineageTag: 528d2960-2a28-4e8d-8588-62dd7bc832d8
+		summarizeBy: none
+
+	column Kuu = FORMAT ( dim_date[Kuupäev], "MMMM" )
+		dataType: string
+		lineageTag: 11a0dd22-8784-4ae2-bf31-4a37dd163942
+		summarizeBy: none
+		sortByColumn: 'Kuu nr'
+
+	column 'Kvartal nr' = QUARTER ( dim_date[Kuupäev] )
+		dataType: int64
+		lineageTag: 3e07fb9f-29b0-433b-9514-b5b013345442
+		summarizeBy: none
+
+	column Kvartal = "K" & FORMAT ( QUARTER ( dim_date[Kuupäev] ), "0" )
+		dataType: string
+		lineageTag: 6fbb5fdc-8a05-4aa3-aa7f-c52a02de2ff3
+		summarizeBy: none
+		sortByColumn: 'Kvartal nr'
+
+	column 'Aasta-kuu nr' = YEAR ( dim_date[Kuupäev] ) * 100 + MONTH ( dim_date[Kuupäev] )
+		dataType: int64
+		lineageTag: d1dd9d05-7db9-4ade-81ed-5675a5d2299c
+		summarizeBy: none
+
+	column Aasta-kuu = FORMAT ( dim_date[Kuupäev], "yyyy-MM" )
+		dataType: string
+		lineageTag: 82c628e0-cc7a-4fe4-b84a-472ad417a2ba
+		summarizeBy: none
+		sortByColumn: 'Aasta-kuu nr'
+
+	hierarchy 'Kalendri hierarhia'
+		lineageTag: a00f9073-e946-4255-bdbf-3085d501b1d3
+
+		level Aasta
+			lineageTag: 3935cdc5-b88b-4676-bb13-7338cd77bfb2
+			column: Aasta
+
+		level Kvartal
+			lineageTag: 50fb6d1e-7cbe-4eec-8ec1-31dcec2922a0
+			column: Kvartal
+
+		level Kuu
+			lineageTag: ec8d140c-191b-4ada-81bb-6baa51fa5e93
+			column: Kuu
+
+	partition dim_date = calculated
+		mode: import
+		source =
+				SELECTCOLUMNS (
+				    CALENDAR ( DATE ( 2023, 1, 1 ), DATE ( 2030, 12, 31 ) ),
+				    "Kuupäev", [Date]
+				)
+

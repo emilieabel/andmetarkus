@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Liikumisaktiivsuse programmid"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "129d3682-88ab-4247-8443-bcffca709034"
+  }
+}

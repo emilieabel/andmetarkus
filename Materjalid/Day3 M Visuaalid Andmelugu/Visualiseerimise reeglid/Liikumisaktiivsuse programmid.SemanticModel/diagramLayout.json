@@ -1,0 +1,111 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 480,
+            "y": 280
+          },
+          "nodeIndex": "fact_activity",
+          "nodeLineageTag": "923f02dc-8ed2-4a84-a98e-69b032eb9637",
+          "size": {
+            "height": 420,
+            "width": 260
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 480,
+            "y": 20
+          },
+          "nodeIndex": "dim_date",
+          "nodeLineageTag": "dc35035c-39b2-4b01-88fa-9f3ddecce41d",
+          "size": {
+            "height": 220,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 40,
+            "y": 320
+          },
+          "nodeIndex": "dim_direction",
+          "nodeLineageTag": "2beeb180-69d2-49dd-b480-ea092ff6a0ba",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 920,
+            "y": 320
+          },
+          "nodeIndex": "dim_organization",
+          "nodeLineageTag": "7689d36f-69c6-4a24-a73f-b68d9cb4c4a8",
+          "size": {
+            "height": 240,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1280,
+            "y": 20
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "2dc6d134-825c-430b-8f30-25b39783a61a",
+          "size": {
+            "height": 280,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1280,
+            "y": 340
+          },
+          "nodeIndex": "dim_measure_info",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1280,
+            "y": 520
+          },
+          "nodeIndex": "dim_mudeli_objekt",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Tähtskeem",
+      "zoomValue": 90,
+      "pinKeyFieldsToTop": true,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Tähtskeem",
+  "defaultDiagram": "Tähtskeem"
+}
