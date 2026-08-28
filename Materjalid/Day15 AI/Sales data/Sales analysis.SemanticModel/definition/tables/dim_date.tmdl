@@ -1,0 +1,105 @@
+table dim_date
+	lineageTag: 7a1c2e4b-9d53-4f18-a6c0-1b8e4d2f0a71
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		lineageTag: 2f6b9c11-4e70-4a3d-9c58-8d1a0b7e6f22
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 91d4e8a2-3c15-4b67-8f90-2a6e1c4d7b33
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c0f7b28-1a94-4d3e-b812-6e9c4a1f0d44
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		lineageTag: a8e3d16f-2b50-4c91-9e74-3d0a5f8b1c55
+		summarizeBy: none
+		sourceColumn: Month
+		sortByColumn: MonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNumber
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4b19c6e0-8d27-4f5a-a103-7c2e9b4d6a66
+		summarizeBy: none
+		sourceColumn: MonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weekday
+		dataType: string
+		lineageTag: d2a70f45-6e18-4b93-8c21-0f5d7a9e3b77
+		summarizeBy: none
+		sourceColumn: Weekday
+		sortByColumn: DayOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeek
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e58b3c9-7a41-4d26-9f80-1b6c4e2a8d88
+		summarizeBy: none
+		sourceColumn: DayOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Date Hierarchy'
+		lineageTag: 6f4c1a82-9b30-45e7-ad14-2c8f0e5b7a99
+
+		level Year
+			lineageTag: 13d9e6b4-5c20-4a78-8e31-9f0b7d4c2a10
+			column: Year
+
+		level Quarter
+			lineageTag: 28a5f0c7-1d63-4b49-9a72-4e8c1b6d3f11
+			column: Quarter
+
+		level Month
+			lineageTag: 39b6e1d8-2e74-4c50-8b83-5f9d2c7e4a12
+			column: Month
+
+		level Date
+			lineageTag: 4ac7f2e9-3f85-4d61-9c94-6a0e3d8f5b13
+			column: Date
+
+	partition dim_date = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\emiliea\Documents\GitHub\andmetarkus\Materjalid\Day15 AI\Sales data\DateTable.csv"), [Delimiter=",", Columns=6, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"Date", type date}, {"Year", Int64.Type}, {"Quarter", Int64.Type}, {"Month", type text}, {"Weekday", type text}, {"DayOfWeek", Int64.Type}}),
+				    #"Added MonthNumber" = Table.AddColumn(#"Changed Type", "MonthNumber", each Date.Month([Date]), Int64.Type)
+				in
+				    #"Added MonthNumber"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

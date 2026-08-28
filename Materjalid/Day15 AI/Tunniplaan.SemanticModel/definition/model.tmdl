@@ -1,0 +1,21 @@
+model Model
+	culture: et-EE
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-150
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["31 08-09 10 2026 (2)"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table '31 08-09 10 2026 (2)'
+ref table DateTableTemplate_08d1c0ff-05ff-4512-b93f-ecb32bbb887b
+ref table LocalDateTable_880b6e09-4c7d-47da-8855-fa54cca6e7ad
+
+ref cultureInfo et-EE
+

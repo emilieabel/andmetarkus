@@ -1,0 +1,246 @@
+table '31 08-09 10 2026 (2)'
+	lineageTag: cbc3431b-d320-4867-9f35-6f8e48b342aa
+
+	column teema
+		dataType: string
+		lineageTag: 44a90b52-03ce-49ad-a916-d78ce5a1c0d3
+		summarizeBy: none
+		sourceColumn: teema
+
+		annotation SummarizationSetBy = Automatic
+
+	column koolitaja
+		dataType: string
+		lineageTag: 76bb3a1e-10a9-43c6-83de-f44efc73b2f6
+		summarizeBy: none
+		sourceColumn: koolitaja
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'jrk nr'
+		dataType: int64
+		formatString: 0
+		lineageTag: d2947fbb-5968-42c0-948c-2ce71c35335d
+		summarizeBy: sum
+		sourceColumn: jrk nr
+
+		annotation SummarizationSetBy = Automatic
+
+	column kuupäev
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d6cbb968-f633-40fb-829e-c5f3897386bd
+		summarizeBy: none
+		sourceColumn: kuupäev
+
+		variation Variation
+			isDefault
+			relationship: 571439b8-8754-4b01-bb14-41e021f7ca3b
+			defaultHierarchy: LocalDateTable_880b6e09-4c7d-47da-8855-fa54cca6e7ad.'Kuupäeva hierarhia'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'näd päev'
+		dataType: string
+		lineageTag: 10c8a989-5659-4299-9f4b-3983591fd115
+		summarizeBy: none
+		sourceColumn: näd päev
+
+		annotation SummarizationSetBy = Automatic
+
+	column teema_grupp
+		dataType: string
+		lineageTag: 2bf5a0ad-e4ea-4a91-af7e-d7c6f954ecc1
+		summarizeBy: none
+		sourceColumn: teema_grupp
+
+		annotation SummarizationSetBy = Automatic
+
+	column tunde
+		dataType: double
+		lineageTag: 72987011-29af-415e-b02e-06601e51d2f6
+		summarizeBy: sum
+		sourceColumn: tunde
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition '31 08-09 10 2026 (2)' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\emiliea\Documents\GitHub\andmetarkus\Materjalid\Day15 AI\Tunniplaan.xlsx"), null, true),
+				
+				    Sheet = Source{[Item="31.08-09.10.2026", Kind="Sheet"]}[Data],
+				
+				    #"Changed Type" = Table.TransformColumnTypes(
+				        Sheet,
+				        {
+				            {"Column1", type text},
+				            {"Column2", type text},
+				            {"Column3", type text},
+				            {"Column4", type text},
+				            {"Column5", type text}
+				        }
+				    ),
+				
+				    // Eemalda täiesti tühjad read
+				    #"Removed Blank Rows" = Table.SelectRows(
+				        #"Changed Type",
+				        each List.NonNullCount(Record.FieldValues(_)) > 0
+				    ),
+				
+				    // Lisa kuupäev
+				    #"Added Date" = Table.AddColumn(
+				        #"Removed Blank Rows",
+				        "kuupäev",
+				        each try Date.FromText([Column1]) otherwise null,
+				        type date
+				    ),
+				
+				    #"Fill Date Down" = Table.FillDown(#"Added Date", {"kuupäev"}),
+				
+				    // Lisa jrk nr
+				    #"Added Nr" = Table.AddColumn(
+				        #"Fill Date Down",
+				        "jrk nr",
+				        each try Number.FromText([Column1]) otherwise null,
+				        Int64.Type
+				    ),
+				
+				    #"Fill Nr Down" = Table.FillDown(#"Added Nr", {"jrk nr"}),
+				
+				    // Nädalapäevad
+				    Weekdays = {
+				        "Esmaspäev",
+				        "Teisipäev",
+				        "Kolmapäev",
+				        "Neljapäev",
+				        "Reede",
+				        "Laupäev",
+				        "Pühapäev"
+				    },
+				
+				    // Leia nädalapäev
+				    #"Added Weekday" = Table.AddColumn(
+				        #"Fill Nr Down",
+				        "näd päev",
+				        each if List.Contains(Weekdays, [Column1]) then [Column1] else null
+				    ),
+				
+				    #"Fill Weekday Down" = Table.FillDown(#"Added Weekday", {"näd päev"}),
+				
+				    // Jäta ainult read, kus olemas jrk nr
+				    #"Keep Training Rows" = Table.SelectRows(
+				        #"Fill Weekday Down",
+				        each [jrk nr] <> null
+				    ),
+				
+				    // Moodul 1
+				    Module1 = Table.SelectColumns(
+				        #"Keep Training Rows",
+				        {"jrk nr", "kuupäev", "näd päev", "Column2", "Column3"}
+				    ),
+				
+				    Module1Renamed = Table.RenameColumns(
+				        Module1,
+				        {
+				            {"Column2", "teema"},
+				            {"Column3", "koolitaja"}
+				        }
+				    ),
+				
+				    Module1Filtered = Table.SelectRows(
+				        Module1Renamed,
+				        each [teema] <> null and [teema] <> ""
+				    ),
+				
+				    // Moodul 2
+				    Module2 = Table.SelectColumns(
+				        #"Keep Training Rows",
+				        {"jrk nr", "kuupäev", "näd päev", "Column4", "Column5"}
+				    ),
+				
+				    Module2Renamed = Table.RenameColumns(
+				        Module2,
+				        {
+				            {"Column4", "teema"},
+				            {"Column5", "koolitaja"}
+				        }
+				    ),
+				
+				    Module2Filtered = Table.SelectRows(
+				        Module2Renamed,
+				        each [teema] <> null and [teema] <> ""
+				    ),
+				
+				    // Ühenda moodulid
+				// Ühenda moodulid
+				FinalTable = Table.Combine({Module1Filtered, Module2Filtered}),
+				
+				// Loenda mitu teemat on samal kuupäeval
+				RowsPerDate = Table.Group(
+				    FinalTable,
+				    {"kuupäev"},
+				    {
+				        {"RowCount", each Table.RowCount(_), Int64.Type}
+				    }
+				),
+				
+				// Liida tagasi põhitabelisse
+				MergedCounts = Table.NestedJoin(
+				    FinalTable,
+				    {"kuupäev"},
+				    RowsPerDate,
+				    {"kuupäev"},
+				    "DateCounts",
+				    JoinKind.LeftOuter
+				),
+				
+				ExpandedCounts = Table.ExpandTableColumn(
+				    MergedCounts,
+				    "DateCounts",
+				    {"RowCount"}
+				),
+				
+				// Arvuta tunnid
+				AddedHours = Table.AddColumn(
+				    ExpandedCounts,
+				    "tunde",
+				    each 8 / [RowCount],
+				    type number
+				),
+				
+				// Eemalda abiveerg
+				RemovedHelper = Table.RemoveColumns(
+				    AddedHours,
+				    {"RowCount"}
+				),
+				
+				// Lisa teema grupp
+				Teemad = Table.AddColumn(
+				    RemovedHelper,
+				    "teema_grupp",
+				    each
+				        if Text.Contains(Text.Lower([teema]), "python") then "Python"
+				        else if Text.Contains(Text.Lower([teema]), "sql") then "SQL"
+				        else if Text.Contains(Text.Lower([teema]), "power bi") then "Power BI"
+				        else if Text.Contains(Text.Lower([teema]), "powerbi") then "Power BI"
+				        else if Text.Contains(Text.Lower([teema]), "grupitöö") then "Grupitöö"
+				        else if Text.Contains(Text.Lower([teema]), "tehisaru") then "Tehisaru"
+				        else if Text.Contains(Text.Lower([teema]), "llm") then "Tehisaru"
+				        else if Text.Contains(Text.Lower([teema]), "karjäär") then "Karjäär"
+				        else if Text.Contains(Text.Lower([teema]), "andmekaitse") then "Andmekaitse"
+				        else "Muu"
+				)
+				
+				in
+				    Teemad
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

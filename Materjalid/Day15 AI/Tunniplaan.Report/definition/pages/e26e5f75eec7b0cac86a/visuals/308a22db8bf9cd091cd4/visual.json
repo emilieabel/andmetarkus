@@ -1,0 +1,283 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "308a22db8bf9cd091cd4",
+  "position": {
+    "x": 16.026711185308848,
+    "y": 0,
+    "z": 0,
+    "height": 720.1335559265442,
+    "width": 1172.0868113522538
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "31 08-09 10 2026 (2)"
+                    }
+                  },
+                  "Property": "koolitaja"
+                }
+              },
+              "queryRef": "31 08-09 10 2026 (2).koolitaja",
+              "nativeQueryRef": "koolitaja",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "31 08-09 10 2026 (2)"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "kuupäev"
+                        }
+                      },
+                      "Hierarchy": "Kuupäeva hierarhia"
+                    }
+                  },
+                  "Level": "Kuu"
+                }
+              },
+              "queryRef": "31 08-09 10 2026 (2).kuupäev.Variation.Kuupäeva hierarhia.Kuu",
+              "nativeQueryRef": "kuupäev Kuu",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "31 08-09 10 2026 (2)"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "kuupäev"
+                        }
+                      },
+                      "Hierarchy": "Kuupäeva hierarhia"
+                    }
+                  },
+                  "Level": "Päev"
+                }
+              },
+              "queryRef": "31 08-09 10 2026 (2).kuupäev.Variation.Kuupäeva hierarhia.Päev",
+              "nativeQueryRef": "kuupäev Päev",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "31 08-09 10 2026 (2)"
+                        }
+                      },
+                      "Property": "tunde"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(31 08-09 10 2026 (2).tunde)",
+              "nativeQueryRef": "Sum of tunde"
+            }
+          ]
+        }
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "31 08-09 10 2026 (2).kuupäev.Variation.Kuupäeva hierarhia.Kuu"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "LocalDateTable_880b6e09-4c7d-47da-8855-fa54cca6e7ad"
+                    }
+                  },
+                  "Property": "Kuu"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "31 08-09 10 2026 (2).kuupäev.Variation.Kuupäeva hierarhia.Päev"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'august'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'september'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'oktoober'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "null"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
+      }
+    ],
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f2c46a2986363035f4b6",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "31 08-09 10 2026 (2)"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "kuupäev"
+                  }
+                },
+                "Hierarchy": "Kuupäeva hierarhia"
+              }
+            },
+            "Level": "Kuu"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "73d6662200b09b7a4837",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "31 08-09 10 2026 (2)"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "kuupäev"
+                  }
+                },
+                "Hierarchy": "Kuupäeva hierarhia"
+              }
+            },
+            "Level": "Päev"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9904058860c6cf5a4672",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "31 08-09 10 2026 (2)"
+                  }
+                },
+                "Property": "tunde"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2977e116fbb56c999954",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "31 08-09 10 2026 (2)"
+              }
+            },
+            "Property": "koolitaja"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

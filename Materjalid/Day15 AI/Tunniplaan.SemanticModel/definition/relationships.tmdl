@@ -1,0 +1,5 @@
+relationship 571439b8-8754-4b01-bb14-41e021f7ca3b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: '31 08-09 10 2026 (2)'.kuupäev
+	toColumn: LocalDateTable_880b6e09-4c7d-47da-8855-fa54cca6e7ad.Date
+

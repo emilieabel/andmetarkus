@@ -1,0 +1,20 @@
+-- 6. ARVUTUSED - võimalik teha aritmeetilisi tehteid (+, -, /, *) tulpade loomiseks, filtreerimiseks ja sorteerimiseks
+-- 6.1. ARVUTUS - Leia müügisummad, kus müügisumma on suurem kui 500 ja järjesta müügisumma alusel kasvavalt
+
+-- 7. AGREGEERIMINE
+
+-- 7.1. LOENDAMINE: Kui palju müügitehinguid on tehtud? - COUNT
+
+-- 7.2. UNIKAALSETE VÄÄRTUSTE LOENDAMINE: Kui palju eri tooteid on müüdud? - COUNT (DISTINCT)
+
+-- 7.3. SUMMERIMINE: Kui palju on tooteid müüdud? - SUM
+
+-- 7.4. KESKMINE, MIINIMUM, MAKSIMUM: Mis on toodete keskmine, minimaalne ja maksimaalne hind? - AVG, MIN, MAX
+
+-- 7.5. GRUPEERIMINE: Mis on toodete keskmine, minimaalne ja maksimaalne hind toodete kaupa? - GROUP BY
+
+-- 7.6. AGREGEERTITUD VÄÄRTUSE ALUSEL FILTREERIMINE: Näita ainult tooteid, mille keskmine hind on suurem kui 54.50. - HAVING
+
+-- 8. TÜHI VÄÄRTUS: Näita tooteridu, kus kogus on või ei ole tühi väärtus - IS NULL või IS NOT NULL
+
+-- 9. VÄÄRTUSE MUUTMINE: Grupeeri tooted kategooriatesse - CASE WHEN

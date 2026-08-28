@@ -1,0 +1,154 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "934e681699d6b085c764",
+  "position": {
+    "x": 7.4226804123711343,
+    "y": 6.1855670103092786,
+    "z": 0,
+    "height": 140.41237113402062,
+    "width": 296.28865979381442,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "31 08-09 10 2026 (2)"
+                    }
+                  },
+                  "Property": "koolitaja"
+                }
+              },
+              "queryRef": "31 08-09 10 2026 (2).koolitaja1",
+              "nativeQueryRef": "koolitaja"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "31 08-09 10 2026 (2)"
+                        }
+                      },
+                      "Property": "koolitaja"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "31 08-09 10 2026 (2).koolitaja",
+              "nativeQueryRef": "Count of koolitaja"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "31 08-09 10 2026 (2)"
+                        }
+                      },
+                      "Property": "tunde"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(31 08-09 10 2026 (2).tunde)",
+              "nativeQueryRef": "Sum of tunde"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "31 08-09 10 2026 (2)"
+                      }
+                    },
+                    "Property": "koolitaja"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "59854d2178ada32b39d5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "31 08-09 10 2026 (2)"
+              }
+            },
+            "Property": "koolitaja"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ada9e989c10ae8e80230",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "31 08-09 10 2026 (2)"
+                  }
+                },
+                "Property": "koolitaja"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5feea85b1713d0ac2d16",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "31 08-09 10 2026 (2)"
+                  }
+                },
+                "Property": "tunde"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

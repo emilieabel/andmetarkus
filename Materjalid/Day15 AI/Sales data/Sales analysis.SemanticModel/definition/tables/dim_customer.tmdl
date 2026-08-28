@@ -1,0 +1,58 @@
+table dim_customer
+	lineageTag: 51d8a3f0-4b16-47c2-9e85-7d1a2c6f8b14
+
+	column CustomerID
+		dataType: string
+		lineageTag: 62e9b4a1-5c27-48d3-8f96-8e2b3d7a9c15
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerName
+		dataType: string
+		lineageTag: 73f0c5b2-6d38-49e4-9a07-9f3c4e8b0d16
+		isDefaultLabel
+		summarizeBy: none
+		sourceColumn: CustomerName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Industry
+		dataType: string
+		lineageTag: 8401d6c3-7e49-4af5-8b18-0a4d5f9c1e17
+		summarizeBy: none
+		sourceColumn: Industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 9512e7d4-8f50-4b06-9c29-1b5e6a0d2f18
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column RegionID
+		dataType: string
+		lineageTag: a623f8e5-9061-4c17-8d3a-2c6f7b1e3029
+		summarizeBy: none
+		sourceColumn: RegionID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_customer = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\emiliea\Documents\GitHub\andmetarkus\Materjalid\Day15 AI\Sales data\CustomerTable.csv"), [Delimiter=",", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"CustomerID", type text}, {"CustomerName", type text}, {"Industry", type text}, {"Country", type text}, {"RegionID", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

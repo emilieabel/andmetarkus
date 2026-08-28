@@ -1,0 +1,7 @@
+-- 1. VALIMINE
+
+-- 1.1. Valime esimesed 10 rida tabeliga tutvumiseks - LIMIT
+
+-- 1.2. Valime konkreetsed tulbad - tulba nimed eraldada komadega
+
+-- 1.3. Valime unikaalsed väärtused - DISTINCT käsk

@@ -1,0 +1,13 @@
+-- AGREGEERIMINE HARJUTUSED
+
+-- 1. LOENDAMINE: Kui palju müügiesindajaid on müügiesindaja tabelis?
+
+-- 2. UNIKAALSETE VÄÄRTUSTE LOENDAMINE: Kui palju eri müügiesindajaid on müükide tabelis? 
+
+-- 3. KESKMINE, MIINIMUM, MAKSIMUM: Mis on toodete keskmine, minimaalne ja maksimaalne kogus?
+
+-- 4. GRUPEERIMINE: Mis on toodete keskmine, minimaalne ja maksimaalne kogus toodete kaupa?
+
+-- 5. AGREGEERTITUD VÄÄRTUSE ALUSEL FILTREERIMINE: Näita ainult tooteid, mille keskmine müüdud kogus on suurem kui 5. 
+
+-- 6. Grupeeri müügiesindajad tiimidesse.

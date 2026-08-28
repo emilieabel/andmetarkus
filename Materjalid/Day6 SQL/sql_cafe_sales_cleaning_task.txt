@@ -1,0 +1,51 @@
+-- This query checks each column values and fixes erronous values. In the end, cleaned table is selected as an output.
+
+-- 1. Check transaction_id column
+-- 1.1. Check the length of transaction_id column
+
+
+-- 2. Check item column
+-- 2.1. Check the values in the column 
+
+
+--2.2. Create a new column in output called item_cleaned where NULL and ERROR for item column are replaced with UNKNOWN, select distinct values from the new column
+
+
+-- 3. Check quantity column values
+
+-- 4. Check the unit price column
+-- 4.1. Check the values in the column 
+
+
+-- 4.2. Create a new column unit_price_clean and select only rows where unit price is a valid number
+
+
+-- 5. Check the total_spent column
+-- 5.1. Check the values in the column 
+
+
+-- 6. Check the payment_method column
+-- 6.1. Check the values in the column 
+
+
+-- 6.2. Create a new column in output called payment_method_clean where NULL and ERROR for payment_method column are replaced with UNKNOWN, select distinct values from the new column
+
+
+
+-- 7. Check the location column
+-- 7.1. Check the values in the column 
+
+
+-- 7.2. Create a new column in output called location_clean where NULL and ERROR for location column are replaced with UNKNOWN, select distinct values from the new column
+
+
+
+-- 8. Check the transaction_date column
+-- 8.1. Check the values in the column 
+
+-- 8.2. Create a new column in the output called transaction_date_clean and select rows with only valid dates 
+
+
+-- 9. Put all the steps together and create a cleaned output 
+
+

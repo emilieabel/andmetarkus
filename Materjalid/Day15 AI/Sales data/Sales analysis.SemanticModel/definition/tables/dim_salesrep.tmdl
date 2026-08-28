@@ -1,0 +1,42 @@
+table dim_salesrep
+	lineageTag: 1d9a65f2-07d8-4394-9ea1-9d364c85a796
+
+	column SalesRepID
+		dataType: string
+		lineageTag: 2e0b76a3-18e9-4405-8fb2-0e475d96b8a7
+		summarizeBy: none
+		sourceColumn: SalesRepID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 3f1c87b4-29f0-4516-9ac3-1f586ea7c9b8
+		isDefaultLabel
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column RegionID
+		dataType: string
+		lineageTag: 402d98c5-3a01-4627-8bd4-20697fb8dac9
+		summarizeBy: none
+		sourceColumn: RegionID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_salesrep = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\emiliea\Documents\GitHub\andmetarkus\Materjalid\Day15 AI\Sales data\SalesRepTable.csv"), [Delimiter=",", Columns=3, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"SalesRepID", type text}, {"Name", type text}, {"RegionID", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

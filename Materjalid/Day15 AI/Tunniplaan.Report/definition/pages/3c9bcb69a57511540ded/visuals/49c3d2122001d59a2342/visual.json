@@ -1,0 +1,115 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "49c3d2122001d59a2342",
+  "position": {
+    "x": 7.4226804123711343,
+    "y": 408.24742268041234,
+    "z": 2001,
+    "height": 227.01030927835052,
+    "width": 209.0721649484536
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "31 08-09 10 2026 (2)"
+                    }
+                  },
+                  "Property": "teema_grupp"
+                }
+              },
+              "queryRef": "31 08-09 10 2026 (2).teema_grupp",
+              "nativeQueryRef": "teema_grupp"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "31 08-09 10 2026 (2)"
+                        }
+                      },
+                      "Property": "tunde"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(31 08-09 10 2026 (2).tunde)",
+              "nativeQueryRef": "Sum of tunde"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "31 08-09 10 2026 (2)"
+                      }
+                    },
+                    "Property": "tunde"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ab28d658d37bc01729dd",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "31 08-09 10 2026 (2)"
+              }
+            },
+            "Property": "teema_grupp"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3d7f085c82e1ee03d4a8",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "31 08-09 10 2026 (2)"
+                  }
+                },
+                "Property": "tunde"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

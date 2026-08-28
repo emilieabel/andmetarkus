@@ -1,0 +1,118 @@
+table DateTableTemplate_08d1c0ff-05ff-4512-b93f-ecb32bbb887b
+	isHidden
+	isPrivate
+	lineageTag: 677defec-666b-48ac-919e-1faf09a85a16
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 141f6bdb-130f-43bf-81b8-79dedb1dc80a
+		dataCategory: PaddedDateTableDates
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = User
+
+	column Aasta = YEAR([Date])
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c74a41fa-2743-4d31-953f-b2382c83a11b
+		dataCategory: Years
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Year
+
+	column MonthNo = MONTH([Date])
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 79bcd522-3345-429e-93ea-49c1b5d9d493
+		dataCategory: MonthOfYear
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = MonthNumber
+
+	column Kuu = FORMAT([Date], "MMMM")
+		dataType: string
+		isHidden
+		lineageTag: 4d755da1-a75d-45dd-a391-07105fb378e8
+		dataCategory: Months
+		summarizeBy: none
+		sortByColumn: MonthNo
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Month
+
+	column QuarterNo = INT(([MonthNo] + 2) / 3)
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 8e8ec714-5753-4ef4-9b10-a87347997f9e
+		dataCategory: QuarterOfYear
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = QuarterNumber
+
+	column Kvartal = "Kv " & [QuarterNo]
+		dataType: string
+		isHidden
+		lineageTag: 3b717bd4-7dd7-4670-989e-ab630b97a3b2
+		dataCategory: Quarters
+		summarizeBy: none
+		sortByColumn: QuarterNo
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Quarter
+
+	column Päev = DAY([Date])
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6134650a-43bb-4df4-8d3b-eefe37e20991
+		dataCategory: DayOfMonth
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Day
+
+	hierarchy 'Kuupäeva hierarhia'
+		lineageTag: 0f1404c8-6ff5-4ce5-a6c3-4dbe1fb12e6b
+
+		level Aasta
+			lineageTag: c1036f53-59a5-47cd-950b-5437b1bfe65a
+			column: Aasta
+
+		level Kvartal
+			lineageTag: aec17db1-ebef-4724-911b-fb7280b65029
+			column: Kvartal
+
+		level Kuu
+			lineageTag: 3f0f964b-2d4a-459a-bd1f-92739afb838d
+			column: Kuu
+
+		level Päev
+			lineageTag: 879e0203-a410-4156-93e5-4746dbe6f438
+			column: Päev
+
+		annotation TemplateId = DateHierarchy
+
+	partition DateTableTemplate_08d1c0ff-05ff-4512-b93f-ecb32bbb887b = calculated
+		mode: import
+		source = Calendar(Date(2015,1,1), Date(2015,1,1))
+
+	annotation __PBI_TemplateDateTable = true
+
+	annotation DefaultItem = DateHierarchy
+

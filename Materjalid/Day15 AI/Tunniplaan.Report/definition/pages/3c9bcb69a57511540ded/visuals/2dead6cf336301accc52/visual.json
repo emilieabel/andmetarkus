@@ -1,0 +1,458 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "2dead6cf336301accc52",
+  "position": {
+    "x": 303.71134020618558,
+    "y": 29.072164948453608,
+    "z": 1000,
+    "height": 690.30927835051546,
+    "width": 976.08247422680415
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "PROMPT:"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Mul on Power BI jaoks Exceli fail järgmise struktuuriga:"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Column1 sisaldab vaheldumisi:"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- järjekorranumbrit"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- kuupäeva"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- nädalapäeva"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Column2 = I mooduli teema"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Column3 = I mooduli koolitaja"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Column4 = II mooduli teema"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Column5 = II mooduli koolitaja"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Failis on ülemised päiseread:"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- “Vali andmetarkus”"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- “Aadress”"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- moodulite kellaajad"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Need tuleb eemaldada."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Soovin Power Query M-koodi, mis:"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- täidab kuupäeva ja nädalapäeva alla"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- ühendab mõlemad moodulid üheks tabeliks"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- annab tulemuse veergudes:"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "  jrk nr | kuupäev | näd päev | teema | koolitaja"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "NÄIDISANDMED"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Vali andmetarkus! I moodul 9.00-12.15",
+                    "textStyle": {
+                      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Aadress: Aia 7, Tallinn - Megede II moodul 13.15-16.30",
+                    "textStyle": {
+                      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "1 Koolituse avasõnad Liis Proos",
+                    "textStyle": {
+                      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "31/08/2026 \"Koolituse eesmärgid ja töövahendid. Tutvustusring ja kokkulepped.",
+                    "textStyle": {
+                      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Näidisandmestiku avamine PowerBIs. Andmemudeli tutvustus – fakti- ja dimensioonitabelid. Esimeste visuaalide loomine.\" Virve Räni",
+                    "textStyle": {
+                      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Esmaspäev \"Power BI - mõõdikud ja arvutatud tulbad.",
+                    "textStyle": {
+                      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Andmeanalüütika protsess ja andmetega seotud rollid.\" Virve Räni",
+                    "textStyle": {
+                      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "2 \"Andmete kogumine – erinevad andmeallikad.",
+                    "textStyle": {
+                      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Andmekvaliteedi dimensioonid, andmekvaliteedi tagamine, andmete elutsükkel.",
+                    "textStyle": {
+                      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Power BI - andmekvaliteedi kontrollimine. Andmete formaadi muutmine.\" Virve Räni",
+                    "textStyle": {
+                      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "01/09/2026",
+                    "textStyle": {
+                      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Teisipäev \"Power BI - mõõdikute ja visuaalide loomine näidisjuhtumi jaoks.",
+                    "textStyle": {
+                      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Versioonihalduse põhimõtted ja GitHubi kasutamine.\" Virve Räni",
+                    "textStyle": {
+                      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "3 \"Power BI - M-päringukeel ja andmestiku formaadi muutmine.",
+                    "textStyle": {
+                      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Andmete visualiseerimise parimad praktikad. \" Virve Räni",
+                    "textStyle": {
+                      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "02/09/2026",
+                    "textStyle": {
+                      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Kolmapäev \"Andmeloo jutustamine.",
+                    "textStyle": {
+                      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "PowerBI – tervikliku raporti loomine. Kirjeldavad visuaalid.\" Virve Räni",
+                    "textStyle": {
+                      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

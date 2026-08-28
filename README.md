@@ -1,0 +1,2 @@
+# andmetarkus
+Andmetarkuse kursuse materjalid

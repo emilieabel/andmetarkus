@@ -1,0 +1,17 @@
+-- 10. TABELITE ÜHENDAMINE
+
+-- 10.1. Kõik read esimesest tabelist ja seotud read teisest tabelist: Kõik eelarveread, seotud müügiesindajad. - LEFT JOIN
+
+-- 10.3. Kõik read teisest tabelist ja seotud read esimesest tabelist: Kõigi müügiesindajate tabelis olevate müügiesindajate eelarveread - RIGHT JOIN
+
+-- 10.4. Read, mis on olemas mõlemas tabelis: Näita ainult ridu, millel on müügiesindajal nii eelarve kui ka väärtus müügiesindajate tabelis. - INNER JOIN
+
+-- 10.5. Read, mis on olemas ühes või teises tabelis: Näita kõiki eelarveridu ja kõiki müügiesindajate ridu. - FULL OUTER JOIN
+
+-- 10.6. Read, mis on olemas esimeses tabelis ja teises ei ole: Näita eelarveridu, millele pole müügiesindaja tabelis müügiesindajat kirjeldatud - LEFT JOIN ja IS NULL
+
+-- 10.7. Read, mida pole esimeses tabelis, aga on teises tabelis: Näita eelarveridu, millele pole müügiesindaja tabelis müügiesindajat kirjeldatud - RIGHT JOIN ja IS NULL
+
+-- 10.8. Read, mis on puudu ühest või teisest tabelis: Näita müügiesindajaid, kellel on puudu eelarve või müügiesindaja tabelist rida. - FULL OUTER JOIN, IS NULL ja OR
+
+-- 10.9. Rohkem kui kahe tabeli ühendamine: Näita müüke, millel on olemas müügiesindaja eelarve ja müügiesindaja tabelis. - INNER JOIN iga seotava tabeli vahele
