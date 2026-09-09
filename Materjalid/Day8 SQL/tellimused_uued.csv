@@ -1,79 +1,79 @@
 tellimus_id,klient_id,kuupäev,staatus,makseviis,tarneviis
-2001,5,2024-01-20,Tühistatud,Pangalink,Kuller
-2002,18,2024-01-24,Täidetud,Pangalink,Pakiautomaat
-2003,12,2024-01-25,Täidetud,Pangalink,Pakiautomaat
-2004,20,2024-01-26,Täidetud,Arve,Tulen ise järele
-2005,25,2024-01-30,Täidetud,Arve,Tulen ise järele
-2006,12,2024-01-31,Täidetud,Krediitkaart,Pakiautomaat
-2007,23,2024-02-01,Täidetud,Pangalink,Kuller
-2008,17,2024-02-05,Ootel,Apple Pay,Tulen ise järele
-2009,10,2024-02-07,Täidetud,Pangalink,Tulen ise järele
-2010,6,2024-02-14,Täidetud,Krediitkaart,Tulen ise järele
-2011,14,2024-02-16,Täidetud,Pangalink,Kuller
-2012,11,2024-02-18,Täidetud,Arve,Tulen ise järele
-2013,3,2024-03-04,Täidetud,Apple Pay,Tulen ise järele
-2014,23,2024-03-09,Täidetud,Pangalink,Kuller
-2015,21,2024-03-18,Ootel,Apple Pay,Tulen ise järele
-2016,29,2024-04-19,Täidetud,Pangalink,Tulen ise järele
-2017,12,2024-04-23,Täidetud,Pangalink,Tulen ise järele
-2018,2,2024-04-24,Täidetud,Apple Pay,Pakiautomaat
-2019,24,2024-05-03,Täidetud,Arve,Tulen ise järele
-2020,30,2024-05-28,Ootel,Pangalink,Pakiautomaat
-2021,15,2024-06-14,Täidetud,Apple Pay,Pakiautomaat
-2022,27,2024-07-06,Täidetud,Apple Pay,Tulen ise järele
-2023,12,2024-07-21,Täidetud,Krediitkaart,Pakiautomaat
-2024,3,2024-07-22,Täidetud,Krediitkaart,Pakiautomaat
-2025,22,2024-08-02,Täidetud,Pangalink,Tulen ise järele
-2026,27,2024-08-02,Täidetud,Apple Pay,Kuller
-2027,1,2024-08-05,Täidetud,Arve,Kuller
-2028,20,2024-08-10,Täidetud,Krediitkaart,Pakiautomaat
-2029,15,2024-09-16,Tühistatud,Arve,Tulen ise järele
-2030,13,2024-10-01,Täidetud,Pangalink,Tulen ise järele
-2031,21,2024-10-09,Täidetud,Pangalink,Pakiautomaat
-2032,3,2024-10-12,Täidetud,Arve,Pakiautomaat
-2033,4,2024-10-16,Täidetud,Pangalink,Pakiautomaat
-2034,1,2024-10-22,Täidetud,Pangalink,Kuller
-2035,20,2024-10-25,Täidetud,Pangalink,Pakiautomaat
-2036,20,2024-10-25,Täidetud,Krediitkaart,Kuller
-2037,12,2024-10-26,Täidetud,Arve,Pakiautomaat
-2038,4,2024-11-17,Ootel,Arve,Tulen ise järele
-2039,16,2024-11-18,Täidetud,Pangalink,Pakiautomaat
-2040,4,2024-11-29,Täidetud,Apple Pay,Tulen ise järele
-3001,16,2025-01-12,Täidetud,Krediitkaart,Kuller
-3002,15,2025-01-14,Täidetud,Apple Pay,Pakiautomaat
-3003,8,2025-01-15,Täidetud,Krediitkaart,Tulen ise järele
+2001,5,2026-01-20,Tühistatud,Pangalink,Kuller
+2002,18,2026-01-24,Täidetud,Pangalink,Pakiautomaat
+2003,12,2026-01-25,Täidetud,Pangalink,Pakiautomaat
+2004,20,2026-01-26,Täidetud,Arve,Tulen ise järele
+2005,25,2026-01-30,Täidetud,Arve,Tulen ise järele
+2006,12,2026-01-31,Täidetud,Krediitkaart,Pakiautomaat
+2007,23,2026-02-01,Täidetud,Pangalink,Kuller
+2008,17,2026-02-05,Ootel,Apple Pay,Tulen ise järele
+2009,10,2026-02-07,Täidetud,Pangalink,Tulen ise järele
+2010,6,2026-02-14,Täidetud,Krediitkaart,Tulen ise järele
+2011,14,2026-02-16,Täidetud,Pangalink,Kuller
+2012,11,2026-02-18,Täidetud,Arve,Tulen ise järele
+2013,3,2025-03-04,Täidetud,Apple Pay,Tulen ise järele
+2014,23,2026-03-09,Täidetud,Pangalink,Kuller
+2015,21,2025-03-18,Ootel,Apple Pay,Tulen ise järele
+2016,29,2025-04-19,Täidetud,Pangalink,Tulen ise järele
+2017,12,2026-04-23,Täidetud,Pangalink,Tulen ise järele
+2018,2,2026-04-24,Täidetud,Apple Pay,Pakiautomaat
+2019,24,2026-05-03,Täidetud,Arve,Tulen ise järele
+2020,30,2026-05-28,Ootel,Pangalink,Pakiautomaat
+2021,15,2026-06-14,Täidetud,Apple Pay,Pakiautomaat
+2022,27,2025-07-06,Täidetud,Apple Pay,Tulen ise järele
+2023,12,2026-07-21,Täidetud,Krediitkaart,Pakiautomaat
+2024,3,2025-07-22,Täidetud,Krediitkaart,Pakiautomaat
+2025,22,2026-08-02,Täidetud,Pangalink,Tulen ise järele
+2026,27,2025-08-02,Täidetud,Apple Pay,Kuller
+2027,1,2025-08-05,Täidetud,Arve,Kuller
+2028,20,2026-08-10,Täidetud,Krediitkaart,Pakiautomaat
+2029,15,2025-09-16,Tühistatud,Arve,Tulen ise järele
+2030,13,2025-10-01,Täidetud,Pangalink,Tulen ise järele
+2031,21,2025-10-09,Täidetud,Pangalink,Pakiautomaat
+2032,3,2025-10-12,Täidetud,Arve,Pakiautomaat
+2033,4,2026-10-16,Täidetud,Pangalink,Pakiautomaat
+2034,1,2025-10-22,Täidetud,Pangalink,Kuller
+2035,20,2026-10-25,Täidetud,Pangalink,Pakiautomaat
+2036,20,2026-10-25,Täidetud,Krediitkaart,Kuller
+2037,12,2026-10-26,Täidetud,Arve,Pakiautomaat
+2038,4,2026-11-17,Ootel,Arve,Tulen ise järele
+2039,16,2025-11-18,Täidetud,Pangalink,Pakiautomaat
+2040,4,2025-11-29,Täidetud,Apple Pay,Tulen ise järele
+3001,16,2026-01-12,Täidetud,Krediitkaart,Kuller
+3002,15,2026-01-14,Täidetud,Apple Pay,Pakiautomaat
+3003,8,2026-01-15,Täidetud,Krediitkaart,Tulen ise järele
 3004,7,2025-01-15,Täidetud,Krediitkaart,Tulen ise järele
-3005,20,2025-02-16,Täidetud,Arve,Kuller
-3006,26,2025-03-17,Täidetud,Pangalink,Tulen ise järele
-3007,26,2025-03-24,Täidetud,Arve,Pakiautomaat
-3008,14,2025-03-27,Täidetud,Pangalink,Tulen ise järele
-3009,15,2025-04-10,Täidetud,Pangalink,Pakiautomaat
-3010,6,2025-04-13,Täidetud,Pangalink,Pakiautomaat
-3011,19,2025-04-16,Ootel,Krediitkaart,Tulen ise järele
-3012,22,2025-04-25,Täidetud,Krediitkaart,Pakiautomaat
+3005,20,2026-02-16,Täidetud,Arve,Kuller
+3006,26,2026-03-17,Täidetud,Pangalink,Tulen ise järele
+3007,26,2026-03-24,Täidetud,Arve,Pakiautomaat
+3008,14,2026-03-27,Täidetud,Pangalink,Tulen ise järele
+3009,15,2026-04-10,Täidetud,Pangalink,Pakiautomaat
+3010,6,2026-04-13,Täidetud,Pangalink,Pakiautomaat
+3011,19,2026-04-16,Ootel,Krediitkaart,Tulen ise järele
+3012,22,2026-04-25,Täidetud,Krediitkaart,Pakiautomaat
 3013,1,2025-04-25,Täidetud,Pangalink,Pakiautomaat
 3014,14,2025-04-27,Täidetud,Krediitkaart,Pakiautomaat
-3015,9,2025-05-03,Täidetud,Apple Pay,Pakiautomaat
+3015,9,2026-05-03,Täidetud,Apple Pay,Pakiautomaat
 3016,25,2025-05-14,Täidetud,Apple Pay,Tulen ise järele
 3017,27,2025-05-24,Täidetud,Pangalink,Kuller
 3018,29,2025-06-02,Ootel,Arve,Pakiautomaat
-3019,18,2025-06-18,Täidetud,Pangalink,Tulen ise järele
+3019,18,2026-06-18,Täidetud,Pangalink,Tulen ise järele
 3020,25,2025-07-02,Täidetud,Pangalink,Pakiautomaat
 3021,6,2025-07-02,Täidetud,Arve,Pakiautomaat
-3022,18,2025-07-05,Täidetud,Apple Pay,Tulen ise järele
-3023,26,2025-07-07,Täidetud,Pangalink,Pakiautomaat
+3022,18,2026-07-05,Täidetud,Apple Pay,Tulen ise järele
+3023,26,2026-07-07,Täidetud,Pangalink,Pakiautomaat
 3024,7,2025-07-25,Täidetud,Pangalink,Pakiautomaat
 3025,17,2025-09-10,Ootel,Pangalink,Pakiautomaat
 3026,15,2025-09-15,Täidetud,Krediitkaart,Kuller
 3027,15,2025-09-22,Tühistatud,Arve,Pakiautomaat
 3028,23,2025-09-23,Tühistatud,Apple Pay,Pakiautomaat
 3029,27,2025-09-23,Ootel,Krediitkaart,Tulen ise järele
-3030,4,2025-09-28,Täidetud,Arve,Kuller
+3030,4,2026-09-28,Täidetud,Arve,Kuller
 3031,3,2025-09-28,Täidetud,Arve,Pakiautomaat
 3032,7,2025-09-30,Täidetud,Pangalink,Pakiautomaat
 3033,23,2025-10-05,Täidetud,Krediitkaart,Kuller
 3034,29,2025-10-06,Täidetud,Arve,Pakiautomaat
-3035,24,2025-11-10,Täidetud,Arve,Tulen ise järele
+3035,24,2026-11-10,Täidetud,Arve,Tulen ise järele
 3036,6,2025-11-22,Täidetud,Krediitkaart,Tulen ise järele
 3037,17,2025-11-26,Täidetud,Apple Pay,Tulen ise järele
 3038,7,2025-12-20,Täidetud,Apple Pay,Pakiautomaat
