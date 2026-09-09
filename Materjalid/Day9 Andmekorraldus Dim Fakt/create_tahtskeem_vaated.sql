@@ -4,17 +4,16 @@
 -- tooted.hind = netohind (ilma KM); KM tuleb kategooriad.km_maar (nt 24 → 24%)
 -- tooted.kategooria = kategooriad.nimetus (seos nime, mitte ID järgi)
 
-DROP VIEW IF EXISTS fact_tellimused;
-DROP VIEW IF EXISTS fact_muuk;
-DROP VIEW IF EXISTS dim_toode;
-DROP VIEW IF EXISTS dim_klient;
-DROP VIEW IF EXISTS dim_aeg;
+DROP VIEW IF EXISTS analytics.fact_tellimused;
+DROP VIEW IF EXISTS analytics.fact_muuk;
+DROP VIEW IF EXISTS analytics.dim_toode;
+DROP VIEW IF EXISTS analytics.dim_klient;
+DROP VIEW IF EXISTS analytics.dim_aeg;
 
-
-CREATE VIEW dim_klient AS
+CREATE OR REPLACE VIEW analytics.dim_klient AS
 SELECT
     klient_id,
-    nimi,
+    nimi AS nimi, --pärast maskeerimiseks repeat('*', length(nimi)) AS nimi,
     linn,
     CASE
         WHEN linn IN ('Tallinn', 'Tartu') THEN linn
@@ -25,7 +24,7 @@ SELECT
 FROM kliendid;
 
 
-CREATE VIEW dim_toode AS
+CREATE OR REPLACE VIEW analytics.dim_toode AS
 SELECT
     t.toode_id,
     t.nimetus,
@@ -46,9 +45,10 @@ LEFT JOIN kategooriad k
     ON t.kategooria = k.nimetus;
 
 
-CREATE VIEW dim_aeg AS
-SELECT
-    d::date AS kuupäev,
+CREATE OR REPLACE OR REPLACE VIEW analytics.dim_aeg AS
+SELECT 
+	TO_CHAR(d, 'YYYYMMDD')::integer AS kuupäev_id, -- UUS: Unikaalne ID sidumiseks faktitabeliga    
+	d::date AS kuupäev,
     EXTRACT(YEAR FROM d)::integer AS aasta,
     EXTRACT(QUARTER FROM d)::integer AS kvartal,
     EXTRACT(MONTH FROM d)::integer AS kuu,
@@ -56,30 +56,7 @@ SELECT
     EXTRACT(YEAR FROM d)::integer::text
         || '-Q'
         || EXTRACT(QUARTER FROM d)::integer::text AS aasta_kvartal,
-    CASE EXTRACT(MONTH FROM d)::integer
-        WHEN 1 THEN 'jaanuar'
-        WHEN 2 THEN 'veebruar'
-        WHEN 3 THEN 'märts'
-        WHEN 4 THEN 'aprill'
-        WHEN 5 THEN 'mai'
-        WHEN 6 THEN 'juuni'
-        WHEN 7 THEN 'juuli'
-        WHEN 8 THEN 'august'
-        WHEN 9 THEN 'september'
-        WHEN 10 THEN 'oktoober'
-        WHEN 11 THEN 'november'
-        WHEN 12 THEN 'detsember'
-    END AS kuu_nimi,
     EXTRACT(ISODOW FROM d)::integer AS nadala_paev,
-    CASE EXTRACT(ISODOW FROM d)::integer
-        WHEN 1 THEN 'esmaspäev'
-        WHEN 2 THEN 'teisipäev'
-        WHEN 3 THEN 'kolmapäev'
-        WHEN 4 THEN 'neljapäev'
-        WHEN 5 THEN 'reede'
-        WHEN 6 THEN 'laupäev'
-        WHEN 7 THEN 'pühapäev'
-    END AS nadala_paev_nimi,
     (EXTRACT(ISODOW FROM d) IN (6, 7)) AS on_naidalopp
 FROM generate_series(
     DATE '2024-01-01',
@@ -88,81 +65,28 @@ FROM generate_series(
 ) AS d;
 
 
-CREATE VIEW fact_muuk AS
-SELECT
-    tr.tellimus_rida_id,
-    tr.tellimus_id,
-    t.klient_id,
+CREATE OR REPLACE VIEW analytics.fact_myyk
+AS SELECT t.tellimus_id,
     tr.toode_id,
-    t.kuupäev,
+    t.klient_id,
+    t."kuupäev",
+    to_char(t."kuupäev"::timestamp with time zone, 'YYYYMMDD'::text)::integer AS "kuupäev_id",
     t.staatus,
     t.makseviis,
     t.tarneviis,
-    CASE WHEN t.staatus = 'Täidetud' THEN 'Täidetud' END AS taidetud,
-    CASE WHEN tr.allahindlus_pct > 0 THEN 'allahinnatud' END AS allahinnatud,
-    (t.kuupäev - kl.liitumise_kuupäev) AS paevi_liitumisest,
+        CASE
+            WHEN t.staatus::text = 'Täidetud'::text THEN 'Täidetud'::text
+            ELSE NULL::text
+        END AS taidetud,
     tr.kogus,
-    tr.allahindlus_pct,
-    k.km_maar,
-    td.hind AS yhiku_hind,
-    ROUND(td.hind * tr.kogus, 2) AS rida_enne_allahindlust,
-    ROUND(td.hind * tr.kogus * tr.allahindlus_pct / 100.0, 2) AS allahindluse_summa,
-    ROUND(td.hind * tr.kogus * (1 - tr.allahindlus_pct / 100.0), 2) AS rida_ilma_km,
-    ROUND(
-        td.hind * tr.kogus * (1 - tr.allahindlus_pct / 100.0) * k.km_maar / 100.0,
-        2
-    ) AS rida_km,
-    ROUND(
-        td.hind * tr.kogus * (1 - tr.allahindlus_pct / 100.0) * (1 + k.km_maar / 100.0),
-        2
-    ) AS rida_koos_km
-FROM tellimuse_read tr
-INNER JOIN tellimused t
-    ON tr.tellimus_id = t.tellimus_id
-INNER JOIN tooted td
-    ON tr.toode_id = td.toode_id
-INNER JOIN kliendid kl
-    ON t.klient_id = kl.klient_id
-LEFT JOIN kategooriad k
-    ON td.kategooria = k.nimetus;
-
-
-CREATE VIEW fact_tellimused AS
-SELECT
-    t.tellimus_id,
-    t.klient_id,
-    t.kuupäev,
-    t.staatus,
-    t.makseviis,
-    t.tarneviis,
-    CASE WHEN t.staatus = 'Täidetud' THEN 'Täidetud' END AS taidetud,
-    (t.kuupäev - kl.liitumise_kuupäev) AS paevi_liitumisest,
-    COUNT(*) AS ridade_arv,
-    SUM(tr.kogus) AS tooteid_kokku,
-    ROUND(SUM(td.hind * tr.kogus * (1 - tr.allahindlus_pct / 100.0)), 2) AS tellimus_ilma_km,
-    ROUND(
-        SUM(td.hind * tr.kogus * (1 - tr.allahindlus_pct / 100.0) * k.km_maar / 100.0),
-        2
-    ) AS tellimus_km,
-    ROUND(
-        SUM(td.hind * tr.kogus * (1 - tr.allahindlus_pct / 100.0) * (1 + k.km_maar / 100.0)),
-        2
-    ) AS tellimus_koos_km,
-    ROUND(SUM(td.hind * tr.kogus * tr.allahindlus_pct / 100.0), 2) AS allahindluse_summa
-FROM tellimused t
-INNER JOIN kliendid kl
-    ON t.klient_id = kl.klient_id
-INNER JOIN tellimuse_read tr
-    ON t.tellimus_id = tr.tellimus_id
-INNER JOIN tooted td
-    ON tr.toode_id = td.toode_id
-LEFT JOIN kategooriad k
-    ON td.kategooria = k.nimetus
-GROUP BY
-    t.tellimus_id,
-    t.klient_id,
-    t.kuupäev,
-    t.staatus,
-    t.makseviis,
-    t.tarneviis,
-    kl.liitumise_kuupäev;
+    round(sum(td.hind * tr.kogus::numeric), 2) AS rida_tais_summa_ilma_km,
+    round(sum(td.hind * tr.kogus::numeric * (1::numeric - tr.allahindlus_pct / 100.0)), 2) AS rida_allahindlusega_ilma_km,
+    round(sum(td.hind * tr.kogus::numeric * tr.allahindlus_pct / 100.0), 2) AS allahindluse_summa,
+    round(sum(td.hind * tr.kogus::numeric * (1::numeric - tr.allahindlus_pct / 100.0) * k.km_maar / 100.0), 2) AS rida_km,
+    round(sum(td.hind * tr.kogus::numeric * (1::numeric - tr.allahindlus_pct / 100.0) * (1::numeric + k.km_maar / 100.0)), 2) AS rida_koos_km
+   FROM tellimused t
+     JOIN kliendid kl ON t.klient_id = kl.klient_id
+     JOIN tellimuse_read tr ON t.tellimus_id = tr.tellimus_id
+     JOIN tooted td ON tr.toode_id = td.toode_id
+     LEFT JOIN kategooriad k ON td.kategooria::text = k.nimetus::text
+  GROUP BY t.tellimus_id, tr.toode_id, t.klient_id, t."kuupäev", t.staatus, t.makseviis, t.tarneviis, tr.kogus;
