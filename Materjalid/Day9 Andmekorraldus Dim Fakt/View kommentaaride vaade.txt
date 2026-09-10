@@ -1,3 +1,4 @@
+---Annab võimaluse selle info aruandesse tuua
 CREATE OR REPLACE VIEW v_view_descriptions AS
 SELECT 
 n.nspname AS skeema_nimi,
