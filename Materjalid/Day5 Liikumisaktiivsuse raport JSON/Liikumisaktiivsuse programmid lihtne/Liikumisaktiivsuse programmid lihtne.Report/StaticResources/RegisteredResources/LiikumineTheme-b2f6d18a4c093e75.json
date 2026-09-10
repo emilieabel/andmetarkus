@@ -1,0 +1,126 @@
+{
+  "name": "LiikumineTheme",
+  "dataColors": [
+    "#2EC4B6",
+    "#4A9FE8",
+    "#FF8B6A",
+    "#7B68C7",
+    "#45B7D1",
+    "#F4A261",
+    "#5DADE2",
+    "#E07A5F"
+  ],
+  "foreground": "#1A3D40",
+  "background": "#FFFFFF",
+  "backgroundLight": "#F5F5F5",
+  "foregroundNeutralSecondary": "#3D6B68",
+  "tableAccent": "#2EC4B6",
+  "good": "#2FA36B",
+  "neutral": "#C9A227",
+  "bad": "#C0392B",
+  "maximum": "#D4F4F0",
+  "center": "#FAFAFA",
+  "minimum": "#F0F0F0",
+  "textClasses": {
+    "callout": {
+      "fontSize": 28,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#1A3D40"
+    },
+    "title": {
+      "fontSize": 13,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#1A3D40"
+    },
+    "header": {
+      "fontSize": 12,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#1A3D40"
+    },
+    "label": {
+      "fontSize": 10,
+      "fontFace": "Segoe UI",
+      "color": "#1A3D40"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "padding": [
+          {
+            "top": 8,
+            "bottom": 8,
+            "left": 8,
+            "right": 8
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#C5E4DE"
+              }
+            },
+            "radius": 6
+          }
+        ],
+        "visualHeader": [
+          {
+            "show": false
+          }
+        ],
+        "title": [
+          {
+            "fontFamily": "Segoe UI Semibold",
+            "fontSize": 13,
+            "fontColor": {
+              "solid": {
+                "color": "#1A3D40"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "cardVisual": {
+      "*": {
+        "outline": [
+          {
+            "show": false
+          }
+        ],
+        "padding": [
+          {
+            "paddingUniform": 4
+          }
+        ],
+        "layout": [
+          {
+            "paddingUniform": 4
+          }
+        ]
+      }
+    },
+    "tableEx": {
+      "*": {
+        "columnHeaders": [
+          {
+            "autoSizeColumnWidth": true,
+            "columnAdjustment": "growToFit"
+          }
+        ]
+      }
+    },
+    "pivotTable": {
+      "*": {
+        "columnHeaders": [
+          {
+            "autoSizeColumnWidth": true,
+            "columnAdjustment": "growToFit"
+          }
+        ]
+      }
+    }
+  }
+}

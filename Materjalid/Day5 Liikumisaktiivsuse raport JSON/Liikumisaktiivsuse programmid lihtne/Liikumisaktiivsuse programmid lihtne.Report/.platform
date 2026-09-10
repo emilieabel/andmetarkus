@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Liikumisaktiivsuse programmid lihtne"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a7c4e91b-2d83-4f6a-b1e0-9c5d8a3f7421"
+  }
+}

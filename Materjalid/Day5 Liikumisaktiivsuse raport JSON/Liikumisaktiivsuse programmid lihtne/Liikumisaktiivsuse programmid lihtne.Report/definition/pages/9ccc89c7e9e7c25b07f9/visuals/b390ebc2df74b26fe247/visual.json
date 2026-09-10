@@ -1,0 +1,138 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "b390ebc2df74b26fe247",
+  "position": {
+    "x": 476.22413435142681,
+    "y": 34.016009596530488,
+    "z": 0,
+    "height": 325.041869477958,
+    "width": 480.00369097326353
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_activity"
+                    }
+                  },
+                  "Property": "Staatus"
+                }
+              },
+              "queryRef": "fact_activity.Staatus",
+              "nativeQueryRef": "Staatus",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_date"
+                    }
+                  },
+                  "Property": "Aasta"
+                }
+              },
+              "queryRef": "dim_date.Aasta",
+              "nativeQueryRef": "Aasta",
+              "active": true,
+              "displayName": "Aasta"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Parameter"
+                    }
+                  },
+                  "Property": "Valitav dimensioon"
+                }
+              },
+              "index": 0,
+              "length": 1
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Tegevuste arv"
+                }
+              },
+              "queryRef": "_Measures.Tegevuste arv",
+              "nativeQueryRef": "Tegevuste arv"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fbfbaba67b49945d93ec",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Tegevuste arv"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6e03f9073d5a5af3f38d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_activity"
+              }
+            },
+            "Property": "Staatus"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fb249885f377f03931c6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_date"
+              }
+            },
+            "Property": "Aasta"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

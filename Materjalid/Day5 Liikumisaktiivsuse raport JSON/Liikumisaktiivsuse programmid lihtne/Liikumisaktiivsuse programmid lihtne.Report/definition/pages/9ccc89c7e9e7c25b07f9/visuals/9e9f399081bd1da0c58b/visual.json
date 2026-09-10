@@ -1,0 +1,68 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "9e9f399081bd1da0c58b",
+  "position": {
+    "x": 476.22413435142681,
+    "y": 369.05787907448848,
+    "z": 2,
+    "height": 325.041869477958,
+    "width": 480.00369097326353
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_kestus_grupp"
+                    }
+                  },
+                  "Property": "Kestuse grupp"
+                }
+              },
+              "queryRef": "dim_kestus_grupp.Kestuse grupp",
+              "nativeQueryRef": "Kestuse grupp"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_activity"
+                    }
+                  },
+                  "Property": "Tegevus"
+                }
+              },
+              "queryRef": "fact_activity.Tegevus",
+              "nativeQueryRef": "Tegevus"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fact_activity"
+                  }
+                },
+                "Property": "Tegevus"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

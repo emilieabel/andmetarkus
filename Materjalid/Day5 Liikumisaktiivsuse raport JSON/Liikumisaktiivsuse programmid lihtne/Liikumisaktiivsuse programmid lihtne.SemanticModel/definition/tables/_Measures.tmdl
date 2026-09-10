@@ -1,0 +1,50 @@
+/// Kõik DAX-mõõdikud, mida Ülevaade-leht kasutab.
+table _Measures
+	lineageTag: 2dc6d134-825c-430b-8f30-25b39783a61a
+
+	/// Filtrikontekstis olevate tegevuste arv.
+	measure 'Tegevuste arv' = COUNTROWS ( fact_activity )
+		formatString: #,##0
+		lineageTag: e2d11870-9a1c-4bc2-9962-b12d8d76741f
+
+	/// Staatusega Tehtud tegevuste arv.
+	measure 'Tehtud tegevused' =
+			CALCULATE (
+			    [Tegevuste arv],
+			    fact_activity[Staatus] = "Tehtud"
+			)
+		formatString: #,##0
+		lineageTag: 08bc9d05-aabc-495f-96f0-fd35154de6ee
+
+	/// Staatusega Töös tegevuste arv.
+	measure 'Töös tegevused' =
+			CALCULATE (
+			    [Tegevuste arv],
+			    fact_activity[Staatus] = "Töös"
+			)
+		formatString: #,##0
+		lineageTag: dbedd93e-0912-4f56-b27d-e3e9d8869f9b
+
+	/// Staatusega Pole alustatud tegevuste arv.
+	measure 'Alustamata tegevused' =
+			CALCULATE (
+			    [Tegevuste arv],
+			    fact_activity[Staatus] = "Pole alustatud"
+			)
+		formatString: #,##0
+		lineageTag: 47050f1b-0b65-4eb2-9994-03fd667ce9f8
+
+	/// Tehtud tegevuste osakaal kõigist tegevustest.
+	measure 'Tehtud %' = DIVIDE ( [Tehtud tegevused], [Tegevuste arv] )
+		formatString: 0.0%
+		lineageTag: 3aa46f3f-bbfe-47ea-9138-dd2ac375e36b
+
+	column Väärtus
+		isHidden
+		lineageTag: 9d4caf0f-a0c5-40e7-9087-bfbe893aed38
+		sourceColumn: [Väärtus]
+
+	partition _Measures = calculated
+		mode: import
+		source = ROW ( "Väärtus", BLANK () )
+

@@ -1,0 +1,63 @@
+/// Asutused; nimi tuleb siit seose fact_activity[lead_org_id] kaudu.
+table 'organization parent'
+	lineageTag: 5cdf7505-68b6-4c63-9204-33fa1480b4d6
+
+	column organization_id
+		dataType: int64
+		formatString: 0
+		lineageTag: b1055a76-5088-4d89-8ed6-cba681377191
+		summarizeBy: sum
+		sourceColumn: organization_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Organisatsioon
+		dataType: string
+		lineageTag: 49b93e2e-4497-4ab6-b02c-e5ccf195601e
+		summarizeBy: none
+		sourceColumn: Organisatsioon
+
+		annotation SummarizationSetBy = Automatic
+
+	column Lühend
+		dataType: string
+		lineageTag: 3adef76f-7fc8-4a1b-8f92-ddc19c3ad006
+		summarizeBy: none
+		sourceColumn: Lühend
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Organisatsiooni tüüp'
+		dataType: string
+		lineageTag: f72d46cc-8664-493d-b987-2a043cbb1339
+		summarizeBy: none
+		sourceColumn: Organisatsiooni tüüp
+
+		annotation SummarizationSetBy = Automatic
+
+	column parent_organization_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 340ccc5a-f35f-4718-8eea-943aa9d3f4b9
+		summarizeBy: sum
+		sourceColumn: parent_organization_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'organization parent' = m
+		mode: import
+		source =
+				let
+				    Source = Json.Document(Web.Contents("https://app.liigume.ee/api/organizations")),
+				    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"id", "name", "abbreviation", "org_type", "parent_organization_id"}, {"id", "name", "abbreviation", "org_type", "parent_organization_id"}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Expanded Column1", {"id", "name", "abbreviation", "org_type", "parent_organization_id"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Other Columns", {{"id", "organization_id"}, {"name", "Organisatsioon"}, {"abbreviation", "Lühend"}, {"org_type", "Organisatsiooni tüüp"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns", {{"organization_id", Int64.Type}, {"Organisatsioon", type text}, {"Lühend", type text}, {"Organisatsiooni tüüp", type text}, {"parent_organization_id", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

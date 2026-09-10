@@ -1,0 +1,54 @@
+table dim_date
+	lineageTag: 37784e53-3198-4c3e-89db-520064801110
+
+	column Kuupäev
+		formatString: Long Date
+		lineageTag: c462a668-1567-4b49-a6a5-1ae643fefb51
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Kuupäev]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Kuu
+		dataType: string
+		lineageTag: f43e25fc-ed12-426c-848a-89297d78c51f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Kuu]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Aasta
+		dataType: string
+		lineageTag: 1485a27d-982a-4a76-a2f3-02a39d98c664
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Aasta]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Päev nr'
+		dataType: string
+		lineageTag: af43eead-ed3b-4646-a9d0-0611828d9f5f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Päev nr]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_date = calculated
+		mode: import
+		source =
+				SELECTCOLUMNS (
+				    CALENDAR ( DATE ( 2023, 1, 1 ), DATE ( 2030, 12, 31 ) ), ---reavahetus SHIFT + ENTER
+				    "Kuupäev", [Date], ---taandrida TAB
+				    "Kuu",MONTH([Date]),
+				    "Aasta",YEAR([Date]),
+				    "Päev nr",DAY([Date])
+				)
+
+	annotation PBI_Id = 4a30e8b2acb443048785e70d8ffd0fe0
+

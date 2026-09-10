@@ -1,0 +1,37 @@
+/// Tegevuse kestuse grupid algus- ja lõppkuupäeva järgi (sortimisveerg eraldi, et vältida tsüklilist viidet).
+table dim_kestus_grupp
+	lineageTag: 9cb8555c-a8c5-41da-9b17-ffeb194c08b3
+
+	/// Kestuse vahemik: 0-1, 1-3, 3-5, 5+ aastat või kuupäev puudub.
+	column 'Kestuse grupp'
+		dataType: string
+		isKey
+		lineageTag: cbcc1754-4d1c-4701-ac0b-5d6b5e730770
+		summarizeBy: none
+		sourceColumn: [Kestuse grupp]
+		sortByColumn: Järjekord
+
+	column Järjekord
+		dataType: int64
+		isHidden
+		lineageTag: 2f50d2ef-a51d-40ec-9afb-9df9ea6893e3
+		summarizeBy: sum
+		sourceColumn: [Järjekord]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_kestus_grupp = calculated
+		mode: import
+		source =
+				DATATABLE (
+				    "Kestuse grupp", STRING,
+				    "Järjekord", INTEGER,
+				    {
+				        { "0-1 aastat", 1 },
+				        { "1-3 aastat", 2 },
+				        { "3-5 aastat", 3 },
+				        { "5+ aastat", 4 },
+				        { "Kuupäev puudub", 5 }
+				    }
+				)
+

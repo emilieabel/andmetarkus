@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "a01ba756c8cefdfbba55",
+  "position": {
+    "x": 115.07957339051033,
+    "y": 0,
+    "z": 0,
+    "height": 666.25016173453355,
+    "width": 1076.5996931664849
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_policies"
+                    }
+                  },
+                  "Property": "Suund"
+                }
+              },
+              "queryRef": "dim_policies.Suund",
+              "nativeQueryRef": "Suund"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_activity"
+                    }
+                  },
+                  "Property": "Tegevus"
+                }
+              },
+              "queryRef": "fact_activity.Tegevus",
+              "nativeQueryRef": "Tegevus"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

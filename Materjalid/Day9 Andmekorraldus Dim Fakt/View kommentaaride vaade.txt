@@ -1,0 +1,34 @@
+CREATE OR REPLACE VIEW v_view_descriptions AS
+SELECT 
+n.nspname AS skeema_nimi,
+c.relname AS vaate_nimi,
+a.attname AS veeru_nimi,
+pg_catalog.col_description(c.oid, a.attnum) AS veeru_kommentaar
+FROM pg_catalog.pg_class c
+JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+JOIN pg_catalog.pg_attribute a ON a.attrelid = c.oid
+WHERE 
+n.nspname = 'analytics' -- Sinu valitud skeema
+AND c.relkind = 'v' -- Filtreerib ainult vaated (v = view)
+AND a.attnum > 0 -- Välistab süsteemsed sisemised veerud
+AND NOT a.attisdropped -- Välistab andmebaasist kustutatud veerud
+ORDER BY vaate_nimi, a.attnum;
+
+
+CREATE OR REPLACE VIEW analytics.v_view_column_descriptions AS
+SELECT 
+n.nspname AS skeema_nimi,
+c.relname AS vaate_nimi,
+a.attname AS veeru_nimi,
+pg_catalog.col_description(c.oid, a.attnum) AS veeru_kommentaar
+FROM pg_catalog.pg_class c
+JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+JOIN pg_catalog.pg_attribute a ON a.attrelid = c.oid
+WHERE 
+n.nspname = 'public' -- ASENDATUD: 'analytics' asemel on nüüd 'public'
+AND c.relkind = 'v' -- Filtreerib ainult vaated (v = view)
+AND a.attnum > 0 -- Välistab süsteemsed sisemised veerud
+AND NOT a.attisdropped -- Välistab andmebaasist kustutatud veerud
+ORDER BY vaate_nimi, a.attnum;
+
+

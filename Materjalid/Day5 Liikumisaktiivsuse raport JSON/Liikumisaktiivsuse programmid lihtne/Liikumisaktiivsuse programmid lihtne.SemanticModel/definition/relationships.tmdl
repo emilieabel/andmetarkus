@@ -1,0 +1,12 @@
+relationship fact_activity_to_dim_direction
+	fromColumn: fact_activity.who_direction_id
+	toColumn: dim_policies.direction_id
+
+relationship fact_activity_to_dim_organization
+	fromColumn: fact_activity.lead_org_id
+	toColumn: dim_organization.organization_id
+
+relationship a187f0ef-abdd-84c1-f055-f48d4f03565f
+	fromColumn: fact_activity.Alguskuupäev
+	toColumn: dim_date.Kuupäev
+

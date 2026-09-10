@@ -1,0 +1,7 @@
+role Sotsiaalmin
+	modelPermission: read
+
+	tablePermission dim_organization = [Parent organization] == "Sotsiaalministeerium"
+
+	annotation PBI_Id = 6e11cbb185f74b5386cc0ecc3f37da62
+

@@ -1,0 +1,49 @@
+table Parameter
+	lineageTag: f5a7a8b4-140a-4169-941b-a668ca91fd26
+
+	column 'Valitav dimensioon'
+		lineageTag: 781d1dcc-8b35-4ce4-8d1a-e67b44dd1ef9
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Fields'
+		isHidden
+		lineageTag: 53be3f8b-8392-4a34-b970-902b51a3fae3
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: f0553395-77e3-416c-9467-92dd18312371
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Parameter = calculated
+		mode: import
+		source =
+				{
+				    ("Aasta", NAMEOF('dim_date'[Aasta]), 0),
+				    ("Suund", NAMEOF('dim_policies'[Suund]), 1),
+				    ("Organisatsioon", NAMEOF('dim_organization'[Organisatsioon]), 2)
+				}
+
+	annotation PBI_Id = 67116bf8e2bc486092b6ce21d87bd36a
+

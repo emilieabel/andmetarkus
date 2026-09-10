@@ -1,0 +1,168 @@
+/// Tegevuste fakt (tähe keskus): üks rida = üks tegevus.
+table fact_activity
+	lineageTag: 923f02dc-8ed2-4a84-a98e-69b032eb9637
+
+	column activity_id
+		dataType: int64
+		isHidden
+		isKey
+		lineageTag: 30ba41a8-d873-4981-a536-da2f487d2f55
+		summarizeBy: sum
+		sourceColumn: activity_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column lead_org_id
+		dataType: int64
+		isHidden
+		lineageTag: 2849420f-878a-4c21-a190-35cfd1d8c713
+		summarizeBy: none
+		sourceColumn: lead_org_id
+
+	column who_direction_id
+		dataType: int64
+		isHidden
+		lineageTag: 330bc3ed-776d-4b32-b75e-e5eb4d6f38d1
+		summarizeBy: none
+		sourceColumn: who_direction_id
+
+	column Alguskuupäev
+		dataType: dateTime
+		formatString: dd.MM.yyyy
+		lineageTag: cf843eef-60da-42f7-8cfc-891c81eff7fd
+		summarizeBy: none
+		sourceColumn: Alguskuupäev
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Lõppkuupäev
+		dataType: dateTime
+		formatString: dd.MM.yyyy
+		lineageTag: 69e2f769-0944-474d-b4d7-75be9e09c613
+		summarizeBy: none
+		sourceColumn: Lõppkuupäev
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Tegevuse seis: Pole alustatud, Töös või Tehtud.
+	column Staatus
+		dataType: string
+		lineageTag: e13376cf-aca0-46ee-8c43-6ae9f425f3cf
+		summarizeBy: none
+		sourceColumn: Staatus
+
+	/// Tegevuse valmidus 0-100. Paljudel ridadel väärtus puudub.
+	column 'Edenemine protsent'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5ae00f27-ee45-43cc-a054-525b9bc953d9
+		summarizeBy: sum
+		sourceColumn: Edenemine protsent
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tegevuse nr'
+		dataType: int64
+		lineageTag: 62d0f94e-4e1a-49f4-9b9f-a70ea44a453a
+		summarizeBy: sum
+		sourceColumn: Tegevuse nr
+
+		annotation SummarizationSetBy = Automatic
+
+	column Kood
+		dataType: string
+		lineageTag: cd97765e-9b4a-4496-8063-d2322eec7e39
+		summarizeBy: none
+		sourceColumn: Kood
+
+	/// Üks kirje tegevuskavas: projekt, programm või seadusemuudatus (activity).
+	column Tegevus
+		dataType: string
+		lineageTag: af3fc1e0-d3fe-4742-a7f4-92f212a11857
+		summarizeBy: none
+		sourceColumn: Tegevus
+
+	column Lühinimi
+		dataType: string
+		lineageTag: 6e271ee6-dc18-448e-a750-f895e92e2e03
+		summarizeBy: none
+		sourceColumn: Lühinimi
+
+	/// Eesti projektid ja programmid või teadus ja innovatsioon.
+	column 'Tegevuse tüüp'
+		dataType: string
+		lineageTag: 2badc81f-1c36-42b8-914c-6161191990e6
+		summarizeBy: none
+		sourceColumn: Tegevuse tüüp
+
+	column Periood
+		dataType: string
+		lineageTag: d63f1614-3322-450f-9d08-bf14b935f019
+		summarizeBy: none
+		sourceColumn: Periood
+
+	column Sihttulemus
+		dataType: string
+		lineageTag: 73ec595a-2462-44ba-a61f-1d597c48f776
+		summarizeBy: none
+		sourceColumn: Sihttulemus
+
+	/// Partnerasutused ühel väljal, komadega.
+	column Partnerid
+		dataType: string
+		lineageTag: 7c8a1f2e-3b4d-4e5f-9a0b-1c2d3e4f5a6b
+		summarizeBy: none
+		sourceColumn: Partnerid
+
+	/// Kestus päevades Alguskuupäev-Lõppkuupäev; tekst peab ühtima dim_kestus_grupp ridadega.
+	column 'Kestuse grupp' =
+			IF (
+			    ISBLANK ( fact_activity[Alguskuupäev] ) || ISBLANK ( fact_activity[Lõppkuupäev] ),
+			    "Kuupäev puudub",
+			    VAR Paevi =
+			        DATEDIFF ( fact_activity[Alguskuupäev], fact_activity[Lõppkuupäev], DAY )
+			    RETURN
+			        SWITCH (
+			            TRUE (),
+			            Paevi < 365, "0-1 aastat",
+			            Paevi < 3 * 365, "1-3 aastat",
+			            Paevi < 5 * 365, "3-5 aastat",
+			            "5+ aastat"
+			        )
+			)
+		dataType: string
+		lineageTag: 15818916-75ab-4fb7-a40c-94c908d11f48
+		summarizeBy: none
+
+	hierarchy 'Tegevuse tüüp ja staatus'
+		lineageTag: 5bcbef92-b8b1-4faf-abd9-0ae1086379b1
+
+		level 'Tegevuse tüüp'
+			lineageTag: ba2f62a1-edd6-46b5-81df-b6679950a83d
+			column: 'Tegevuse tüüp'
+
+		level Staatus
+			lineageTag: 61ccd2b9-9d7c-45d5-a27b-31cacfaa3280
+			column: Staatus
+
+	partition fact_activity = m
+		mode: import
+		source =
+				let
+				    Source = Json.Document(Web.Contents("https://app.liigume.ee/api/activities")),
+				    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"id", "nr", "code", "name", "name_short", "activity_type", "period", "start_date", "end_date", "status", "target_outcome", "who_direction_id", "lead_org_id", "partner_ids", "progress_pct"}, {"id", "nr", "code", "name", "name_short", "activity_type", "period", "start_date", "end_date", "status", "target_outcome", "who_direction_id", "lead_org_id", "partner_ids", "progress_pct"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded Column1", {{"id", "activity_id"}, {"nr", "Tegevuse nr"}, {"code", "Kood"}, {"name", "Tegevus"}, {"name_short", "Lühinimi"}, {"activity_type", "Tegevuse tüüp"}, {"period", "Periood"}, {"start_date", "Alguskuupäev"}, {"end_date", "Lõppkuupäev"}, {"status", "Staatus"}, {"target_outcome", "Sihttulemus"}, {"progress_pct", "Edenemine protsent"}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns", each [partner_ids], each if [partner_ids] = null then {null} else if List.IsEmpty([partner_ids]) then {null} else [partner_ids], Replacer.ReplaceValue, {"partner_ids"}),
+				    #"Expanded partner_ids" = Table.ExpandListColumn(#"Replaced Value", "partner_ids"),
+				    #"Merged Queries" = Table.NestedJoin(#"Expanded partner_ids", {"partner_ids"}, dim_organization, {"organization_id"}, "dim_organization", JoinKind.LeftOuter),
+				    #"Expanded dim_organization" = Table.ExpandTableColumn(#"Merged Queries", "dim_organization", {"Organisatsioon"}, {"Partner nimi"}),
+				    #"Grouped Rows" = Table.Group(#"Expanded dim_organization", {"activity_id", "Tegevuse nr", "Kood", "Tegevus", "Lühinimi", "Tegevuse tüüp", "Periood", "Alguskuupäev", "Lõppkuupäev", "Staatus", "Sihttulemus", "who_direction_id", "lead_org_id", "Edenemine protsent"}, {{"Partnerid", each Text.Combine(List.Distinct(List.RemoveNulls([Partner nimi])), ", "), type text}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Grouped Rows", {{"activity_id", Int64.Type}, {"Tegevuse nr", Int64.Type}, {"Kood", type text}, {"Tegevus", type text}, {"Lühinimi", type text}, {"Tegevuse tüüp", type text}, {"Periood", type text}, {"Alguskuupäev", type date}, {"Lõppkuupäev", type date}, {"Staatus", type text}, {"Sihttulemus", type text}, {"who_direction_id", Int64.Type}, {"lead_org_id", Int64.Type}, {"Edenemine protsent", Int64.Type}, {"Partnerid", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

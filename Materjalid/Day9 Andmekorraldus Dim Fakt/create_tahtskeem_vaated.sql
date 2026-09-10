@@ -1,11 +1,5 @@
--- PostgreSQL: olemasolevad tabelid → tähtskeem (vaated)
--- fact_muuk:        üks rida = üks müügirida (tellimuse_read)
--- fact_tellimused:  üks rida = üks tellimus
--- tooted.hind = netohind (ilma KM); KM tuleb kategooriad.km_maar (nt 24 → 24%)
--- tooted.kategooria = kategooriad.nimetus (seos nime, mitte ID järgi)
 
-DROP VIEW IF EXISTS analytics.fact_tellimused;
-DROP VIEW IF EXISTS analytics.fact_muuk;
+DROP VIEW IF EXISTS analytics.fact_myyk;
 DROP VIEW IF EXISTS analytics.dim_toode;
 DROP VIEW IF EXISTS analytics.dim_klient;
 DROP VIEW IF EXISTS analytics.dim_aeg;
@@ -20,7 +14,8 @@ SELECT
         ELSE 'muu'
     END AS piirkond,
     liitumise_kuupäev,
-    EXTRACT(YEAR FROM liitumise_kuupäev)::integer AS liitumise_aasta
+    EXTRACT(YEAR FROM liitumise_kuupäev)::integer AS liitumise_aasta,
+    (CURRENT_DATE - liitumise_kuupäev) AS paevi_liitumisest
 FROM kliendid;
 
 
@@ -45,7 +40,7 @@ LEFT JOIN kategooriad k
     ON t.kategooria = k.nimetus;
 
 
-CREATE OR REPLACE OR REPLACE VIEW analytics.dim_aeg AS
+CREATE OR REPLACE VIEW analytics.dim_aeg AS
 SELECT 
 	TO_CHAR(d, 'YYYYMMDD')::integer AS kuupäev_id, -- UUS: Unikaalne ID sidumiseks faktitabeliga    
 	d::date AS kuupäev,
@@ -64,29 +59,57 @@ FROM generate_series(
     INTERVAL '1 day'
 ) AS d;
 
-
-CREATE OR REPLACE VIEW analytics.fact_myyk
-AS SELECT t.tellimus_id,
-    tr.toode_id,
+CREATE OR REPLACE VIEW analytics.fact_myyk AS
+SELECT
+    t.tellimus_id,
+    tr.toode_id, 
     t.klient_id,
-    t."kuupäev",
-    to_char(t."kuupäev"::timestamp with time zone, 'YYYYMMDD'::text)::integer AS "kuupäev_id",
+    t.kuupäev,
+    TO_CHAR(t.kuupäev, 'YYYYMMDD')::integer AS kuupäev_id, 
     t.staatus,
     t.makseviis,
     t.tarneviis,
-        CASE
-            WHEN t.staatus::text = 'Täidetud'::text THEN 'Täidetud'::text
-            ELSE NULL::text
-        END AS taidetud,
-    tr.kogus,
-    round(sum(td.hind * tr.kogus::numeric), 2) AS rida_tais_summa_ilma_km,
-    round(sum(td.hind * tr.kogus::numeric * (1::numeric - tr.allahindlus_pct / 100.0)), 2) AS rida_allahindlusega_ilma_km,
-    round(sum(td.hind * tr.kogus::numeric * tr.allahindlus_pct / 100.0), 2) AS allahindluse_summa,
-    round(sum(td.hind * tr.kogus::numeric * (1::numeric - tr.allahindlus_pct / 100.0) * k.km_maar / 100.0), 2) AS rida_km,
-    round(sum(td.hind * tr.kogus::numeric * (1::numeric - tr.allahindlus_pct / 100.0) * (1::numeric + k.km_maar / 100.0)), 2) AS rida_koos_km
-   FROM tellimused t
-     JOIN kliendid kl ON t.klient_id = kl.klient_id
-     JOIN tellimuse_read tr ON t.tellimus_id = tr.tellimus_id
-     JOIN tooted td ON tr.toode_id = td.toode_id
-     LEFT JOIN kategooriad k ON td.kategooria::text = k.nimetus::text
-  GROUP BY t.tellimus_id, tr.toode_id, t.klient_id, t."kuupäev", t.staatus, t.makseviis, t.tarneviis, tr.kogus;
+    CASE WHEN t.staatus = 'Täidetud' THEN 'Täidetud' END AS taidetud,
+    (t.kuupäev - kl.liitumise_kuupäev) AS paevi_liitumisest,
+    tr.kogus AS kogus, 
+    
+    -- 1. Summa algse täishinnaga (enne allahindlust ja ilma KM-ta)
+    ROUND(SUM(td.hind * tr.kogus), 2) AS rida_tais_summa_ilma_km,
+    
+    -- 2. UUS: Summa, kus allahindlus on maha arvatud (ilma KM-ta)
+    ROUND(SUM(td.hind * tr.kogus * (1 - tr.allahindlus_pct / 100.0)), 2) AS rida_allahindlusega_ilma_km,
+    
+    -- 3. Allahindluse summa ise (rahaline võit)
+    ROUND(SUM(td.hind * tr.kogus * tr.allahindlus_pct / 100.0), 2) AS allahindluse_summa,
+    
+    -- 4. Käibemaksu summa (arvutatud juba allahinnatud summalt)
+    ROUND(
+        SUM(td.hind * tr.kogus * (1 - tr.allahindlus_pct / 100.0) * k.km_maar / 100.0),
+        2
+    ) AS rida_km,
+    
+    -- 5. Lõplik summa kliendile (allahindlus maha arvatud + KM juurde liidetud)
+    ROUND(
+        SUM(td.hind * tr.kogus * (1 - tr.allahindlus_pct / 100.0) * (1 + k.km_maar / 100.0)),
+        2
+    ) AS rida_koos_km
+    
+FROM tellimused t
+INNER JOIN kliendid kl
+    ON t.klient_id = kl.klient_id
+INNER JOIN tellimuse_read tr
+    ON t.tellimus_id = tr.tellimus_id
+INNER JOIN tooted td
+    ON tr.toode_id = td.toode_id
+LEFT JOIN kategooriad k
+    ON td.kategooria = k.nimetus
+GROUP BY
+    t.tellimus_id,
+    tr.toode_id, 
+    t.klient_id,
+    t.kuupäev,
+    t.staatus,
+    t.makseviis,
+    t.tarneviis,
+    kl.liitumise_kuupäev,
+    tr.kogus;

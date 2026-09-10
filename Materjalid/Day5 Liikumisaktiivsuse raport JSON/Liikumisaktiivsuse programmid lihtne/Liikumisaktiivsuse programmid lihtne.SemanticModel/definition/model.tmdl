@@ -1,0 +1,29 @@
+model Model
+	culture: et-EE
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: et-EE
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation PBI_QueryOrder = ["dim_organization","dim_policies","fact_activity","organization parent"]
+
+ref table dim_organization
+ref table dim_policies
+ref table fact_activity
+ref table _Measures
+ref table Parameter
+ref table 'organization parent'
+ref table dim_kestus_grupp
+ref table dim_date
+
+ref role Sotsiaalmin
+
+ref cultureInfo et-EE
+

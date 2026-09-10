@@ -1,0 +1,3571 @@
+cultureInfo et-EE
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "dim_organization": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_organization"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim organization": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "dim_organization": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "organization": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "dim corporation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "dim institution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "dim org": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "corporation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "institution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "dim business": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "dim company": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "business": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "company": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "dim_organization.organization_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_organization",
+			          "ConceptualProperty": "organization_id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "organization id": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "organization_id": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "organization": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "organization identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "organization identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "organization identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "corporation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "institution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "organization credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "business": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "company": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "corporation id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "institution id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ]
+			    },
+			    "dim_organization.parent_organization_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_organization",
+			          "ConceptualProperty": "parent_organization_id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "parent organization id": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "parent_organization_id": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "organization": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "parent organization": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "organization id": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "parent organization identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "parent organization identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "parent organization identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "parent corporation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "parent institution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "parent org": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "organization identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "organization identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "organization identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "parent organization credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "dim_organization.organisatsioon": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_organization",
+			          "ConceptualProperty": "Organisatsioon"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "organisatsioon": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_organization.lühend": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_organization",
+			          "ConceptualProperty": "Lühend"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "lühend": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_organization.organisatsiooni_tüüp": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_organization",
+			          "ConceptualProperty": "Organisatsiooni tüüp"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "organisatsiooni tüüp": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_organization.organisatsiooni_hierarhia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_organization",
+			          "Hierarchy": "Organisatsiooni hierarhia"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "organisatsiooni hierarhia": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_organization.organisatsiooni_hierarhia.organisatsiooni_tüüp": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_organization",
+			          "Hierarchy": "Organisatsiooni hierarhia",
+			          "HierarchyLevel": "Organisatsiooni tüüp"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "organisatsiooni tüüp": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_organization.organisatsiooni_hierarhia.organisatsioon": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_organization",
+			          "Hierarchy": "Organisatsiooni hierarhia",
+			          "HierarchyLevel": "Organisatsioon"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "organisatsioon": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_direction": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_policies"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim direction": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "dim_direction": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "direction": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "dim path": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "dim road": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "path": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "road": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "dim way": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "dim course": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "dim track": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "dim route": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "dim bearing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "way": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "dim_direction.direction_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_policies",
+			          "ConceptualProperty": "direction_id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "direction id": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "direction_id": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "direction": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "direction identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "direction identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "direction identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "direction credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "path": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "road": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "way": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "course": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "track": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "route": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "dim_direction.suuna_kood": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_policies",
+			          "ConceptualProperty": "Suuna kood"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "suuna kood": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_direction.suund": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_policies",
+			          "ConceptualProperty": "Suund"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "suund": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_direction.kirjeldus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_policies",
+			          "ConceptualProperty": "Kirjeldus"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "kirjeldus": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_activity": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_activity"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fact activity": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fact_activity": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "activity": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "fact movement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "fact commotion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "movement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "commotion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "fact action": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "fact motion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "fact bustle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "action": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "motion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "bustle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "fact_activity.activity_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_activity",
+			          "ConceptualProperty": "activity_id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "activity id": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "activity_id": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "activity": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "activity identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "activity identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "activity identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "activity credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "movement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "commotion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "action": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "motion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "bustle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "pursuit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "fact_activity.lead_org_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_activity",
+			          "ConceptualProperty": "lead_org_id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "lead org id": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "lead_org_id": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "org": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "lead org": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "org id": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "lead org identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "lead org identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "lead org identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "org identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "org identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "org identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "lead org credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "org credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "fact_activity.who_direction_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_activity",
+			          "ConceptualProperty": "who_direction_id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "who direction id": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "who_direction_id": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "who direction identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "who direction identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "who direction identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "who direction credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "who path id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "who road id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "who way id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "who course id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "who track id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "who route id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "fact_activity.alguskuupäev": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_activity",
+			          "ConceptualProperty": "Alguskuupäev"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "alguskuupäev": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_activity.lõppkuupäev": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_activity",
+			          "ConceptualProperty": "Lõppkuupäev"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "lõppkuupäev": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_activity.staatus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_activity",
+			          "ConceptualProperty": "Staatus"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "staatus": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_activity.edenemine_protsent": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_activity",
+			          "ConceptualProperty": "Edenemine protsent"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "edenemine protsent": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_activity.tegevuse_nr": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_activity",
+			          "ConceptualProperty": "Tegevuse nr"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tegevuse nr": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_activity.kood": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_activity",
+			          "ConceptualProperty": "Kood"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "kood": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_activity.tegevus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_activity",
+			          "ConceptualProperty": "Tegevus"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tegevus": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_activity.lühinimi": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_activity",
+			          "ConceptualProperty": "Lühinimi"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "lühinimi": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_activity.tegevuse_tüüp": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_activity",
+			          "ConceptualProperty": "Tegevuse tüüp"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tegevuse tüüp": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_activity.periood": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_activity",
+			          "ConceptualProperty": "Periood"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "periood": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_activity.sihttulemus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_activity",
+			          "ConceptualProperty": "Sihttulemus"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sihttulemus": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_activity.partnerid": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_activity",
+			          "ConceptualProperty": "Partnerid"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "partnerid": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_activity.tegevuse_tüüp_ja_staatus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_activity",
+			          "Hierarchy": "Tegevuse tüüp ja staatus"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tegevuse tüüp ja staatus": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_activity.tegevuse_tüüp_ja_staatus.tegevuse_tüüp": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_activity",
+			          "Hierarchy": "Tegevuse tüüp ja staatus",
+			          "HierarchyLevel": "Tegevuse tüüp"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tegevuse tüüp": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_activity.tegevuse_tüüp_ja_staatus.staatus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_activity",
+			          "Hierarchy": "Tegevuse tüüp ja staatus",
+			          "HierarchyLevel": "Staatus"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "staatus": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "_measure": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_ degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "_ quantity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "_ quota": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "_ extent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "_ amount": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "_ portion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "_ ration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "_ size": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.väärtus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Väärtus"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "väärtus": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.tegevuste_arv": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Tegevuste arv"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tegevuste arv": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.tehtud_tegevused": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Tehtud tegevused"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tehtud tegevused": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.töös_tegevused": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Töös tegevused"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "töös tegevused": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.alustamata_tegevused": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Alustamata tegevused"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "alustamata tegevused": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.tehtud_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Tehtud %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tehtud %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "tehtud percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "tehtud pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "parameter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Parameter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "parameter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "stricture": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "limitation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "restriction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "constraint": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "consideration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "boundary": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "limit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "bound": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "factor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "issue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "parameter.parameter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Parameter",
+			          "ConceptualProperty": "Valitav dimensioon"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "parameter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "parameter name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "stricture": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "limitation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "restriction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "constraint": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "consideration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "boundary": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "limit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "bound": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "factor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "issue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "Vali väli": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "parameter.parameter_field": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Parameter",
+			          "ConceptualProperty": "Parameter Fields"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "parameter field": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "field": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "parameter arena": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "arena": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "parameter turf": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "parameter ground": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "parameter pitch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "parameter park": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "turf": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "ground": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "pitch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "park": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "parameter.parameter_order": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Parameter",
+			          "ConceptualProperty": "Parameter Order"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "parameter order": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "order": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "parameter instruction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "parameter direction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "parameter edict": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "instruction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "edict": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "parameter command": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "parameter directive": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "parameter demand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "parameter mandate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "parameter imperative": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "dim_date.aasta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_date",
+			          "ConceptualProperty": "Aasta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Aasta": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "parameter_is_named_parameter": {
+			      "Binding": {
+			        "ConceptualEntity": "Parameter"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "parameter": {
+			          "Target": {
+			            "Entity": "parameter"
+			          }
+			        },
+			        "parameter.parameter": {
+			          "Target": {
+			            "Entity": "parameter.parameter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "parameter"
+			            },
+			            "Name": {
+			              "Role": "parameter.parameter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "parameters_are_names_IDs_of_parameters"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "parameter"
+			            },
+			            "Object": {
+			              "Role": "parameter.parameter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "parameters_have_parameters"
+			        }
+			      ]
+			    },
+			    "dim_organization_has_organisatsioon": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_organization"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_organization": {
+			          "Target": {
+			            "Entity": "dim_organization"
+			          }
+			        },
+			        "dim_organization.organisatsioon": {
+			          "Target": {
+			            "Entity": "dim_organization.organisatsioon"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_organization"
+			            },
+			            "Object": {
+			              "Role": "dim_organization.organisatsioon"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_organizations_have_organisatsioons"
+			        }
+			      ]
+			    },
+			    "dim_organization_has_lühend": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_organization"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_organization": {
+			          "Target": {
+			            "Entity": "dim_organization"
+			          }
+			        },
+			        "dim_organization.lühend": {
+			          "Target": {
+			            "Entity": "dim_organization.lühend"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_organization"
+			            },
+			            "Object": {
+			              "Role": "dim_organization.lühend"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_organizations_have_lühends"
+			        }
+			      ]
+			    },
+			    "dim_organization_has_organisatsiooni_tüüp": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_organization"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_organization": {
+			          "Target": {
+			            "Entity": "dim_organization"
+			          }
+			        },
+			        "dim_organization.organisatsiooni_tüüp": {
+			          "Target": {
+			            "Entity": "dim_organization.organisatsiooni_tüüp"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_organization"
+			            },
+			            "Object": {
+			              "Role": "dim_organization.organisatsiooni_tüüp"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_organizations_have_organisatsiooni_tüüps"
+			        }
+			      ]
+			    },
+			    "dim_organization_has_organisatsiooni_hierarhia": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_organization"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_organization": {
+			          "Target": {
+			            "Entity": "dim_organization"
+			          }
+			        },
+			        "dim_organization.organisatsiooni_hierarhia": {
+			          "Target": {
+			            "Entity": "dim_organization.organisatsiooni_hierarhia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_organization"
+			            },
+			            "Object": {
+			              "Role": "dim_organization.organisatsiooni_hierarhia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_organizations_have_organisatsiooni_hierarhias"
+			        }
+			      ]
+			    },
+			    "dim_direction_has_suund": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_policies"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_direction": {
+			          "Target": {
+			            "Entity": "dim_direction"
+			          }
+			        },
+			        "dim_direction.suund": {
+			          "Target": {
+			            "Entity": "dim_direction.suund"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_direction"
+			            },
+			            "Object": {
+			              "Role": "dim_direction.suund"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_directions_have_suunds"
+			        }
+			      ]
+			    },
+			    "dim_direction_has_kirjeldus": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_policies"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_direction": {
+			          "Target": {
+			            "Entity": "dim_direction"
+			          }
+			        },
+			        "dim_direction.kirjeldus": {
+			          "Target": {
+			            "Entity": "dim_direction.kirjeldus"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_direction"
+			            },
+			            "Object": {
+			              "Role": "dim_direction.kirjeldus"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_directions_have_kirjelduses"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_alguskuupäev": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "fact_activity.alguskuupäev": {
+			          "Target": {
+			            "Entity": "fact_activity.alguskuupäev"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "fact_activity.alguskuupäev"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_alguskuupäevs"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_lõppkuupäev": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "fact_activity.lõppkuupäev": {
+			          "Target": {
+			            "Entity": "fact_activity.lõppkuupäev"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "fact_activity.lõppkuupäev"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_lõppkuupäevs"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_staatus": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "fact_activity.staatus": {
+			          "Target": {
+			            "Entity": "fact_activity.staatus"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "fact_activity.staatus"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_staatuses"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_edenemine_protsent": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "fact_activity.edenemine_protsent": {
+			          "Target": {
+			            "Entity": "fact_activity.edenemine_protsent"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "fact_activity.edenemine_protsent"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_edenemine_protsents"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_tegevuse_nr": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "fact_activity.tegevuse_nr": {
+			          "Target": {
+			            "Entity": "fact_activity.tegevuse_nr"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "fact_activity.tegevuse_nr"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_tegevuse_nr"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_kood": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "fact_activity.kood": {
+			          "Target": {
+			            "Entity": "fact_activity.kood"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "fact_activity.kood"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_koods"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_tegevus": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "fact_activity.tegevus": {
+			          "Target": {
+			            "Entity": "fact_activity.tegevus"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "fact_activity.tegevus"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_tegevuses"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_lühinimi": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "fact_activity.lühinimi": {
+			          "Target": {
+			            "Entity": "fact_activity.lühinimi"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "fact_activity.lühinimi"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_lühinimis"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_tegevuse_tüüp": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "fact_activity.tegevuse_tüüp": {
+			          "Target": {
+			            "Entity": "fact_activity.tegevuse_tüüp"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "fact_activity.tegevuse_tüüp"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_tegevuse_tüüps"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_periood": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "fact_activity.periood": {
+			          "Target": {
+			            "Entity": "fact_activity.periood"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "fact_activity.periood"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_perioods"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_sihttulemus": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "fact_activity.sihttulemus": {
+			          "Target": {
+			            "Entity": "fact_activity.sihttulemus"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "fact_activity.sihttulemus"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_sihttulemuses"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_partnerid": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "fact_activity.partnerid": {
+			          "Target": {
+			            "Entity": "fact_activity.partnerid"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "fact_activity.partnerid"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_partnerids"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_tegevuse_tüüp_ja_staatus": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "fact_activity.tegevuse_tüüp_ja_staatus": {
+			          "Target": {
+			            "Entity": "fact_activity.tegevuse_tüüp_ja_staatus"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "fact_activity.tegevuse_tüüp_ja_staatus"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_tegevuse_tüüp_ja_staatuses"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_entity__measure_tegevuste_arv": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "entity__measure.tegevuste_arv": {
+			          "Target": {
+			            "Entity": "entity__measure.tegevuste_arv"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.tegevuste_arv"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_tegevuste_arv"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_entity__measure_tehtud_tegevused": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "entity__measure.tehtud_tegevused": {
+			          "Target": {
+			            "Entity": "entity__measure.tehtud_tegevused"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.tehtud_tegevused"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_tehtud_tegevused"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_entity__measure_töös_tegevused": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "entity__measure.töös_tegevused": {
+			          "Target": {
+			            "Entity": "entity__measure.töös_tegevused"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.töös_tegevused"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_töös_tegevused"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_entity__measure_alustamata_tegevused": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "entity__measure.alustamata_tegevused": {
+			          "Target": {
+			            "Entity": "entity__measure.alustamata_tegevused"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.alustamata_tegevused"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_alustamata_tegevused"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_entity__measure_tehtud_": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "entity__measure.tehtud_": {
+			          "Target": {
+			            "Entity": "entity__measure.tehtud_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.tehtud_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_tehtud_"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_dim_direction": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "dim_direction": {
+			          "Target": {
+			            "Entity": "dim_direction"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "dim_direction"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_dim_directions"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_direction"
+			            },
+			            "Object": {
+			              "Role": "fact_activity"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_directions_have_fact_activities"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_dim_date": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "dim_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_dim_dates"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "fact_activity"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_fact_activities"
+			        }
+			      ]
+			    },
+			    "fact_activity_has_dim_organization": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity": {
+			          "Target": {
+			            "Entity": "fact_activity"
+			          }
+			        },
+			        "dim_organization": {
+			          "Target": {
+			            "Entity": "dim_organization"
+			          },
+			          "Nouns": [
+			            {
+			              "org": {
+			                "State": "Generated"
+			              }
+			            },
+			            {
+			              "lead org": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity"
+			            },
+			            "Object": {
+			              "Role": "dim_organization"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_activities_have_dim_organizations"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_organization"
+			            },
+			            "Object": {
+			              "Role": "fact_activity"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_organizations_have_fact_activities"
+			        }
+			      ]
+			    },
+			    "dim_organization_organisatsiooni_hierarhia_has_organisatsiooni_tüüp": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_organization"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_organization.organisatsiooni_hierarhia": {
+			          "Target": {
+			            "Entity": "dim_organization.organisatsiooni_hierarhia"
+			          }
+			        },
+			        "dim_organization.organisatsiooni_hierarhia.organisatsiooni_tüüp": {
+			          "Target": {
+			            "Entity": "dim_organization.organisatsiooni_hierarhia.organisatsiooni_tüüp"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_organization.organisatsiooni_hierarhia"
+			            },
+			            "Object": {
+			              "Role": "dim_organization.organisatsiooni_hierarhia.organisatsiooni_tüüp"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "organisatsiooni_hierarhias_have_organisatsiooni_tüüps"
+			        }
+			      ]
+			    },
+			    "dim_organization_organisatsiooni_hierarhia_has_organisatsioon": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_organization"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_organization.organisatsiooni_hierarhia": {
+			          "Target": {
+			            "Entity": "dim_organization.organisatsiooni_hierarhia"
+			          }
+			        },
+			        "dim_organization.organisatsiooni_hierarhia.organisatsioon": {
+			          "Target": {
+			            "Entity": "dim_organization.organisatsiooni_hierarhia.organisatsioon"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_organization.organisatsiooni_hierarhia"
+			            },
+			            "Object": {
+			              "Role": "dim_organization.organisatsiooni_hierarhia.organisatsioon"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "organisatsiooni_hierarhias_have_organisatsioons"
+			        }
+			      ]
+			    },
+			    "dim_organization_organisatsiooni_hierarhia_organisatsiooni_tüüp_has_dim_organization_organisatsiooni_hierarhia_organisatsioon": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_organization"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_organization.organisatsiooni_hierarhia.organisatsiooni_tüüp": {
+			          "Target": {
+			            "Entity": "dim_organization.organisatsiooni_hierarhia.organisatsiooni_tüüp"
+			          }
+			        },
+			        "dim_organization.organisatsiooni_hierarhia.organisatsioon": {
+			          "Target": {
+			            "Entity": "dim_organization.organisatsiooni_hierarhia.organisatsioon"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_organization.organisatsiooni_hierarhia.organisatsiooni_tüüp"
+			            },
+			            "Object": {
+			              "Role": "dim_organization.organisatsiooni_hierarhia.organisatsioon"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "organisatsiooni_tüüps_have_organisatsioons"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_organization.organisatsiooni_hierarhia.organisatsioon"
+			            },
+			            "Object": {
+			              "Role": "dim_organization.organisatsiooni_hierarhia.organisatsiooni_tüüp"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "organisatsioons_have_organisatsiooni_tüüps"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "dim_organization.organisatsiooni_hierarhia.organisatsioon"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "dim_organization.organisatsiooni_hierarhia.organisatsiooni_tüüp"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "organisatsioons_are_in_organisatsiooni_tüüps"
+			        }
+			      ]
+			    },
+			    "fact_activity_tegevuse_tüüp_ja_staatus_has_tegevuse_tüüp": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity.tegevuse_tüüp_ja_staatus": {
+			          "Target": {
+			            "Entity": "fact_activity.tegevuse_tüüp_ja_staatus"
+			          }
+			        },
+			        "fact_activity.tegevuse_tüüp_ja_staatus.tegevuse_tüüp": {
+			          "Target": {
+			            "Entity": "fact_activity.tegevuse_tüüp_ja_staatus.tegevuse_tüüp"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity.tegevuse_tüüp_ja_staatus"
+			            },
+			            "Object": {
+			              "Role": "fact_activity.tegevuse_tüüp_ja_staatus.tegevuse_tüüp"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tegevuse_tüüp_ja_staatuses_have_tegevuse_tüüps"
+			        }
+			      ]
+			    },
+			    "fact_activity_tegevuse_tüüp_ja_staatus_has_staatus": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity.tegevuse_tüüp_ja_staatus": {
+			          "Target": {
+			            "Entity": "fact_activity.tegevuse_tüüp_ja_staatus"
+			          }
+			        },
+			        "fact_activity.tegevuse_tüüp_ja_staatus.staatus": {
+			          "Target": {
+			            "Entity": "fact_activity.tegevuse_tüüp_ja_staatus.staatus"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity.tegevuse_tüüp_ja_staatus"
+			            },
+			            "Object": {
+			              "Role": "fact_activity.tegevuse_tüüp_ja_staatus.staatus"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tegevuse_tüüp_ja_staatuses_have_staatuses"
+			        }
+			      ]
+			    },
+			    "fact_activity_tegevuse_tüüp_ja_staatus_tegevuse_tüüp_has_fact_activity_tegevuse_tüüp_ja_staatus_staatus": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_activity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_activity.tegevuse_tüüp_ja_staatus.tegevuse_tüüp": {
+			          "Target": {
+			            "Entity": "fact_activity.tegevuse_tüüp_ja_staatus.tegevuse_tüüp"
+			          }
+			        },
+			        "fact_activity.tegevuse_tüüp_ja_staatus.staatus": {
+			          "Target": {
+			            "Entity": "fact_activity.tegevuse_tüüp_ja_staatus.staatus"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity.tegevuse_tüüp_ja_staatus.tegevuse_tüüp"
+			            },
+			            "Object": {
+			              "Role": "fact_activity.tegevuse_tüüp_ja_staatus.staatus"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tegevuse_tüüps_have_staatuses"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_activity.tegevuse_tüüp_ja_staatus.staatus"
+			            },
+			            "Object": {
+			              "Role": "fact_activity.tegevuse_tüüp_ja_staatus.tegevuse_tüüp"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "staatuses_have_tegevuse_tüüps"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "fact_activity.tegevuse_tüüp_ja_staatus.staatus"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "fact_activity.tegevuse_tüüp_ja_staatus.tegevuse_tüüp"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "staatuses_are_in_tegevuse_tüüps"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

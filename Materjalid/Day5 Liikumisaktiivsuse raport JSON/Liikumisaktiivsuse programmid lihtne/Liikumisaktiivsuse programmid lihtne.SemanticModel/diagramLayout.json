@@ -1,0 +1,126 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 3.3675127584727589,
+        "y": 90.922844478764489
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 480,
+            "y": 436.52843269769579
+          },
+          "nodeIndex": "fact_activity",
+          "nodeLineageTag": "923f02dc-8ed2-4a84-a98e-69b032eb9637",
+          "size": {
+            "height": 722.18580444444456,
+            "width": 260
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 2053.7804748324661,
+            "y": 146.77584403376358
+          },
+          "nodeIndex": "dim_kestus_grupp",
+          "nodeLineageTag": "9cb8555c-a8c5-41da-9b17-ffeb194c08b3",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 829.17630828904885,
+            "y": 456.17139834868948
+          },
+          "nodeIndex": "dim_organization",
+          "nodeLineageTag": "7689d36f-69c6-4a24-a73f-b68d9cb4c4a8",
+          "size": {
+            "height": 240,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1880.3623388888891,
+            "y": 635.3369449199181
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "2dc6d134-825c-430b-8f30-25b39783a61a",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1911.7750188888892,
+            "y": 461.98008714214023
+          },
+          "nodeIndex": "Parameter",
+          "nodeLineageTag": "f5a7a8b4-140a-4169-941b-a668ca91fd26",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1753.937258868481,
+            "y": 223.8281802777945
+          },
+          "nodeIndex": "organization parent",
+          "nodeLineageTag": "5cdf7505-68b6-4c63-9204-33fa1480b4d6",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 31.699048763900166,
+            "y": 475.79954219848537
+          },
+          "nodeIndex": "dim_policies",
+          "nodeLineageTag": "2beeb180-69d2-49dd-b480-ea092ff6a0ba",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 632.427585107605,
+            "y": 145.08330411928245
+          },
+          "nodeIndex": "dim_date",
+          "nodeLineageTag": "37784e53-3198-4c3e-89db-520064801110",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Tähtskeem",
+      "zoomValue": 59.391014776943088,
+      "pinKeyFieldsToTop": true,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Tähtskeem",
+  "defaultDiagram": "Tähtskeem"
+}
