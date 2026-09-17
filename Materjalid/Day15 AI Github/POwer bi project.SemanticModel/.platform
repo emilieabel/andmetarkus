@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "POwer bi project"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e2aeca84-e978-424d-9768-fa5ca92077a6"
+  }
+}
