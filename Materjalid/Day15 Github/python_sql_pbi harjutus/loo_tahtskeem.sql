@@ -1,5 +1,6 @@
 -- Dimensioon ja fakt. Käivitab protseduuri (ei ole Python).
 -- parent_organization_name = emaorganisatsiooni nimi parent_organization_id järgi.
+--- ajastus Task scheduleriga
 
 CREATE SCHEMA IF NOT EXISTS analytics;
 
