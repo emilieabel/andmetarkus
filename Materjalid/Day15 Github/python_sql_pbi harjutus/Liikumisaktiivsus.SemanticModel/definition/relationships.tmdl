@@ -1,0 +1,4 @@
+relationship rel_lead_organization
+	fromColumn: fact_activities.lead_organization_id
+	toColumn: dim_organizations.organization_id
+

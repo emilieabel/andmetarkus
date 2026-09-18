@@ -1,0 +1,68 @@
+table dim_organizations
+	lineageTag: 3a9c8d71-2e4b-4f80-b1c6-5d7e9a0b2c34
+
+	column organization_id
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb01
+		summarizeBy: none
+		sourceColumn: organization_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column organization_name
+		dataType: string
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb02
+		summarizeBy: none
+		sourceColumn: organization_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column abbreviation
+		dataType: string
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb03
+		summarizeBy: none
+		sourceColumn: abbreviation
+
+		annotation SummarizationSetBy = Automatic
+
+	column organization_type
+		dataType: string
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb04
+		summarizeBy: none
+		sourceColumn: organization_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column parent_organization_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb05
+		summarizeBy: none
+		sourceColumn: parent_organization_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ministeerium
+		dataType: string
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb06
+		summarizeBy: none
+		sourceColumn: Ministeerium
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_organizations = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("localhost", "postgres"),
+				    Data = Value.NativeQuery(Source, "select * from analytics.dim_organizations", null, [EnableFolding=true]),
+				    #"Renamed Columns" = Table.RenameColumns(Data,{{"parent_organization_name", "Ministeerium"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,19 @@
+model Model
+	culture: et-EE
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: et-EE
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation PBI_QueryOrder = ["dim_organizations","fact_activities"]
+
+ref table dim_organizations
+ref table fact_activities
+
+ref cultureInfo et-EE
+

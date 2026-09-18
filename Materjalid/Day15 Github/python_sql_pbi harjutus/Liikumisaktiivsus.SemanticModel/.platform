@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Liikumisaktiivsus"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c9e4d2a1-7b18-4f03-9e55-aa11bb22cc33"
+  }
+}

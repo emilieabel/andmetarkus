@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "b8c91d0e2f3a41526789",
+  "displayName": "Töölaud",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F5F5F5'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "1927fdcc32bba0911501",
+      "target": "c01a2b3c4d5e6f708202",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1927fdcc32bba0911501",
+      "target": "c01a2b3c4d5e6f708203",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1927fdcc32bba0911501",
+      "target": "c01a2b3c4d5e6f708204",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1927fdcc32bba0911501",
+      "target": "c01a2b3c4d5e6f708201",
+      "type": "NoFilter"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "b2bb1283d2062d66800e",
+  "position": {
+    "x": 23.333333333333332,
+    "y": 220,
+    "z": 4002,
+    "height": 328.88888888888886,
+    "width": 497.77777777777777
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_organizations"
+                    }
+                  },
+                  "Property": "Ministeerium"
+                }
+              },
+              "queryRef": "dim_organizations.Ministeerium",
+              "nativeQueryRef": "Ministeerium",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_activities"
+                    }
+                  },
+                  "Property": "Tegevuste arv"
+                }
+              },
+              "queryRef": "fact_activities.Tegevuste arv",
+              "nativeQueryRef": "Tegevuste arv"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fact_activities"
+                  }
+                },
+                "Property": "Tegevuste arv"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "cf919ef60d09318bb4e5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_organizations"
+              }
+            },
+            "Property": "Ministeerium"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "47a2cee097594b6686da",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_activities"
+              }
+            },
+            "Property": "Tegevuste arv"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

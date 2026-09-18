@@ -1,0 +1,258 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "c01a2b3c4d5e6f708205",
+  "position": {
+    "x": 533.33333333333337,
+    "y": 220,
+    "z": 4000,
+    "height": 483.33333333333331,
+    "width": 722.22222222222217,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_organizations"
+                    }
+                  },
+                  "Property": "Ministeerium"
+                }
+              },
+              "queryRef": "dim_organizations.parent_organization_name",
+              "nativeQueryRef": "Ministeerium",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_organizations"
+                    }
+                  },
+                  "Property": "organization_name"
+                }
+              },
+              "queryRef": "dim_organizations.organization_name",
+              "nativeQueryRef": "organization_name",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_activities"
+                    }
+                  },
+                  "Property": "activity_name"
+                }
+              },
+              "queryRef": "fact_activities.activity_name",
+              "nativeQueryRef": "activity_name",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_activities"
+                    }
+                  },
+                  "Property": "status"
+                }
+              },
+              "queryRef": "fact_activities.status",
+              "nativeQueryRef": "status",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_activities"
+                    }
+                  },
+                  "Property": "progress_percent"
+                }
+              },
+              "queryRef": "fact_activities.progress_percent",
+              "nativeQueryRef": "progress_percent",
+              "active": true
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0F203E'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tegevused organisatsiooni kaupa'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b4a55878b95032110dd0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_organizations"
+              }
+            },
+            "Property": "Ministeerium"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c71180ef307bbeae9676",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_organizations"
+              }
+            },
+            "Property": "organization_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d6764ce5bee33a0d8b93",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_activities"
+              }
+            },
+            "Property": "activity_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e3bbf100d639cae8e774",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_activities"
+              }
+            },
+            "Property": "status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ccb08b62337759bac607",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_activities"
+              }
+            },
+            "Property": "progress_percent"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,217 @@
+table fact_activities
+	lineageTag: 8d4f2b01-5c3e-4f90-ad2b-3e5f7a9c1d23
+
+	measure 'Organisatsioonide arv' = DISTINCTCOUNT ( dim_organizations[organization_id] )
+		formatString: #,##0
+		lineageTag: b22e3c44-d55e-4f66-9077-8899aabbcc11
+
+	measure 'Tegevuste arv' = COUNTROWS ( fact_activities )
+		formatString: #,##0
+		lineageTag: b22e3c44-d55e-4f66-9077-8899aabbcc12
+
+	measure 'Tehtud tegevuste arv' =
+			
+			CALCULATE (
+			    COUNTROWS ( fact_activities ),
+			    fact_activities[status] = "Tehtud"
+			)
+		formatString: #,##0
+		lineageTag: b22e3c44-d55e-4f66-9077-8899aabbcc13
+
+	column activity_id
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb11
+		summarizeBy: none
+		sourceColumn: activity_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column activity_name
+		dataType: string
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb12
+		summarizeBy: none
+		sourceColumn: activity_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column activity_number
+		dataType: int64
+		formatString: 0
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb13
+		summarizeBy: none
+		sourceColumn: activity_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column activity_code
+		dataType: string
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb14
+		summarizeBy: none
+		sourceColumn: activity_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column short_name
+		dataType: string
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb15
+		summarizeBy: none
+		sourceColumn: short_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column activity_type
+		dataType: string
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb16
+		summarizeBy: none
+		sourceColumn: activity_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column period
+		dataType: string
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb17
+		summarizeBy: none
+		sourceColumn: period
+
+		annotation SummarizationSetBy = Automatic
+
+	column start_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb18
+		summarizeBy: none
+		sourceColumn: start_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column end_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb19
+		summarizeBy: none
+		sourceColumn: end_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_outcome
+		dataType: string
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb20
+		summarizeBy: none
+		sourceColumn: target_outcome
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb21
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_groups
+		dataType: string
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb22
+		summarizeBy: none
+		sourceColumn: target_groups
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb23
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column progress_percent
+		dataType: int64
+		formatString: 0
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb24
+		summarizeBy: none
+		sourceColumn: progress_percent
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb25
+		summarizeBy: none
+		sourceColumn: direction_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column lead_organization_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb26
+		summarizeBy: none
+		sourceColumn: lead_organization_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column read_more_link
+		dataType: string
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb27
+		summarizeBy: none
+		sourceColumn: read_more_link
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_modified_time
+		dataType: string
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb28
+		summarizeBy: none
+		sourceColumn: last_modified_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column partner_identifiers
+		dataType: string
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb29
+		summarizeBy: none
+		sourceColumn: partner_identifiers
+
+		annotation SummarizationSetBy = Automatic
+
+	column policy_identifiers
+		dataType: string
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb30
+		summarizeBy: none
+		sourceColumn: policy_identifiers
+
+		annotation SummarizationSetBy = Automatic
+
+	column research_identifiers
+		dataType: string
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb31
+		summarizeBy: none
+		sourceColumn: research_identifiers
+
+		annotation SummarizationSetBy = Automatic
+
+	column indicators
+		dataType: string
+		lineageTag: a11e2b33-c44d-4e55-8f66-778899aabb32
+		summarizeBy: none
+		sourceColumn: indicators
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_activities = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("localhost", "postgres"),
+				    Data = Value.NativeQuery(Source, "select * from analytics.fact_activities", null, [EnableFolding=true])
+				in
+				    Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
