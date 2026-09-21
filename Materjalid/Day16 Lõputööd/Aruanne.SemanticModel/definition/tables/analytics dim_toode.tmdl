@@ -1,0 +1,103 @@
+table 'analytics dim_toode'
+	lineageTag: e056fb25-e6f3-44dd-a7bc-0f04f83808bc
+
+	column toode_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 6df923ce-4325-4220-bf04-e45153d95257
+		summarizeBy: none
+		sourceColumn: toode_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column nimetus
+		dataType: string
+		lineageTag: bbbb9751-374a-46c2-a5ab-c369b08cca5a
+		summarizeBy: none
+		sourceColumn: nimetus
+
+		annotation SummarizationSetBy = Automatic
+
+	column hind_ilma_km
+		dataType: double
+		lineageTag: 86176e59-e2f8-416e-b787-f4bd4fad91ff
+		summarizeBy: none
+		sourceColumn: hind_ilma_km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column hind_koos_km
+		dataType: double
+		lineageTag: 18fe996f-09f9-412d-a504-f5e571723775
+		summarizeBy: none
+		sourceColumn: hind_koos_km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column hinna_klass
+		dataType: string
+		lineageTag: 96be3b6e-7231-4d92-a30f-efb8e40aa362
+		summarizeBy: none
+		sourceColumn: hinna_klass
+
+		annotation SummarizationSetBy = Automatic
+
+	column kategooria_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 51577f96-939d-4c64-90ad-cce24924dff4
+		summarizeBy: none
+		sourceColumn: kategooria_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column kategooria
+		dataType: string
+		lineageTag: f1755a18-a4a4-4b54-9a08-9700cd34c2f8
+		summarizeBy: none
+		sourceColumn: kategooria
+
+		annotation SummarizationSetBy = Automatic
+
+	column osakond
+		dataType: string
+		lineageTag: 59f628e1-5924-48b7-b4f2-17d2097bb1b8
+		summarizeBy: none
+		sourceColumn: osakond
+
+		annotation SummarizationSetBy = Automatic
+
+	column km_maar
+		dataType: double
+		lineageTag: 1783ce2d-1481-4aff-a2e4-fa96ba5aca0b
+		summarizeBy: none
+		sourceColumn: km_maar
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column on_soodus_km
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 33e3dbbd-03b0-4cd3-97a2-71a41332ecac
+		summarizeBy: none
+		sourceColumn: on_soodus_km
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'analytics dim_toode' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("localhost", "postgres"),
+				    analytics_dim_toode = Source{[Schema="analytics",Item="dim_toode"]}[Data]
+				in
+				    analytics_dim_toode
+
+	annotation PBI_ResultType = Table
+

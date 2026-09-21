@@ -1,0 +1,26 @@
+model Model
+	culture: et-EE
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-150
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation PBI_QueryOrder = ["analytics dim_klient","analytics dim_aeg","analytics dim_toode","analytics fact_myyk"]
+
+ref table 'analytics dim_klient'
+ref table DateTableTemplate_3d07a21c-4fdc-4bf1-a7d3-69de47b78a72
+ref table LocalDateTable_509c7a02-8137-4012-87e6-bbd9a448350a
+ref table 'analytics dim_aeg'
+ref table LocalDateTable_ad524c0b-8055-49f7-9feb-6ecc7c79404f
+ref table 'analytics dim_toode'
+ref table 'analytics fact_myyk'
+ref table LocalDateTable_9288f2d7-cc31-46be-86c7-eebe6af44d6d
+
+ref cultureInfo et-EE
+

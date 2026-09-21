@@ -1,0 +1,81 @@
+table 'analytics dim_klient'
+	lineageTag: 53980264-da5b-4446-a807-19a5081e653c
+
+	column klient_id
+		dataType: int64
+		formatString: 0
+		lineageTag: f609bb6e-9388-4c66-af54-7174a89f7c4a
+		summarizeBy: none
+		sourceColumn: klient_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column nimi
+		dataType: string
+		lineageTag: 8a6c97db-7c9a-4742-bd41-4ead61d2f2dc
+		summarizeBy: none
+		sourceColumn: nimi
+
+		annotation SummarizationSetBy = Automatic
+
+	column linn
+		dataType: string
+		lineageTag: eb108eda-be06-48b5-b014-f22260ed9b88
+		summarizeBy: none
+		sourceColumn: linn
+
+		annotation SummarizationSetBy = Automatic
+
+	column piirkond
+		dataType: string
+		lineageTag: 04bc5017-1f5b-4748-aab8-9e5f89caaca4
+		summarizeBy: none
+		sourceColumn: piirkond
+
+		annotation SummarizationSetBy = Automatic
+
+	column liitumise_kuupäev
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ad175375-85b0-46d0-8fe7-7a330375f146
+		summarizeBy: none
+		sourceColumn: liitumise_kuupäev
+
+		variation Variation
+			isDefault
+			relationship: ec7a218f-821b-4d96-ae55-66fd5772631e
+			defaultHierarchy: LocalDateTable_509c7a02-8137-4012-87e6-bbd9a448350a.'Kuupäeva hierarhia'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column liitumise_aasta
+		dataType: int64
+		formatString: 0
+		lineageTag: 1422e66c-b811-439a-93f9-6e2e2a74ec07
+		summarizeBy: sum
+		sourceColumn: liitumise_aasta
+
+		annotation SummarizationSetBy = Automatic
+
+	column paevi_liitumisest
+		dataType: int64
+		formatString: 0
+		lineageTag: 826a1894-6ff8-48b6-81e0-4f3f694cea82
+		summarizeBy: sum
+		sourceColumn: paevi_liitumisest
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'analytics dim_klient' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("localhost", "postgres"),
+				    analytics_dim_klient = Source{[Schema="analytics",Item="dim_klient"]}[Data]
+				in
+				    analytics_dim_klient
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,166 @@
+table 'analytics fact_myyk'
+	lineageTag: 05500f48-d061-4114-86f4-c883f92049d6
+
+	column tellimus_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 5721851b-0dc0-4516-8cdd-30aa145d8b4d
+		summarizeBy: sum
+		sourceColumn: tellimus_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column toode_id
+		dataType: int64
+		formatString: 0
+		lineageTag: b185e43e-5943-4f2b-84a6-83180b1f86d8
+		summarizeBy: none
+		sourceColumn: toode_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column klient_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c65820a-3f92-48af-904e-4f70dea94c7a
+		summarizeBy: none
+		sourceColumn: klient_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column kuupäev
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f16bbf95-270e-4ace-8442-47db78248f95
+		summarizeBy: none
+		sourceColumn: kuupäev
+
+		variation Variation
+			isDefault
+			relationship: 6ef54538-84d7-4e43-a763-6e89a43ddef6
+			defaultHierarchy: LocalDateTable_9288f2d7-cc31-46be-86c7-eebe6af44d6d.'Kuupäeva hierarhia'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column kuupäev_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 436178a4-03df-449e-a864-a5f7bf190f08
+		summarizeBy: none
+		sourceColumn: kuupäev_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column staatus
+		dataType: string
+		lineageTag: e0d2bb3d-49aa-43da-8beb-1c7fd46c7ea5
+		summarizeBy: none
+		sourceColumn: staatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column makseviis
+		dataType: string
+		lineageTag: edeca3bd-b163-484c-8657-a0def824c2c6
+		summarizeBy: none
+		sourceColumn: makseviis
+
+		annotation SummarizationSetBy = Automatic
+
+	column tarneviis
+		dataType: string
+		lineageTag: e1fef95c-e5c3-4f5f-a018-0c33d6618d1c
+		summarizeBy: none
+		sourceColumn: tarneviis
+
+		annotation SummarizationSetBy = Automatic
+
+	column taidetud
+		dataType: string
+		lineageTag: 1291b8c7-1739-4024-a37d-d02ce868ce98
+		summarizeBy: none
+		sourceColumn: taidetud
+
+		annotation SummarizationSetBy = Automatic
+
+	column paevi_liitumisest
+		dataType: int64
+		formatString: 0
+		lineageTag: 50527ff8-d6b2-4095-8b3c-c01cf234a32b
+		summarizeBy: sum
+		sourceColumn: paevi_liitumisest
+
+		annotation SummarizationSetBy = Automatic
+
+	column kogus
+		dataType: int64
+		formatString: 0
+		lineageTag: 48ee7552-bc15-4ee4-b230-7fc47fedc540
+		summarizeBy: sum
+		sourceColumn: kogus
+
+		annotation SummarizationSetBy = Automatic
+
+	column rida_tais_summa_ilma_km
+		dataType: double
+		lineageTag: 4184a2a7-62e4-4ff2-930a-00d395a2b3f5
+		summarizeBy: sum
+		sourceColumn: rida_tais_summa_ilma_km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rida_allahindlusega_ilma_km
+		dataType: double
+		lineageTag: 131861c5-1d4d-4375-a681-36642813d30f
+		summarizeBy: sum
+		sourceColumn: rida_allahindlusega_ilma_km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column allahindluse_summa
+		dataType: double
+		lineageTag: 4083b9fc-0bb6-4388-baf0-9990f7d6650d
+		summarizeBy: sum
+		sourceColumn: allahindluse_summa
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rida_km
+		dataType: double
+		lineageTag: 679299b1-e5ef-4069-9612-a0d34c3981ec
+		summarizeBy: sum
+		sourceColumn: rida_km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rida_koos_km
+		dataType: double
+		lineageTag: b2036d18-62ba-4cd4-bc3b-b2439a7b3659
+		summarizeBy: sum
+		sourceColumn: rida_koos_km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'analytics fact_myyk' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("localhost", "postgres"),
+				    analytics_fact_myyk = Source{[Schema="analytics",Item="fact_myyk"]}[Data]
+				in
+				    analytics_fact_myyk
+
+	annotation PBI_ResultType = Table
+

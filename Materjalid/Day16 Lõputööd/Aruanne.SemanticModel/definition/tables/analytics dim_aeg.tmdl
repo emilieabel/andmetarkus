@@ -1,0 +1,100 @@
+table 'analytics dim_aeg'
+	lineageTag: 26066f7b-98f8-491e-9d17-3cd90ed5d9b8
+
+	column kuupäev_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 5ef98b61-c9e3-4af7-895f-38c4869c9eef
+		summarizeBy: none
+		sourceColumn: kuupäev_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column kuupäev
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 57ffc4bd-7aa9-4847-a75d-1199173d66f2
+		summarizeBy: none
+		sourceColumn: kuupäev
+
+		variation Variation
+			isDefault
+			relationship: 7f933016-289f-4cd1-8f44-917cfef58acc
+			defaultHierarchy: LocalDateTable_ad524c0b-8055-49f7-9feb-6ecc7c79404f.'Kuupäeva hierarhia'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column aasta
+		dataType: int64
+		formatString: 0
+		lineageTag: 36b57dbf-f4e0-4ee4-9cef-744fe1a900ac
+		summarizeBy: sum
+		sourceColumn: aasta
+
+		annotation SummarizationSetBy = Automatic
+
+	column kvartal
+		dataType: int64
+		formatString: 0
+		lineageTag: 78b27243-c046-4a91-8b36-c1f5b0b61d07
+		summarizeBy: sum
+		sourceColumn: kvartal
+
+		annotation SummarizationSetBy = Automatic
+
+	column kuu
+		dataType: int64
+		formatString: 0
+		lineageTag: 4e9a40bb-7766-44c4-b65a-8f9279d20270
+		summarizeBy: sum
+		sourceColumn: kuu
+
+		annotation SummarizationSetBy = Automatic
+
+	column aasta_kuu
+		dataType: string
+		lineageTag: ea199e64-a139-4ae4-b0a1-63f1d87fb98f
+		summarizeBy: none
+		sourceColumn: aasta_kuu
+
+		annotation SummarizationSetBy = Automatic
+
+	column aasta_kvartal
+		dataType: string
+		lineageTag: 48264e55-a0df-4414-819d-74998ce91900
+		summarizeBy: none
+		sourceColumn: aasta_kvartal
+
+		annotation SummarizationSetBy = Automatic
+
+	column nadala_paev
+		dataType: int64
+		formatString: 0
+		lineageTag: bd6c4925-83a7-4a53-9998-a1a1f05c720a
+		summarizeBy: sum
+		sourceColumn: nadala_paev
+
+		annotation SummarizationSetBy = Automatic
+
+	column on_naidalopp
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5e9c8ac5-892f-469c-b4f1-2c51c8c1489c
+		summarizeBy: none
+		sourceColumn: on_naidalopp
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'analytics dim_aeg' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("localhost", "postgres"),
+				    analytics_dim_aeg = Source{[Schema="analytics",Item="dim_aeg"]}[Data]
+				in
+				    analytics_dim_aeg
+
+	annotation PBI_ResultType = Table
+

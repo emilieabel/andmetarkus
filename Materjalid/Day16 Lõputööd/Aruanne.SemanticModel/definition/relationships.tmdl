@@ -1,0 +1,27 @@
+relationship ec7a218f-821b-4d96-ae55-66fd5772631e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'analytics dim_klient'.liitumise_kuupäev
+	toColumn: LocalDateTable_509c7a02-8137-4012-87e6-bbd9a448350a.Date
+
+relationship 7f933016-289f-4cd1-8f44-917cfef58acc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'analytics dim_aeg'.kuupäev
+	toColumn: LocalDateTable_ad524c0b-8055-49f7-9feb-6ecc7c79404f.Date
+
+relationship 6ef54538-84d7-4e43-a763-6e89a43ddef6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'analytics fact_myyk'.kuupäev
+	toColumn: LocalDateTable_9288f2d7-cc31-46be-86c7-eebe6af44d6d.Date
+
+relationship AutoDetected_a87fff67-243b-499f-8d74-247e57f238f9
+	fromColumn: 'analytics fact_myyk'.klient_id
+	toColumn: 'analytics dim_klient'.klient_id
+
+relationship AutoDetected_cd5461e4-773c-48fd-a9a5-0afae2c8c393
+	fromColumn: 'analytics fact_myyk'.kuupäev_id
+	toColumn: 'analytics dim_aeg'.kuupäev_id
+
+relationship AutoDetected_74555829-7b2f-4dd7-bd75-30ea9106303f
+	fromColumn: 'analytics fact_myyk'.toode_id
+	toColumn: 'analytics dim_toode'.toode_id
+

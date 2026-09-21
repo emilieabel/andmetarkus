@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Aruanne"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9cc5e463-e576-4f7e-9a4b-cf7ca3c4b509"
+  }
+}

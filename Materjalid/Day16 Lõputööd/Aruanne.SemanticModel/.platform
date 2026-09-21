@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Aruanne"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7c5a87fa-15c6-4743-908c-6bf8ad2697a5"
+  }
+}
