@@ -1,0 +1,19 @@
+model Model
+	culture: et-EE
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-150
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Sheet1"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Sheet1
+
+ref cultureInfo et-EE
+
