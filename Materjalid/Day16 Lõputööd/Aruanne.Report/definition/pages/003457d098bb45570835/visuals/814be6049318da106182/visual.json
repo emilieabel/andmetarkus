@@ -2,17 +2,36 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "814be6049318da106182",
   "position": {
-    "x": 372.5,
-    "y": 86.25,
+    "x": 25,
+    "y": 18.75,
     "z": 0,
     "height": 386.25,
     "width": 803.75
   },
   "visual": {
-    "visualType": "tableEx",
+    "visualType": "barChart",
     "query": {
       "queryState": {
-        "Values": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "analytics dim_klient"
+                    }
+                  },
+                  "Property": "linn"
+                }
+              },
+              "queryRef": "analytics dim_klient.linn",
+              "nativeQueryRef": "linn",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
           "projections": [
             {
               "field": {
@@ -32,29 +51,46 @@
               },
               "queryRef": "Sum(analytics fact_myyk.rida_koos_km)",
               "nativeQueryRef": "Sum of rida_koos_km"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "analytics dim_klient"
-                    }
-                  },
-                  "Property": "linn"
-                }
-              },
-              "queryRef": "analytics dim_klient.linn",
-              "nativeQueryRef": "linn"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "analytics fact_myyk"
+                      }
+                    },
+                    "Property": "rida_koos_km"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
-    "objects": {
-      "columnHeaders": [
+    "visualContainerObjects": {
+      "title": [
         {
-          "properties": {}
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Pealkiri'"
+                }
+              }
+            }
+          }
         }
       ]
     },
@@ -63,7 +99,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "8f17c9a85007d021c1a5",
+        "name": "4647f6b8cd382726c0d0",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -82,7 +118,7 @@
         "type": "Advanced"
       },
       {
-        "name": "cbee4a819074522d0420",
+        "name": "ef4cd2aae105be2027b2",
         "field": {
           "Column": {
             "Expression": {
