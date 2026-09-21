@@ -62,7 +62,7 @@
 <h3>Päritolu ja voog</h3>
 <ul>
   <li>Kust andmed pärinevad (riiklik statistika, API, andmebaas, failid).</li>
-  <li>Andmevoog skeemina: allikas → töötlus → aruanne. Joonisel on iga etapi <b>tööriist</b> (nt Python, SQL, Power Query, Power BI Desktop / Service), failid või tabelid. Lühike kirjeldus joonise all.</li>
+  <li>Andmevoog skeemina: allikas → töötlus → aruanne. Joonisel on iga etapi <b>tööriist</b> (nt Python, SQL, Power Query, Power BI Desktop), failid või tabelid. Lühike kirjeldus joonise all.</li>
 </ul>
 
 <figure>
@@ -88,7 +88,7 @@
   <text x="733" y="106" text-anchor="middle" fill="#0f203e" font-size="15" font-family="Calibri, sans-serif" font-weight="700">Aruanne</text>
   <text x="305" y="178" text-anchor="middle" fill="#64748b" font-size="12" font-family="Calibri, sans-serif">nt Python</text>
   <text x="519" y="178" text-anchor="middle" fill="#64748b" font-size="12" font-family="Calibri, sans-serif">nt SQL</text>
-  <text x="733" y="178" text-anchor="middle" fill="#64748b" font-size="12" font-family="Calibri, sans-serif">nt Power BI</text>
+  <text x="733" y="178" text-anchor="middle" fill="#64748b" font-size="12" font-family="Calibri, sans-serif">nt Power BI Desktop</text>
 </svg>
 <figcaption>Näide. Üks allikas piisab; [Allikas 2] on valik, kui allikaid on mitu. Asendage oma etappide ja tööriistadega.</figcaption>
 </figure>
@@ -160,7 +160,7 @@
 
 <h3>Üleandmine</h3>
 <ul>
-  <li>4–8 juhist, kuidas voogu käivitada ja täiendada (käivitus, parool, uus veerg, millal voog jookseb).</li>
+  <li>4–8 juhist, kuidas voogu käivitada ja täiendada: käivitus, parool, uus veerg, millal voog jookseb. (Aruande Info-lehel on «millal viimati uuendati» ja number allikani — mitte see käivitusjuhend.)</li>
 </ul>
 
 <h2>4. Analüüs ja visualiseerimine</h2>
@@ -190,12 +190,12 @@
 <h3>Kasutajajuhend, Info-leht ja mõõdikute tabel</h3>
 <ul>
   <li>Kasutajajuhend: 5–8 sammu aruande avamiseks ja lugemiseks.</li>
-  <li>Info-leht (peakasutaja / audiitor): kust andmed tulevad, millal viimati uuendati, mis kell andmevoog jookseb, kuidas number allikani viia (visuaal → mõõdik → tabel või vaade → allikas).</li>
+  <li>Info-leht (peakasutaja / audiitor): kust andmed tulevad, millal viimati uuendati, kuidas number allikani viia (visuaal → mõõdik → tabel või vaade → allikas). Millal voog käivitatakse, on §3 üleandmine.</li>
   <li>Mõõdikute tabel (tavakasutaja): sõnastik, mida number tähendab. Näide: «Ostukorv = käive ÷ tellimuste arv» või «Marginaal = (müügitulu − omahind) / müügitulu». Võib tulla ka SQL COMMENT / Description väljalt.</li>
 </ul>
 
 <h2>5. Andmekorraldus (valikuline)</h2>
-<p>Valikulisi osi lõppdokumenti ei panda. Metaandmed, rollid ja kontroll: kui te ei kirjuta, jätke need pealkirjad ära. Turve valmis aruandes peab dokumendis olema.</p>
+<p>Valikulisi osi lõppdokumenti ei panda. Tühja pealkirja ei jäeta. Metaandmed, rollid ja kontroll: kui te ei kirjuta, jätke need pealkirjad ära. Turve valmis aruandes peab dokumendis olema. Kui §6 puudub, tuleb pärast §5 kohe §7.</p>
 
 <h3>Metaandmete haldus</h3>
 <ul>
@@ -225,7 +225,7 @@
 <h2>7. Kokkuvõte ja arutelu</h2>
 <ul>
   <li>Kuidas tehtud lahenduse pealt saab äriküsimustele vastuseid leida. Iga uurimisküsimuse juures: lühike vastus ja kust see lahenduses tuleb (nt visuaal, mõõdik, leht).</li>
-  <li>Ärilised või praktilised soovitused: mida tulemuste põhjal ette võtta.</li>
+  <li>Praktilised soovitused lahenduse kasutamiseks: kuidas vastust otsida, mida mitte valesti lugeda. Mitte uus ärianalüüs ega kampaaniaplaan.</li>
   <li>Piirangud ja edasiarendused: mis jäi andmete või aja tõttu tegemata; kuidas tööd hiljem parandada.</li>
   <li>AI: mil määral tehisaru kasutati.</li>
 </ul>

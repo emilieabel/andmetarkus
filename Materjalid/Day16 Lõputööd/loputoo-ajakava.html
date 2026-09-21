@@ -32,11 +32,15 @@
   .mark { background: #eef6f6; font-weight: 700; }
   ul { margin: 6px 0 10px; padding-left: 22px; }
   li { margin: 4px 0; }
+  figure { margin: 12px 0 16px; }
+  figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; }
+  svg { display: block; width: 100%; height: auto; }
   footer { margin-top: 32px; font-size: 12px; color: var(--muted); }
   @media print {
     body { padding: 12px 16px; }
     h2 { break-after: avoid; }
     table { break-inside: avoid; }
+    figure, svg { break-inside: avoid; }
   }
 </style>
 </head>
@@ -45,17 +49,6 @@
 <p class="kicker">Andmetarkus · lõputöö</p>
 <h1>Lõputöö ajakava</h1>
 <p>Kolm nädalat. Töö eesmärk on rakendada andmetöötluse oskusi, mitte ärilist lisaanalüüsi. Visualiseerimine = aruanne. Dokumenti täidetakse jooksvalt; 7.10 on kokkupanek, mitte algus.</p>
-
-<h2>Töö käib ringiga</h2>
-<p>Päev ütleb, <b>millele tähelepanu panna</b>, mitte et eelmised tükid on lukus. Tüüpiline ring: küsimused → andmed → töötlus → uuriv analüüs → aruanne → küsimused või ärimõisted uuesti. Iga ring kirjutage lühidalt üle (git + dokumendi vastav lõik).</p>
-<ul>
-  <li>Küsimused, skoop, ärimõisted: v1 nädalas 1; täpsustuvad, kui andmed või mõõdik näitab, et reegel ei klapi.</li>
-  <li>Allikas, voog, mudel, grain: eskiis nädalas 1, käivitatav andmevoog nädalas 2, parandus kui uuriv analüüs või aruanne ei klapi.</li>
-  <li>Kvaliteet ja töötlus: määrad võivad tulla mitu korda; uue ringi juurde uus arv, mitte «andmed olid head».</li>
-  <li>Aruanne ja andmelugu: esimene leht nädalas 2; lugu, UX, Info ja sõnastik täienevad nädalas 3.</li>
-  <li>Andmekaitse laadimisel (§3) ja turve aruandes (§5) on eri ajad, aga mõlemad täienevad, kui tuleb uus veerg.</li>
-  <li>Esitlused on <b>praegune versioon</b>, mitte lõplik külmutus. Lukku läheb töö 8.10.</li>
-</ul>
 
 <h2>Nädal 1 · skoop ja andmed</h2>
 <p>Fookus 21.–24.09: teema, küsimused, skoop, allikad, esimene pilt andmetest. Päevade järjekord võib nihkuda; reedeks peab skoop olema näidatav.</p>
@@ -90,6 +83,7 @@
 <h2>Nädal 2 · töötlus ja esimene aruanne</h2>
 <p>Fookus 28.09–1.10: andmed korda, esimene ülevaade, avatav aruanne. Päevade järjekord on rühma otsustada; tükid täienevad koos.</p>
 <ul>
+  <li>Python ja/või SQL: skriptid importimiseks, SQL töötlus, dim-mudeli tegemine.</li>
   <li>Uuriv analüüs: 3–5 profiiliarvu. Tähtskeem grain’iga andmete järgi.</li>
   <li>Aruanne: ühendus, seosed, lehed, filtrid; kaks DAX-i, mis kordavad ärimõistet; andmelugu juhib paigutust.</li>
 </ul>
