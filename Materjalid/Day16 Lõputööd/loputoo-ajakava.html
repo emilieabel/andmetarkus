@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="utf-8">
+<title>Lõputöö ajakava — andmetarkus</title>
+<style>
+  :root {
+    --navy: #0f203e;
+    --teal: #007073;
+    --gold: #c49526;
+    --slate: #334155;
+    --muted: #64748b;
+    --line: #d6dee8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0 auto;
+    max-width: 920px;
+    padding: 36px 40px 64px;
+    font: 16px/1.45 Calibri, "Segoe UI", sans-serif;
+    color: var(--slate);
+    background: white;
+  }
+  h1 { margin: 0 0 6px; font-size: 28px; color: var(--navy); }
+  h2 { margin: 28px 0 8px; font-size: 18px; color: var(--navy); border-bottom: 2px solid var(--teal); padding-bottom: 4px; }
+  .kicker { color: var(--teal); font-weight: 700; letter-spacing: .04em; font-size: 13px; text-transform: uppercase; }
+  p { margin: 8px 0 12px; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 18px; font-size: 15px; }
+  th, td { border: 1px solid var(--line); padding: 7px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--navy); color: white; font-weight: 600; }
+  td:first-child { white-space: nowrap; font-weight: 600; color: var(--navy); width: 7.5em; }
+  .mark { background: #eef6f6; font-weight: 700; }
+  ul { margin: 6px 0 10px; padding-left: 22px; }
+  li { margin: 4px 0; }
+  footer { margin-top: 32px; font-size: 12px; color: var(--muted); }
+  @media print {
+    body { padding: 12px 16px; }
+    h2 { break-after: avoid; }
+    table { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<p class="kicker">Andmetarkus · lõputöö</p>
+<h1>Lõputöö ajakava</h1>
+<p>Kolm nädalat. Töö eesmärk on rakendada andmetöötluse oskusi, mitte ärilist lisaanalüüsi. Visualiseerimine = aruanne. Dokumenti täidetakse jooksvalt; 7.10 on kokkupanek, mitte algus.</p>
+
+<h2>Töö käib ringiga</h2>
+<p>Päev ütleb, <b>millele tähelepanu panna</b>, mitte et eelmised tükid on lukus. Tüüpiline ring: küsimused → andmed → töötlus → uuriv analüüs → aruanne → küsimused või ärimõisted uuesti. Iga ring kirjutage lühidalt üle (git + dokumendi vastav lõik).</p>
+<ul>
+  <li>Küsimused, skoop, ärimõisted: v1 nädalas 1; täpsustuvad, kui andmed või mõõdik näitab, et reegel ei klapi.</li>
+  <li>Allikas, voog, mudel, grain: eskiis nädalas 1, käivitatav andmevoog nädalas 2, parandus kui uuriv analüüs või aruanne ei klapi.</li>
+  <li>Kvaliteet ja töötlus: määrad võivad tulla mitu korda; uue ringi juurde uus arv, mitte «andmed olid head».</li>
+  <li>Aruanne ja andmelugu: esimene leht nädalas 2; lugu, UX, Info ja sõnastik täienevad nädalas 3.</li>
+  <li>Andmekaitse laadimisel (§3) ja turve aruandes (§5) on eri ajad, aga mõlemad täienevad, kui tuleb uus veerg.</li>
+  <li>Esitlused on <b>praegune versioon</b>, mitte lõplik külmutus. Lukku läheb töö 8.10.</li>
+</ul>
+
+<h2>Nädal 1 · skoop ja andmed</h2>
+<p>Fookus 21.–24.09: teema, küsimused, skoop, allikad, esimene pilt andmetest. Päevade järjekord võib nihkuda; reedeks peab skoop olema näidatav.</p>
+<ul>
+  <li>Andmed: kust tulevad, voo eskiis, maht, grain hüpotees tabeliti, kaitse laadimisel.</li>
+  <li>Kvaliteet: esimesed määrad (arv või %).</li>
+</ul>
+<table>
+  <tr><th>Päev</th><th>Selle päeva fookus</th></tr>
+  <tr>
+    <td>21.09 E</td>
+    <td>Grupiga alustamine. Ettevõte või teema, 2–4 äriküsimust, analüüsiplaan, rühma rollid (kes koristab, kes mudeldab, kes aruannet teeb). Git repo.</td>
+  </tr>
+  <tr>
+    <td>22.09 T</td>
+    <td>Skoobi kokkulepe. Ärimõisted ilma tabelinimeta. Lahenduse idee: millistele küsimustele juhtlaud peab vastama. Kohtumised.</td>
+  </tr>
+  <tr>
+    <td>23.09 K</td>
+    <td>Andmeallikad. Esimene voo eskiis: allikas → töötlus → aruanne (tööriistad võivad muutuda). Kohtumised. Kui andmeid ei ole lubatud, neid ei ole või on suuri probleeme, kitsendage skoopi — ärge oodake nädalat 3. Saate hiljem uue tsükliga lisada.</td>
+  </tr>
+  <tr>
+    <td>24.09 N</td>
+    <td>Andmete kirjeldus: read, veerud, tüübid. Andmekaitse laadimisel (veerg välja, mask, id nime asemel). Tähtskeemi eskiis ja grain iga nähtud tabeli kohta — hüpotees, mida uuriv analüüs võib ümber lükata.</td>
+  </tr>
+  <tr class="mark">
+    <td>25.09 R</td>
+    <td>Kvaliteedimäärad (duplikaadid, tühjad, lubatud väärtused) ja esimene puhastus. Vahetulemuste esitlus: ülesanne, andmete allikas, andmemudel, plaan.</td>
+  </tr>
+</table>
+
+<h2>Nädal 2 · töötlus ja esimene aruanne</h2>
+<p>Fookus 28.09–1.10: andmed korda, esimene ülevaade, avatav aruanne. Päevade järjekord on rühma otsustada; tükid täienevad koos.</p>
+<ul>
+  <li>Uuriv analüüs: 3–5 profiiliarvu. Tähtskeem grain’iga andmete järgi.</li>
+  <li>Aruanne: ühendus, seosed, lehed, filtrid; kaks DAX-i, mis kordavad ärimõistet; andmelugu juhib paigutust.</li>
+</ul>
+<table>
+  <tr><th>Päev</th><th>Selle päeva fookus</th></tr>
+  <tr>
+    <td>28.09–1.10</td>
+    <td>Nädala fookus ülal. Reedeks peab olema midagi näidata, mitte iga alampunkt eraldi päeval valmis.</td>
+  </tr>
+  <tr class="mark">
+    <td>2.10 R</td>
+    <td>Vahetulemuste esitlus. Andmetöötluse ja aruande tulemus. Probleemid ja väljakutsed. Skoobi muudatused, kui on, koos põhjendusega.</td>
+  </tr>
+</table>
+
+<h2>Nädal 3 · vormistus, dokument, esitamine</h2>
+<p>Fookus 5.–8.10: aruanne loetavaks, dokument kokku, töö esitamine.</p>
+<ul>
+  <li>Aruanne: UX, juhend, mõõdikute tabel (kasutaja), andmelugu.</li>
+</ul>
+<table>
+  <tr><th>Päev</th><th>Selle päeva fookus</th></tr>
+  <tr>
+    <td>5.10 E</td>
+    <td>Raporti lihvimine: pealkirjad, värvid, visuaalide suhtlus, kasutajajuhend (5–8 sammu).</td>
+  </tr>
+  <tr>
+    <td>6.10 T</td>
+    <td>Info-leht (audiitor) ja mõõdikute tabel (tavakasutaja). Turve valmis aruandes: veergude liigitus, mis tohib juhtlauale, õigused / RLS. Üleandmise juhised.</td>
+  </tr>
+  <tr>
+    <td>7.10 K</td>
+    <td>Dokumentatsiooni kokkupanek: viige jooksvalt kirjutatud lõigud ühte faili ja ühtlustage, kui iteratsioon jättis kaks eri versiooni.</td>
+  </tr>
+  <tr>
+    <td>8.10 N</td>
+    <td>Järeldused ja andmelugu dokumendis. Piirangud. AI: mil määral kasutati. Tööjaotus, õppetund, AI-kogemus. Töö esitamine.</td>
+  </tr>
+  <tr class="mark">
+    <td>9.10 R</td>
+    <td>Esitluse proov. Sisu ei muudeta; harjutatakse lugu ja vastuseid küsimustele.</td>
+  </tr>
+</table>
+
+<h2>Esitlused</h2>
+<ul>
+  <li><b>25.09</b> — kas skoop on paigas: küsimused, ärimõisted, allikas, rühma rollid, esimesed kvaliteediarvud. See on v1; pärast esitlust tohib muuta.</li>
+  <li><b>2.10</b> — kas andmevoog ja esimene aruanne on koos: grain, määrad, kaks DAX-i, visuaalid küsimustele, mis jääb nädalasse 3.</li>
+  <li><b>8.10</b> — kirjalik töö ja töö esitamine.</li>
+  <li><b>9.10</b> — suuline esitlus; uut sisu ei lisata.</li>
+</ul>
+
+<footer>
+  Andmetarkus. Struktuur: loputoo-struktuur.html.
+</footer>
+</body>
+</html>
