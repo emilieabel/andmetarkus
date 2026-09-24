@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="utf-8">
+<title>Lõputöö struktuur — andmetarkus</title>
+<style>
+  :root {
+    --navy: #0f203e;
+    --teal: #007073;
+    --gold: #c49526;
+    --slate: #334155;
+    --muted: #64748b;
+    --line: #d6dee8;
+    --bg: #f7f9fc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0 auto;
+    max-width: 860px;
+    padding: 36px 40px 64px;
+    font: 16px/1.45 Calibri, "Segoe UI", sans-serif;
+    color: var(--slate);
+    background: white;
+  }
+  h1 { margin: 0 0 6px; font-size: 28px; color: var(--navy); }
+  h2 { margin: 28px 0 8px; font-size: 18px; color: var(--navy); border-bottom: 2px solid var(--teal); padding-bottom: 4px; }
+  h3 { margin: 14px 0 4px; font-size: 15px; color: var(--navy); }
+  .kicker { color: var(--teal); font-weight: 700; letter-spacing: .04em; font-size: 13px; text-transform: uppercase; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 18px; font-size: 15px; }
+  th, td { border: 1px solid var(--line); padding: 7px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--navy); color: white; font-weight: 600; }
+  ul { margin: 6px 0 10px; padding-left: 22px; }
+  li { margin: 4px 0; }
+  figure { margin: 12px 0 16px; }
+  figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; }
+  svg { display: block; width: 100%; height: auto; }
+  footer { margin-top: 32px; font-size: 12px; color: var(--muted); }
+  @media print {
+    body { padding: 12px 16px; }
+    h2 { break-after: avoid; }
+    table { break-inside: avoid; }
+    figure, svg { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<p class="kicker">Andmetarkus · lõputöö</p>
+<h1>Lõputöö struktuur</h1>
+
+<h2>1. Sissejuhatus ja probleemi püstitus</h2>
+<ul>
+  <li>Eesmärk: äriprobleem või hüpotees.</li>
+  <li>Aktuaalsus: kellele tulemus väärtust loob.</li>
+  <li>Uurimisküsimused: 2–4 konkreetset küsimust, millele aruanne saab vastata.</li>
+  <li>Ärimõisted: selles peatükis on peamiste mõistete kirjeldus ärikeeles. Tabeli- ja veerunimesid siin ei ole.</li>
+</ul>
+
+<h2>2. Andmeallikate ja andmevoo kirjeldus</h2>
+<p>Andmevoog ja andmemudel skeemidena (joonised), mitte ainult tekstina.</p>
+
+<h3>Päritolu ja voog</h3>
+<ul>
+  <li>Kust andmed pärinevad (riiklik statistika, API, andmebaas, failid).</li>
+  <li>Andmevoog skeemina: allikas → töötlus → aruanne. Joonisel on iga etapi <b>tööriist</b> (nt Python, SQL, Power Query, Power BI Desktop), failid või tabelid. Lühike kirjeldus joonise all.</li>
+</ul>
+
+<figure>
+<svg viewBox="0 0 860 200" xmlns="http://www.w3.org/2000/svg" aria-label="Andmevoo näidisskeem">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#007073"/>
+    </marker>
+  </defs>
+  <rect x="12" y="16" width="150" height="56" rx="6" fill="#0f203e"/>
+  <text x="87" y="50" text-anchor="middle" fill="#fff" font-size="15" font-family="Calibri, sans-serif">Allikas 1</text>
+  <rect x="12" y="88" width="150" height="56" rx="6" fill="none" stroke="#0f203e" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="87" y="122" text-anchor="middle" fill="#64748b" font-size="15" font-family="Calibri, sans-serif">[Allikas 2]</text>
+  <line x1="162" y1="44" x2="218" y2="100" stroke="#007073" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="162" y1="116" x2="218" y2="100" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+  <rect x="230" y="72" width="150" height="56" rx="6" fill="#0f203e"/>
+  <text x="305" y="106" text-anchor="middle" fill="#fff" font-size="15" font-family="Calibri, sans-serif">Laadimine</text>
+  <line x1="380" y1="100" x2="432" y2="100" stroke="#007073" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="444" y="72" width="150" height="56" rx="6" fill="#0f203e"/>
+  <text x="519" y="106" text-anchor="middle" fill="#fff" font-size="15" font-family="Calibri, sans-serif">Töötlus</text>
+  <line x1="594" y1="100" x2="646" y2="100" stroke="#007073" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="658" y="72" width="150" height="56" rx="6" fill="#c49526"/>
+  <text x="733" y="106" text-anchor="middle" fill="#0f203e" font-size="15" font-family="Calibri, sans-serif" font-weight="700">Aruanne</text>
+  <text x="305" y="178" text-anchor="middle" fill="#64748b" font-size="12" font-family="Calibri, sans-serif">nt Python</text>
+  <text x="519" y="178" text-anchor="middle" fill="#64748b" font-size="12" font-family="Calibri, sans-serif">nt SQL</text>
+  <text x="733" y="178" text-anchor="middle" fill="#64748b" font-size="12" font-family="Calibri, sans-serif">nt Power BI Desktop</text>
+</svg>
+<figcaption>Näide. Üks allikas piisab; [Allikas 2] on valik, kui allikaid on mitu. Asendage oma etappide ja tööriistadega.</figcaption>
+</figure>
+
+<h3>Dim-mudel SQL andmebaasis</h3>
+<ul>
+  <li>See on mudel <b>enne Power BI-d</b>: dim- ja faktitabelid (või vaated) andmebaasis, seosed võtmetega. Power BI mudel on §4.</li>
+  <li>Andmemudel skeemina: tähtskeem või mitu seotud tähte — tabelid ja seosed.</li>
+</ul>
+
+<figure>
+<svg viewBox="0 0 860 260" xmlns="http://www.w3.org/2000/svg" aria-label="Dim-mudeli näidisskeem">
+  <defs>
+    <marker id="arr2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#007073"/>
+    </marker>
+  </defs>
+  <rect x="40" y="16" width="220" height="56" rx="8" fill="#0f203e"/>
+  <text x="150" y="50" text-anchor="middle" fill="#fff" font-size="16" font-family="Calibri, sans-serif" font-weight="700">dim_klient</text>
+  <rect x="40" y="102" width="220" height="56" rx="8" fill="#0f203e"/>
+  <text x="150" y="136" text-anchor="middle" fill="#fff" font-size="16" font-family="Calibri, sans-serif" font-weight="700">dim_toode</text>
+  <rect x="40" y="188" width="220" height="56" rx="8" fill="#0f203e"/>
+  <text x="150" y="222" text-anchor="middle" fill="#fff" font-size="16" font-family="Calibri, sans-serif" font-weight="700">dim_aeg</text>
+  <rect x="520" y="88" width="240" height="84" rx="8" fill="#0f203e"/>
+  <text x="640" y="126" text-anchor="middle" fill="#fff" font-size="18" font-family="Calibri, sans-serif" font-weight="700">fact</text>
+  <text x="640" y="150" text-anchor="middle" fill="#c49526" font-size="13" font-family="Calibri, sans-serif">nt müük</text>
+  <line x1="260" y1="44" x2="508" y2="118" stroke="#007073" stroke-width="2" marker-end="url(#arr2)"/>
+  <line x1="260" y1="130" x2="508" y2="130" stroke="#007073" stroke-width="2.5" marker-end="url(#arr2)"/>
+  <line x1="260" y1="216" x2="508" y2="142" stroke="#007073" stroke-width="2" marker-end="url(#arr2)"/>
+  <text x="390" y="118" text-anchor="middle" fill="#007073" font-size="14" font-family="Calibri, sans-serif" font-weight="700">JOIN</text>
+</svg>
+<figcaption>Näide. Asendage oma dim- ja faktitabelitega; JOIN-i juurde kirjutage võtmed. Dime võib olla rohkem või vähem.</figcaption>
+</figure>
+
+<ul>
+  <li>Grain <b>iga tabeli kohta eraldi</b>, mitte üks üldine lause. Iga rida: tabeli nimi ja «üks rida = …».</li>
+  <li>Näide: faktitabeli <code>fact_myyk</code> grain on üks tehingu rida tšekil. Dimensioonitabeli <code>dim_klient</code> grain on üks unikaalne klient. Dimensioonitabeli <code>dim_aeg</code> grain on üks kalendripäev.</li>
+</ul>
+
+<h3>Maht ja profiil</h3>
+<ul>
+  <li>Maht: ridade ja veergude arv, olulisemad andmetüübid.</li>
+  <li>Profiil: 3–5 arvu tähtsamate tunnuste alusel (nt staatused, piirkonnad, ajaperiood).</li>
+</ul>
+
+<h2>3. Andmetöötlus</h2>
+<p>Tulenevalt tööst võib rõhk olla töötlusel või hoopis aruandel. Mõlemad peatükid jäävad sisse; kirjutage pikemalt seda, kus lahenduse tuum on.</p>
+
+<h3>Andmekaitse (laadimisel)</h3>
+<ul>
+  <li>Ainult see, mida tegite andmete <b>laadimisel ja töötlemisel</b>: milline veerg jäeti allikast välja, mask, identifikaator nime asemel.</li>
+  <li>Näide: «API-st tulnud e-posti aadresse Power Query’sse ei laetud.» / «Isikukood asendati reanumbriga.»</li>
+</ul>
+
+<h3>Andmekvaliteet</h3>
+<ul>
+  <li>Mis seisus andmed olid (võtmed, duplikaadid, lubatud väärtused, tühjad lahtrid).</li>
+  <li>Konkreetsed määrad arvuna või protsendina ja mis tehti. Näide: «3,4 % ridadest puudus lõppkuupäev; need read eemaldati.» Pelgalt «andmed olid head» ei piisa.</li>
+</ul>
+
+<h3>Transformeerimine</h3>
+<ul>
+  <li>Tüübiteisendused (nt tekstist kuupäevaks) ja tabelite ühendamine (JOIN). Kus see tehti (SQL, protseduur, vaade, Power Query).</li>
+</ul>
+
+<h3>Rikastamine</h3>
+<ul>
+  <li>Uued tunnused ja arvutused andmetabelites (nt klass, lipik, vanema nimi).</li>
+</ul>
+
+<h3>Üleandmine</h3>
+<ul>
+  <li>4–8 juhist, kuidas voogu käivitada ja täiendada: käivitus, parool, uus veerg, millal voog jookseb. (Aruande Info-lehel on «millal viimati uuendati» ja number allikani — mitte see käivitusjuhend.)</li>
+</ul>
+
+<h2>4. Analüüs ja visualiseerimine</h2>
+<p>Tulenevalt tööst võib rõhk olla aruandel või hoopis töötlusel. Mõlemad peatükid jäävad sisse; kirjutage pikemalt seda, kus lahenduse tuum on.</p>
+
+<h3>Aruanne</h3>
+<ul>
+  <li>Power Query: kuidas aruanne andmetele ühendati.</li>
+  <li>Dim-mudel Power BI-s: kuidas aruanne SQL-i dim-mudeliga seostub (seosed, tähtskeem või osaline lumehelves). See on aruande mudel, mitte §2 andmebaasi mudel.</li>
+  <li>Kas mudelisse tehti täiendusi: dubleeritud tabel, arvutatud lisatabel, kalender, ümbernimetus. Kirjutage, mis ja miks. Kui täiendusi ei olnud, öelge see välja.</li>
+  <li>Soovitus: ärge ehitage tähtskeemi Power Query-s või arvutatud tabelitena teist korda — dim ja fact jäävad SQL-i, aruandes on mõõdikud. Kalendritabel Power BI-s on mõistlik, kui seda baasis ei ole. Dubleerimine ei ole soovituslik.</li>
+  <li>DAX-mõõdikud (vähemalt kaks). Iga mõõdiku juures:
+    <ul>
+      <li>nimi ja valem;</li>
+      <li>üks lause, millist sissejuhatuse ärimõistet see arvutab (nt «See mõõdik arvutab sissejuhatuses defineeritud käivet.»);</li>
+      <li>kui ärimõiste reegel välistab ridu, on sama filter valemis näha (nt <code>FILTER ( …, staatus &lt;&gt; "Tühistatud" )</code> või <code>taidetud = "Täidetud"</code>).</li>
+    </ul>
+  </li>
+  <li>Visuaalid, visuaalide vaheline suhtlus, filtrid, UX/UI.</li>
+</ul>
+
+<h3>Andmelugu, kasutajamugavus, visualiseerimine</h3>
+<ul>
+  <li>Mida juhtlaud jutustab ja kuidas see uurimisküsimustele vastab.</li>
+  <li>Kasutajamugavus ja visualiseeringud (esimene vaade, pealkirjad, värvid).</li>
+</ul>
+
+<h3>Kasutajajuhend, Info-leht ja mõõdikute tabel</h3>
+<ul>
+  <li>Kasutajajuhend: 5–8 sammu aruande avamiseks ja lugemiseks.</li>
+  <li>Info-leht (peakasutaja / audiitor): kust andmed tulevad, millal viimati uuendati, kuidas number allikani viia (visuaal → mõõdik → tabel või vaade → allikas). Millal voog käivitatakse, on §3 üleandmine.</li>
+  <li>Mõõdikute tabel (tavakasutaja): sõnastik, mida number tähendab. Näide: «Ostukorv = käive ÷ tellimuste arv» või «Marginaal = (müügitulu − omahind) / müügitulu». Võib tulla ka SQL COMMENT / Description väljalt.</li>
+</ul>
+
+<h2>5. Andmekorraldus (valikuline)</h2>
+<p>Valikulisi osi lõppdokumenti ei panda. Tühja pealkirja ei jäeta. Metaandmed, rollid ja kontroll: kui te ei kirjuta, jätke need pealkirjad ära. Turve valmis aruandes peab dokumendis olema. Kui §6 puudub, tuleb pärast §5 kohe §7.</p>
+
+<h3>Metaandmete haldus</h3>
+<ul>
+  <li>Kes uuendab mõisteid ja reegleid, millal ja millises kohas (COMMENT, Description, Info-leht).</li>
+</ul>
+
+<h3>Rollid (tulemuse kasutamisel)</h3>
+<ul>
+  <li>Omanik, haldur, analüütik, kasutaja.</li>
+</ul>
+
+<h3>Reeglite ja kvaliteedi kontroll</h3>
+<ul>
+  <li>Kes ja kuidas kontrollib reegleid ja kvaliteeti; kes uuendab metaandmeid.</li>
+</ul>
+
+<h3>Turve (valmis aruandes) — kohustuslik</h3>
+<ul>
+  <li>Liigitage veerud: isikuandmed · eriliigiline · tundlik äri · ilma liigituseta. Kui eriliigilist ei ole, öelge see välja.</li>
+  <li>Mis tohib avalikule juhtlauale.</li>
+  <li>Kuidas turve on <b>valmis aruandes</b> tagatud: õigused, RLS (nt piirkonnajuht näeb ainult oma piirkonna ridu), parool, mis on faktis. Laadimise võtted (veerg välja) on §3.</li>
+</ul>
+
+<h2>6. Lisatulemused (valikuline)</h2>
+<p>Töö eesmärk oli peamiselt rakendada andmetöötluse oskusi, mitte ärilist analüüsi. Kui tegite prognoosi, stsenaariumi või lisaanalüüsi: kirjeldage lühidalt. Kui ei teinud, jätke see peatükk lõppdokumendist välja — pealkirja ega põhjust ei ole vaja.</p>
+
+<h2>7. Kokkuvõte ja arutelu</h2>
+<ul>
+  <li>Kuidas tehtud lahenduse pealt saab äriküsimustele vastuseid leida. Iga uurimisküsimuse juures: lühike vastus ja kust see lahenduses tuleb (nt visuaal, mõõdik, leht).</li>
+  <li>Praktilised soovitused lahenduse kasutamiseks: kuidas vastust otsida, mida mitte valesti lugeda. Mitte uus ärianalüüs ega kampaaniaplaan.</li>
+  <li>Piirangud ja edasiarendused: mis jäi andmete või aja tõttu tegemata; kuidas tööd hiljem parandada.</li>
+  <li>AI: mil määral tehisaru kasutati.</li>
+</ul>
+
+<h2>8. Grupi tööjaotus ja eneserefleksioon</h2>
+<ul>
+  <li>Kes rühmas mida tegi. Näiteks: kes töötles andmeid, kes analüüsis, kes vormistas aruande, kes korraldas (kohtumised, tähtajad, git), kes kirjutas dokumenti, kes esitas. Kirjutage tegelik jaotus, mitte ainult need näited.</li>
+  <li>Suurim tehniline või korralduslik väljakutse ja mida sellest õpiti.</li>
+  <li>AI-kogemus (eraldi lõik): mida tehisaru tegi hästi ja kus kontroll oli vajalik.</li>
+</ul>
+
+<h2>Soovituslik lahendus</h2>
+<p>See on soovitus, mitte kohustus. Repo ei ole andmebaas — repo on see, millest iga grupiliige saab sama lahenduse oma arvutis uuesti teha.</p>
+
+<figure>
+<svg viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg" aria-label="Soovitusliku lahenduse skeem">
+  <defs>
+    <marker id="arr3" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#007073"/>
+    </marker>
+  </defs>
+  <text x="430" y="22" text-anchor="middle" fill="#007073" font-size="13" font-family="Calibri, sans-serif" font-weight="700">REPO (git)</text>
+  <rect x="40" y="36" width="240" height="56" rx="6" fill="#0f203e"/>
+  <text x="160" y="70" text-anchor="middle" fill="#fff" font-size="15" font-family="Calibri, sans-serif">SQL-skriptid</text>
+  <rect x="310" y="36" width="240" height="56" rx="6" fill="#0f203e"/>
+  <text x="430" y="62" text-anchor="middle" fill="#fff" font-size="15" font-family="Calibri, sans-serif">Import</text>
+  <text x="430" y="80" text-anchor="middle" fill="#c49526" font-size="12" font-family="Calibri, sans-serif">Python / [käsitsi]</text>
+  <rect x="580" y="36" width="240" height="56" rx="6" fill="#0f203e"/>
+  <text x="700" y="70" text-anchor="middle" fill="#fff" font-size="15" font-family="Calibri, sans-serif">Power BI aruanne</text>
+  <line x1="430" y1="92" x2="430" y2="128" stroke="#007073" stroke-width="2" marker-end="url(#arr3)"/>
+  <text x="448" y="118" fill="#007073" font-size="13" font-family="Calibri, sans-serif">klooni → oma arvuti</text>
+  <text x="430" y="154" text-anchor="middle" fill="#007073" font-size="13" font-family="Calibri, sans-serif" font-weight="700">IGAÜHEL LOCALHOST</text>
+  <rect x="40" y="168" width="150" height="56" rx="6" fill="#0f203e"/>
+  <text x="115" y="202" text-anchor="middle" fill="#fff" font-size="15" font-family="Calibri, sans-serif">Allikas</text>
+  <line x1="190" y1="196" x2="242" y2="196" stroke="#007073" stroke-width="2" marker-end="url(#arr3)"/>
+  <rect x="254" y="168" width="150" height="56" rx="6" fill="#0f203e"/>
+  <text x="329" y="202" text-anchor="middle" fill="#fff" font-size="15" font-family="Calibri, sans-serif">Import</text>
+  <line x1="404" y1="196" x2="456" y2="196" stroke="#007073" stroke-width="2" marker-end="url(#arr3)"/>
+  <rect x="468" y="168" width="150" height="56" rx="6" fill="#0f203e"/>
+  <text x="543" y="194" text-anchor="middle" fill="#fff" font-size="14" font-family="Calibri, sans-serif">SQL baas</text>
+  <text x="543" y="212" text-anchor="middle" fill="#c49526" font-size="12" font-family="Calibri, sans-serif">localhost</text>
+  <line x1="618" y1="196" x2="670" y2="196" stroke="#007073" stroke-width="2" marker-end="url(#arr3)"/>
+  <rect x="682" y="168" width="138" height="56" rx="6" fill="#c49526"/>
+  <text x="751" y="202" text-anchor="middle" fill="#0f203e" font-size="15" font-family="Calibri, sans-serif" font-weight="700">Aruanne</text>
+  <text x="430" y="256" text-anchor="middle" fill="#64748b" font-size="13" font-family="Calibri, sans-serif">parool.txt ja baasifailid gitti ei lähe · sama koopia igaühel</text>
+</svg>
+<figcaption>Soovituslik lahendus. Repo on käivitatav koopia; baas on igaühel oma masinas.</figcaption>
+</figure>
+
+<ul>
+  <li>Import andmebaasi: ideaalis Pythoniga (API, fail, veeb); selle grupitöö raames võib import olla ka käsitsi. Kirjutage, kumb variant teil oli.</li>
+  <li>Repos on SQL-skriptid andmebaasi loomiseks ja tabelite loomiseks.</li>
+  <li>Repos on Power BI aruanne.</li>
+  <li>Baas on igaühel oma arvutis (nt Postgres, sama baasi nimi). See on sama struktuuri koopia, mitte üks ühine server.</li>
+  <li>Kasutamine: kloonige repo → käivitage SQL → laadige andmed (Python või käsitsi) → avage aruanne Desktopis. Ühendus on <code>localhost</code>.</li>
+  <li>Gitti ei lähe parool (<code>parool.txt</code>), andmebaasi failid ega isikuandmed. Tabeli muudatus käib SQL-skriptina repos; teised tõmbavad ja käivitavad skripti uuesti.</li>
+</ul>
+
+<footer>
+  Andmetarkus. Näide: loputoo-naidis.html.
+</footer>
+</body>
+</html>

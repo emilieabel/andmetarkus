@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="utf-8">
+<title>AI Skill: Andmearhitektuur ja nimekonventsioonid (Lõputööde standard)</title>
+<style>
+  :root {
+    --navy: #0f203e;
+    --teal: #007073;
+    --gold: #c49526;
+    --slate: #334155;
+    --muted: #64748b;
+    --line: #d6dee8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0 auto;
+    max-width: 860px;
+    padding: 36px 40px 64px;
+    font: 16px/1.45 Calibri, "Segoe UI", sans-serif;
+    color: var(--slate);
+    background: white;
+  }
+  h1 { margin: 0 0 6px; font-size: 28px; color: var(--navy); }
+  h2 { margin: 28px 0 8px; font-size: 18px; color: var(--navy); border-bottom: 2px solid var(--teal); padding-bottom: 4px; }
+  h3 { margin: 14px 0 4px; font-size: 15px; color: var(--navy); }
+  .kicker { color: var(--teal); font-weight: 700; letter-spacing: .04em; font-size: 13px; text-transform: uppercase; }
+  p { margin: 8px 0 12px; }
+  ul { margin: 6px 0 10px; padding-left: 22px; }
+  li { margin: 4px 0; }
+  footer { margin-top: 32px; font-size: 12px; color: var(--muted); }
+  @media print {
+    body { padding: 12px 16px; }
+    h2 { break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<p class="kicker">Andmetarkus · lõputööde standard</p>
+<h1>🤖 AI Skill: Andmearhitektuur ja nimekonventsioonid (Lõputööde standard)</h1>
+
+<h2>1. Andmete hoiustamine ja skeemid (Medallion stiilis)</h2>
+<p>Andmed tuleb hoida rangelt lahus kolmes eraldi PostgreSQL-i skeemis:</p>
+<ul>
+  <li>raw või bronze skeem: Algandmed. Tabelite struktuur peab olema identne allikfailide struktuuriga ja täpselt samade veergudega. Andmed imporditakse siia koos kõikide võimalike andmekvaliteedi probleemidega (nt valed tüübid, tühjad väljad, duplikaadid). Selle eesmärk on tagada andmete jälgi ajamine (traceability), et vajadusel saaks tulemusi alati algallikaga võrrelda.</li>
+  <li>staging või silver skeem: Vahekiht andmete puhastamiseks, tüübitunnuste korrastamiseks ja duplikaatide eemaldamiseks.</li>
+  <li>analytics või gold skeem: Lõplik andmemudel. Siin asuvad koos nii dimensiooni (dim_) kui ka fakti (fact_) tabelid.</li>
+</ul>
+
+<h2>2. Naming Conventions (Nimetamise reeglid)</h2>
+<p>Andmebaasis ja Power BI raportis kehtivad järgmised nimetamise standardid:</p>
+<ul>
+  <li>Andmebaasi objektid (PostgreSQL):
+    <ul>
+      <li>Ainult inglise keeles: Eestikeelseid termineid andmebaasi tasemel ei kasuta.</li>
+      <li>Ei tohi lühendada: Kirjuta välja customer (mitte cust), quantity (mitte qty), identification (mitte id - v.a võtmed).</li>
+      <li>Ainult väiketähed: Mitmesõnaliste nimede puhul kasuta snake_case stiili (nt total_amount).</li>
+      <li>Alati ainsuses: Tabeli nimi on ainsuses, nt product (mitte products), sale (mitte sales).</li>
+      <li>Erand: analytics/gold skeemis lisa tabeli ette tüüp, nt dim_customer või fact_sales_order.</li>
+    </ul>
+  </li>
+  <li>Power BI objektid (tabelid, veerud, mõõdikud raportis):
+    <ul>
+      <li>Eesti või inglise keeles: Nimetused võivad olla nii eesti kui ka inglise keeles, olenevalt lõppkasutaja vajadustest ja ärikontekstist.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>3. Kommenteerimine ja dokumenteerimine</h2>
+<p>Kõik andmemudeli osad peavad olema selgelt dokumenteeritud:</p>
+<ul>
+  <li>Kohustuslikud kommentaarid: Nii andmebaasi tabelitel/veergudel (SQL COMMENT ON), Pythoni koodis kui ka Power BI objektidel (tabelite, veergude ja DAX mõõdikute kirjeldused ehk Description) peavad olema lisatud selgitavad kommentaarid, mis avavad andmete või arvutuste sisu.</li>
+</ul>
+
+<h2>4. Andmevoo ülesehitus (Pipeline)</h2>
+<p>Andmete liikumine ja töötlus toimub samm-sammult järgmiselt:</p>
+<ul>
+  <li>Import (Ingestion): Allikandmed (failid, API-d) laetakse PostgreSQL-i raw/bronze skeemi kas Pythoni skriptiga või manuaalse impordi teel.</li>
+  <li>Töötlus (Processing): Andmed loetakse algsest skeemist, puhastatakse ja salvestatakse vahetulemused staging/silver skeemi.</li>
+  <li>Arvutused ja mudel (SQL): PostgreSQL-is kirjutatakse SQL-skriptid, mis teevad raskemad andmete struktureerimise tööd ning loovad valmis dim- ja fakt-tabelid lõppkihti.</li>
+  <li>Kuvamine ja äriloogika (Power BI): Power BI ühendatakse otse lõppkihiga. Power Query's tehakse ainult minimaalset andmetüüpide kontrolli. DAX-i kasutatakse dünaamiliste mõõdikute loomiseks, kuid seal võib vajadusel teha ka spetsiifilisi äriloogika arvutusi.</li>
+</ul>
+
+<h2>5. Võtmete käsitlemine</h2>
+<ul>
+  <li>Tabelite sidumiseks võib kasutada nii naturaalvõtmeid (nt olemasolev äri-ID nagu isikukood või tootenumber) kui ka surrogaatvõtmeid (andmebaasi loodud tehislikud asendusvõtmed, nt automaatselt kasvav serial väärtus).</li>
+</ul>
+
+</body>
+</html>
