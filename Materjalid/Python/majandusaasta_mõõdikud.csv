@@ -1,0 +1,260 @@
+tabel,elemendi_label,elemendi_nimetus
+Bilanss,Varad,Assets
+
+Kasumiaruanne skeem 1,Tööjõukulud,EmployeeExpense
+
+"Bilanss, detailne",Lühiajalised kohustised,CurrentLiabilities
+"Bilanss, kasvava likviidsuse järjekorras",Pikaajalised kohustised,NonCurrentLiabilities
+
+
+Bilanss,Põhivarad,NonCurrentAssets
+Bilanss,Netovara,NetAssets
+Konsolideerimata kasumiaruanne (skeem 1),Tööjõukulud,EmployeeExpense
+Konsolideeritud rahavoogude aruanne kaudsel meetodil,Ärikasum (kahjum),TotalProfitLossConsolidated
+PDF,Töötajate keskmine arv taandatuna täistööajale,
+"Konsolideerimata bilanss, kasvava likviidsuse järjekorras",Raha,CashAndCashEquivalents
+"Konsolideeritud bilanss, kasvava likviidsuse järjekorras",Käibevarad,CurrentAssetsConsolidated
+Konsolideeritud kasumiaruanne skeem 2,Müügitulu,RevenueConsolidated
+Kasumi jaotamise otsus,Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLoss
+"Bilanss, detailne",Omakapital,Equity
+"Likvideerimise algbilanss, detailne",Käibevarad,CurrentAssets
+"Bilanss, kasvava likviidsuse järjekorras",Käibevarad,CurrentAssets
+Likvideerimiseelne kasumiaruanne (skeem 2),Kasum (kahjum) enne tulumaksustamist,TotalProfitLossBeforeTax
+"Likvideerimise vahebilanss, detailne",Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLoss
+"Konsolideerimata bilanss, detailne",Omakapital,Equity
+"Konsolideeritud bilanss, detailne",Käibevarad,CurrentAssetsConsolidated
+"Bilanss, kasvava likviidsuse järjekorras",Omakapital,Equity
+Bilanss,Raha,CashAndCashEquivalents
+Konsolideerimata bilanss,Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLoss
+Konsolideerimata bilanss,Raha,CashAndCashEquivalents
+Konsolideeritud bilanss,Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLossConsolidated
+"Konsolideerimata bilanss, kasvava likviidsuse järjekorras",Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLoss
+"Konsolideerimata bilanss, kasvava likviidsuse järjekorras",Lühiajalised kohustised,CurrentLiabilities
+"Bilanss, detailne",Aktsiakapital nimiväärtuses,IssuedCapital2
+"Bilanss, detailne",Lühiajalised kohustised,CurrentLiabilities
+"Lõppbilanss, detailne",Käibevarad,CurrentAssets
+Likvideerimiseelne kasumiaruanne (skeem 1),Tööjõukulud,EmployeeExpense
+Likvideerimiseelne kasumiaruanne (skeem 1),Ärikasum (kahjum),TotalProfitLoss
+Likvideerimise algbilanss,Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLoss
+Likvideerimiseelne kasumiaruanne (skeem 1),Põhivarade kulum ja väärtuse langus,DepreciationAndImpairmentLossReversal
+"Bilanss, kasvava likviidsuse järjekorras",Pikaajalised kohustised,NonCurrentLiabilities
+"Bilanss, kasvava likviidsuse järjekorras",Põhivarad,NonCurrentAssets
+PDF,Müügitulu Konsolideeritud,
+Konsolideerimata kasumiaruanne (finantsteenuse osutaja),Kasum (kahjum) enne tulumaksustamist,TotalProfitLossBeforeTax
+"Lõppbilanss, detailne, kasvava likviidsuse järjekorras",Varad,Assets
+"Likvideerimise algbilanss, kasvava likviidsuse järjekorras",Osakapital nimiväärtuses,IssuedCapital
+Kahjumi katmise ettepanek,Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLoss
+Konsolideerimata bilanss,Lühiajalised kohustised,CurrentLiabilities
+Konsolideerimata kasumiaruanne (skeem 1),Põhivarade kulum ja väärtuse langus,DepreciationAndImpairmentLossReversal
+Konsolideerimata rahavoogude aruanne kaudsel meetodil,Põhivarade kulum ja väärtuse langus,DepreciationAndImpairmentLossReversalNeg
+Konsolideeritud rahavoogude aruanne kaudsel meetodil,Põhivarade kulum ja väärtuse langus,DepreciationAndImpairmentLossReversalNegConsolidated
+"Konsolideerimata bilanss, kasvava likviidsuse järjekorras",Põhivarad,NonCurrentAssets
+Konsolideeritud kasumiaruanne skeem 2,Kasum (kahjum) enne tulumaksustamist,TotalProfitLossBeforeTaxConsolidated
+Rahavoogude aruanne kaudsel meetodil,Põhivarade kulum ja väärtuse langus,DepreciationAndImpairmentLossReversalNeg
+"Likvideerimise algbilanss, detailne",Osakapital nimiväärtuses,IssuedCapital
+"Lõppbilanss, detailne",Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLoss
+Likvideerimise algbilanss,Omakapital,Equity
+"Bilanss, detailne, kasvava likviidsuse järjekorras",Lühiajalised kohustised,CurrentLiabilities
+"Bilanss, detailne, kasvava likviidsuse järjekorras",Pikaajalised kohustised,NonCurrentLiabilities
+"Bilanss, kasvava likviidsuse järjekorras",Varad,Assets
+Likvideerimiseelne kasumiaruanne (skeem 2),Aruandeaasta kasum (kahjum),TotalAnnualPeriodProfitLoss
+Likvideerimiseelne tulemiaruanne,Põhitegevuse tulem,SurplusDeficitFromOperatingActivities
+PDF,Varad Konsolideeritud,
+"Likvideerimise algbilanss, kasvava likviidsuse järjekorras",Raha,CashAndCashEquivalents
+"Konsolideeritud bilanss, detailne",Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLossConsolidated
+Konsolideeritud kasumiaruanne (finantsteenuse osutaja),Aruandeaasta kasum (kahjum),TotalAnnualPeriodProfitLossConsolidated
+Tulemiaruanne,Aruandeaasta tulem,NetSurplusDeficitForPeriod
+Konsolideeritud bilanss,Lühiajalised kohustised,CurrentLiabilitiesConsolidated
+Konsolideeritud kasumiaruanne skeem 1,Müügitulu,RevenueConsolidated
+Konsolideeritud kasumiaruanne skeem 1,Ärikasum (kahjum),TotalProfitLossConsolidated
+Likvideerimise vahebilanss,Käibevarad,CurrentAssets
+"Likvideerimise algbilanss, detailne",Raha,CashAndCashEquivalents
+Konsolideerimata bilanss,Pikaajalised kohustised,NonCurrentLiabilities
+Likvideerimise algbilanss,Lühiajalised kohustised,CurrentLiabilities
+"Bilanss, detailne, kasvava likviidsuse järjekorras",Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLoss
+Kasumiaruanne (finantsteenuse osutaja),Aruandeaasta kasum (kahjum),TotalAnnualPeriodProfitLoss
+Likvideerimise algbilanss,Kohustised ja netovara,LiabilitiesAndNetAssets
+"Likvideerimise vahebilanss, detailne",Omakapital,Equity
+"Konsolideeritud bilanss, detailne",Lühiajalised kohustised,CurrentLiabilitiesConsolidated
+"Konsolideeritud bilanss, detailne",Osakapital nimiväärtuses,IssuedCapitalConsolidated
+Kasumiaruanne skeem 1,Müügitulu,Revenue
+Bilanss,Omakapital,Equity
+Konsolideerimata kasumiaruanne (skeem 2),Müügitulu,Revenue
+Rahavoogude aruanne kaudsel meetodil,Põhitegevuse tulem,SurplusDeficitFromOperatingActivities
+"Bilanss, detailne",Varad,Assets
+PDF,Müügitulu,
+Konsolideerimata bilanss,Osakapital nimiväärtuses,IssuedCapital
+Likvideerimise algbilanss,Põhivarad,NonCurrentAssets
+"Bilanss, kasvava likviidsuse järjekorras",Lühiajalised kohustised,CurrentLiabilities
+"Konsolideerimata bilanss, detailne",Lühiajalised kohustised,CurrentLiabilities
+"Konsolideeritud bilanss, detailne",Põhivarad,NonCurrentAssetsConsolidated
+"Bilanss, kasvava likviidsuse järjekorras",Aktsiakapital nimiväärtuses,IssuedCapital2
+Kasumi jaotamise ettepanek,Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLoss
+Tulemiaruanne,Põhitegevuse tulem,SurplusDeficitFromOperatingActivities
+Konsolideeritud kasumiaruanne skeem 1,Aruandeaasta kasum (kahjum),TotalAnnualPeriodProfitLossConsolidated
+"Konsolideeritud bilanss, kasvava likviidsuse järjekorras",Lühiajalised kohustised,CurrentLiabilitiesConsolidated
+Likvideerimise kasumiaruanne,Aruandeaasta kasum (kahjum),TotalAnnualPeriodProfitLoss
+"Lõppbilanss, detailne",Osakapital nimiväärtuses,IssuedCapital
+"Bilanss, detailne, kasvava likviidsuse järjekorras",Raha,CashAndCashEquivalents
+Likvideerimise algbilanss,Pikaajalised kohustised,NonCurrentLiabilities
+"Likvideerimise algbilanss, detailne",Põhivarad,NonCurrentAssets
+Likvideerimise vahebilanss,Netovara,NetAssets
+Kasumiaruanne skeem 1,Kasum (kahjum) enne tulumaksustamist,TotalProfitLossBeforeTax
+Konsolideerimata kasumiaruanne (skeem 1),Ärikasum (kahjum),TotalProfitLoss
+Lisa: Tööjõukulud,Töötajate keskmine arv taandatuna täistööajale,AverageNumberOfEmployeesInFullTimeEquivalentUnitsConsolidated
+"Konsolideeritud bilanss, kasvava likviidsuse järjekorras",Osakapital nimiväärtuses,IssuedCapitalConsolidated
+Kahjumi katmise otsus,Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLoss
+Likvideerimise vahebilanss,Omakapital,Equity
+"Lõppbilanss, detailne",Lühiajalised kohustised,CurrentLiabilities
+Lõppbilanss,Netovara,NetAssets
+Likvideerimise algbilanss,Netovara,NetAssets
+Likvideerimiseelne tulemiaruanne,Tulu ettevõtlusest,BusinessIncome
+"Lõppbilanss, detailne, kasvava likviidsuse järjekorras",Omakapital,Equity
+Lõppbilanss,Aktsiakapital nimiväärtuses,IssuedCapital2
+"Likvideerimise algbilanss, detailne",Kohustised ja netovara,LiabilitiesAndNetAssets
+Konsolideeritud kasumiaruanne (finantsteenuse osutaja),Põhivarade kulum ja väärtuse langus,DepreciationAndImpairmentLossReversalConsolidated
+Kasumiaruanne skeem 1,Ärikasum (kahjum),TotalProfitLoss
+Lisa: Tööjõukulud,Töötajate keskmine arv taandatuna täistööajale,AverageNumberOfEmployeesInFullTimeEquivalentUnits
+Tulemiaruanne,Tööjõukulud,EmployeeExpense
+Konsolideerimata kasumiaruanne (skeem 1),Kasum (kahjum) enne tulumaksustamist,TotalProfitLossBeforeTax
+Konsolideeritud bilanss,Pikaajalised kohustised,NonCurrentLiabilitiesConsolidated
+"Konsolideerimata bilanss, kasvava likviidsuse järjekorras",Käibevarad,CurrentAssets
+Konsolideeritud kasumiaruanne skeem 2,Aruandeaasta kasum (kahjum),TotalAnnualPeriodProfitLossConsolidated
+"Bilanss, detailne",Pikaajalised kohustised,NonCurrentLiabilities
+"Likvideerimise algbilanss, detailne",Omakapital,Equity
+Lõppbilanss,Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLoss
+"Bilanss, detailne, kasvava likviidsuse järjekorras",Käibevarad,CurrentAssets
+"Bilanss, detailne, kasvava likviidsuse järjekorras",Põhivarad,NonCurrentAssets
+Likvideerimise vahebilanss,Lühiajalised kohustised,CurrentLiabilities
+Likvideerimise tulemiaruanne,Aruandeaasta tulem,NetSurplusDeficitForPeriod
+Kahjumi katmise otsus,Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLossConsolidated
+Konsolideerimata kasumiaruanne (finantsteenuse osutaja),Põhivarade kulum ja väärtuse langus,DepreciationAndImpairmentLossReversal
+"Konsolideerimata bilanss, detailne",Osakapital nimiväärtuses,IssuedCapital
+Konsolideeritud kasumiaruanne (finantsteenuse osutaja),Teenustasu tulud,ServiceFeeIncomeConsolidated
+"Likvideerimise algbilanss, kasvava likviidsuse järjekorras",Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLoss
+Tulemiaruanne,Tulud,TotalRevenue
+Tulemiaruanne,Põhivarade kulum ja väärtuse langus,DepreciationAndImpairmentLossReversal
+Konsolideerimata bilanss,Varad,Assets
+Konsolideeritud bilanss,Aktsiakapital nimiväärtuses,IssuedCapital2Consolidated
+Konsolideeritud kasumiaruanne skeem 1,Põhivarade kulum ja väärtuse langus,DepreciationAndImpairmentLossReversalConsolidated
+"Konsolideeritud bilanss, kasvava likviidsuse järjekorras",Pikaajalised kohustised,NonCurrentLiabilitiesConsolidated
+"Bilanss, detailne",Kohustised ja netovara,LiabilitiesAndNetAssets
+Konsolideeritud bilanss,Osakapital nimiväärtuses,IssuedCapitalConsolidated
+Kasumiaruanne (finantsteenuse osutaja),Põhivarade kulum ja väärtuse langus,DepreciationAndImpairmentLossReversal
+Kasumiaruanne (finantsteenuse osutaja),Teenustasu tulud,ServiceFeeIncome
+"Likvideerimise algbilanss, detailne",Lühiajalised kohustised,CurrentLiabilities
+Kasumi jaotamise otsus,Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLossConsolidated
+"Likvideerimise vahebilanss, detailne",Varad,Assets
+"Lõppbilanss, detailne, kasvava likviidsuse järjekorras",Käibevarad,CurrentAssets
+"Konsolideeritud bilanss, detailne",Varad,AssetsConsolidated
+"Likvideerimise algbilanss, detailne",Netovara,NetAssets
+Bilanss,Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLoss
+Konsolideeritud bilanss,Omakapital,EquityConsolidated
+Kahjumi katmise ettepanek,Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLossConsolidated
+"Konsolideerimata bilanss, kasvava likviidsuse järjekorras",Osakapital nimiväärtuses,IssuedCapital
+"Konsolideeritud bilanss, kasvava likviidsuse järjekorras",Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLossConsolidated
+"Bilanss, detailne",Põhivarad,NonCurrentAssets
+Lõppbilanss,Lühiajalised kohustised,CurrentLiabilities
+"Bilanss, detailne, kasvava likviidsuse järjekorras",Omakapital,Equity
+Likvideerimiseelne kasumiaruanne (skeem 2),Ärikasum (kahjum),TotalProfitLoss
+"Likvideerimise algbilanss, detailne",Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLoss
+Likvideerimiseelne tulemiaruanne,Aruandeaasta tulem,NetSurplusDeficitForPeriod
+Likvideerimiseelne tulemiaruanne,Tulud,TotalRevenue
+Likvideerimiseelne tulemiaruanne,Põhivarade kulum ja väärtuse langus,DepreciationAndImpairmentLossReversal
+"Likvideerimise vahebilanss, detailne",Raha,CashAndCashEquivalents
+"Likvideerimise algbilanss, kasvava likviidsuse järjekorras",Käibevarad,CurrentAssets
+"Konsolideeritud bilanss, detailne",Omakapital,EquityConsolidated
+"Konsolideeritud bilanss, detailne",Raha,CashAndCashEquivalentsConsolidated
+"Bilanss, kasvava likviidsuse järjekorras",Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLoss
+"Konsolideeritud bilanss, detailne",Pikaajalised kohustised,NonCurrentLiabilitiesConsolidated
+"Lõppbilanss, detailne",Kohustised ja netovara,LiabilitiesAndNetAssets
+"Konsolideeritud bilanss, detailne",Aktsiakapital nimiväärtuses,IssuedCapital2Consolidated
+Kasumi jaotamise ettepanek,Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLossConsolidated
+Konsolideeritud bilanss,Varad,AssetsConsolidated
+Lisa: Tööjõukulud,Tööjõukulud,LaborExpenseConsolidated
+"Konsolideerimata bilanss, kasvava likviidsuse järjekorras",Varad,Assets
+Kasumiaruanne skeem 2,Aruandeaasta kasum (kahjum),TotalAnnualPeriodProfitLoss
+"Bilanss, detailne",Käibevarad,CurrentAssets
+"Bilanss, detailne",Raha,CashAndCashEquivalents
+Kasumiaruanne skeem 2,Müügitulu,Revenue
+Likvideerimise vahebilanss,Raha,CashAndCashEquivalents
+Lõppbilanss,Käibevarad,CurrentAssets
+Lõppbilanss,Varad,Assets
+Kasumiaruanne (finantsteenuse osutaja),Tööjõukulud,EmployeeExpense
+Likvideerimise algbilanss,Aktsiakapital nimiväärtuses,IssuedCapital2
+"Likvideerimise vahebilanss, detailne",Osakapital nimiväärtuses,IssuedCapital
+"Lõppbilanss, detailne, kasvava likviidsuse järjekorras",Osakapital nimiväärtuses,IssuedCapital
+"Likvideerimise algbilanss, kasvava likviidsuse järjekorras",Netovara,NetAssets
+"Konsolideerimata bilanss, detailne",Raha,CashAndCashEquivalents
+"Bilanss, kasvava likviidsuse järjekorras",Osakapital nimiväärtuses,IssuedCapital
+Kasumiaruanne skeem 1,Aruandeaasta kasum (kahjum),TotalAnnualPeriodProfitLoss
+Bilanss,Osakapital nimiväärtuses,IssuedCapital
+Konsolideerimata bilanss,Põhivarad,NonCurrentAssets
+Konsolideeritud kasumiaruanne skeem 1,Tööjõukulud,EmployeeExpenseConsolidated
+Konsolideerimata kasumiaruanne (skeem 2),Kasum (kahjum) enne tulumaksustamist,TotalProfitLossBeforeTax
+Rahavoogude aruanne kaudsel meetodil,Ärikasum (kahjum),TotalProfitLoss
+Likvideerimise vahebilanss,Osakapital nimiväärtuses,IssuedCapital
+Konsolideerimata kasumiaruanne (finantsteenuse osutaja),Teenustasu tulud,ServiceFeeIncome
+"Likvideerimise algbilanss, kasvava likviidsuse järjekorras",Kohustised ja netovara,LiabilitiesAndNetAssets
+"Konsolideerimata bilanss, detailne",Käibevarad,CurrentAssets
+"Lõppbilanss, detailne",Netovara,NetAssets
+"Konsolideerimata bilanss, detailne",Pikaajalised kohustised,NonCurrentLiabilities
+Lisa: Tööjõukulud,Tööjõukulud,LaborExpense
+Bilanss,Kohustised ja netovara,LiabilitiesAndNetAssets
+Konsolideerimata bilanss,Aktsiakapital nimiväärtuses,IssuedCapital2
+Konsolideerimata kasumiaruanne (skeem 2),Aruandeaasta kasum (kahjum),TotalAnnualPeriodProfitLoss
+Konsolideerimata kasumiaruanne (skeem 2),Ärikasum (kahjum),TotalProfitLoss
+"Konsolideeritud bilanss, kasvava likviidsuse järjekorras",Põhivarad,NonCurrentAssetsConsolidated
+"Bilanss, detailne",Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLoss
+Likvideerimise vahebilanss,Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLoss
+"Likvideerimise algbilanss, detailne",Varad,Assets
+Lõppbilanss,Omakapital,Equity
+Likvideerimise algbilanss,Käibevarad,CurrentAssets
+"Bilanss, detailne, kasvava likviidsuse järjekorras",Osakapital nimiväärtuses,IssuedCapital
+"Bilanss, kasvava likviidsuse järjekorras",Netovara,NetAssets
+"Bilanss, kasvava likviidsuse järjekorras",Raha,CashAndCashEquivalents
+Likvideerimiseelne kasumiaruanne (skeem 2),Müügitulu,Revenue
+"Likvideerimise algbilanss, detailne",Pikaajalised kohustised,NonCurrentLiabilities
+Lõppbilanss,Kohustised ja netovara,LiabilitiesAndNetAssets
+Konsolideerimata kasumiaruanne (finantsteenuse osutaja),Tööjõukulud,EmployeeExpense
+"Likvideerimise algbilanss, kasvava likviidsuse järjekorras",Pikaajalised kohustised,NonCurrentLiabilities
+"Konsolideerimata bilanss, detailne",Põhivarad,NonCurrentAssets
+"Konsolideerimata bilanss, detailne",Varad,Assets
+Konsolideeritud kasumiaruanne (finantsteenuse osutaja),Tööjõukulud,EmployeeExpenseConsolidated
+Konsolideerimata kasumiaruanne (skeem 1),Aruandeaasta kasum (kahjum),TotalAnnualPeriodProfitLoss
+Konsolideeritud bilanss,Raha,CashAndCashEquivalentsConsolidated
+"Konsolideeritud bilanss, kasvava likviidsuse järjekorras",Raha,CashAndCashEquivalentsConsolidated
+Konsolideeritud kasumiaruanne skeem 2,Ärikasum (kahjum),TotalProfitLossConsolidated
+Kasumiaruanne skeem 2,Kasum (kahjum) enne tulumaksustamist,TotalProfitLossBeforeTax
+"Bilanss, detailne",Osakapital nimiväärtuses,IssuedCapital
+"Bilanss, detailne",Netovara,NetAssets
+Bilanss,Aktsiakapital nimiväärtuses,IssuedCapital2
+Likvideerimise vahebilanss,Varad,Assets
+Likvideerimise algbilanss,Varad,Assets
+"Bilanss, detailne, kasvava likviidsuse järjekorras",Varad,Assets
+Kasumiaruanne (finantsteenuse osutaja),Kasum (kahjum) enne tulumaksustamist,TotalProfitLossBeforeTax
+"Likvideerimise vahebilanss, detailne",Lühiajalised kohustised,CurrentLiabilities
+"Konsolideerimata bilanss, detailne",Eelmiste perioodide jaotamata kasum (kahjum),RetainedEarningsLoss
+"Likvideerimise algbilanss, kasvava likviidsuse järjekorras",Omakapital,Equity
+Likvideerimise vahebilanss,Kohustised ja netovara,LiabilitiesAndNetAssets
+Likvideerimise vahebilanss,Aktsiakapital nimiväärtuses,IssuedCapital2
+Tulemiaruanne,Tulu ettevõtlusest,BusinessIncome
+Konsolideerimata bilanss,Omakapital,Equity
+Konsolideerimata kasumiaruanne (skeem 1),Müügitulu,Revenue
+Konsolideerimata rahavoogude aruanne kaudsel meetodil,Ärikasum (kahjum),TotalProfitLoss
+Konsolideeritud bilanss,Käibevarad,CurrentAssetsConsolidated
+Konsolideeritud bilanss,Põhivarad,NonCurrentAssetsConsolidated
+"Konsolideerimata bilanss, kasvava likviidsuse järjekorras",Pikaajalised kohustised,NonCurrentLiabilities
+"Konsolideeritud bilanss, kasvava likviidsuse järjekorras",Omakapital,EquityConsolidated
+Kasumiaruanne skeem 2,Ärikasum (kahjum),TotalProfitLoss
+Likvideerimiseelne kasumiaruanne (skeem 1),Müügitulu,Revenue
+Lõppbilanss,Osakapital nimiväärtuses,IssuedCapital
+Likvideerimiseelne kasumiaruanne (skeem 1),Kasum (kahjum) enne tulumaksustamist,TotalProfitLossBeforeTax
+PDF,Töötajate keskmine arv taandatuna täistööajale Konsolideeritud,
+Likvideerimiseelne tulemiaruanne,Tööjõukulud,EmployeeExpense
+"Likvideerimise vahebilanss, detailne",Käibevarad,CurrentAssets
+Konsolideerimata kasumiaruanne (finantsteenuse osutaja),Aruandeaasta kasum (kahjum),TotalAnnualPeriodProfitLoss
+"Likvideerimise algbilanss, kasvava likviidsuse järjekorras",Lühiajalised kohustised,CurrentLiabilities
+"Likvideerimise algbilanss, kasvava likviidsuse järjekorras",Varad,Assets
+"Lõppbilanss, detailne",Aktsiakapital nimiväärtuses,IssuedCapital2
+Konsolideeritud kasumiaruanne (finantsteenuse osutaja),Kasum (kahjum) enne tulumaksustamist,TotalProfitLossBeforeTaxConsolidated
