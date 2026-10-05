@@ -58,6 +58,7 @@
       <li>Ainult väiketähed: Mitmesõnaliste nimede puhul kasuta snake_case stiili (nt total_amount).</li>
       <li>Alati ainsuses: Tabeli nimi on ainsuses, nt product (mitte products), sale (mitte sales).</li>
       <li>Erand: analytics/gold skeemis lisa tabeli ette tüüp, nt dim_customer või fact_sales_order.</li>
+      <li>Võtmed (id): Võtmeveerg lõpeb _id-ga. Sama nimi on dim-i primaarvõti ja fact-i välisvõti (nt date_id, customer_id, product_id). Ära kasuta lühendit d_ (nt date_id) — tabelil on juba dim_ eesliide. Pelk id on lubatud ainult võtmetes (vt ülal: identification muidu välja).</li>
     </ul>
   </li>
   <li>Power BI objektid (tabelid, veerud, mõõdikud raportis):
@@ -77,14 +78,15 @@
 <p>Andmete liikumine ja töötlus toimub samm-sammult järgmiselt:</p>
 <ul>
   <li>Import (Ingestion): Allikandmed (failid, API-d) laetakse PostgreSQL-i raw/bronze skeemi kas Pythoni skriptiga või manuaalse impordi teel.</li>
-  <li>Töötlus (Processing): Andmed loetakse algsest skeemist, puhastatakse ja salvestatakse vahetulemused staging/silver skeemi.</li>
-  <li>Arvutused ja mudel (SQL): PostgreSQL-is kirjutatakse SQL-skriptid, mis teevad raskemad andmete struktureerimise tööd ning loovad valmis dim- ja fakt-tabelid lõppkihti.</li>
+  <li>Töötlus (Processing): Andmed loetakse algsest skeemist, puhastatakse ja salvestatakse vahetulemused staging/silver skeemi. Vajadusel silver, aga meie praegu ei pea tegema.</li>
+  <li>Arvutused ja mudel: raskemad andmete struktureerimise tööd ning valmis dim- ja fakt-tabelid lõppkihti. Seda võib teha Pythonis ja/või SQL-is.</li>
   <li>Kuvamine ja äriloogika (Power BI): Power BI ühendatakse otse lõppkihiga. Power Query's tehakse ainult minimaalset andmetüüpide kontrolli. DAX-i kasutatakse dünaamiliste mõõdikute loomiseks, kuid seal võib vajadusel teha ka spetsiifilisi äriloogika arvutusi.</li>
 </ul>
 
 <h2>5. Võtmete käsitlemine</h2>
 <ul>
   <li>Tabelite sidumiseks võib kasutada nii naturaalvõtmeid (nt olemasolev äri-ID nagu isikukood või tootenumber) kui ka surrogaatvõtmeid (andmebaasi loodud tehislikud asendusvõtmed, nt automaatselt kasvav serial väärtus).</li>
+  <li>Võtmeveerg nimetatakse _id-ga (nt date_id).</li>
 </ul>
 
 </body>
