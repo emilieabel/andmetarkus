@@ -1,2 +1,8 @@
 **/.pbi/localSettings.json
 **/.pbi/cache.abf
+# Large data files (exceed GitHub file size limits)
+Materjalid/Python/1.aruannete_yldandmed_kuni_31082026.csv
+Materjalid/Python/4.2025_aruannete_elemendid_kuni_31082026.csv
+Materjalid/Python/ettevotja_rekvisiidid__lihtandmed.csv
+
+.DS_Store
