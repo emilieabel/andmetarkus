@@ -44,7 +44,7 @@
 <p>Andmed tuleb hoida rangelt lahus kolmes eraldi PostgreSQL-i skeemis:</p>
 <ul>
   <li>raw või bronze skeem: Algandmed. Tabelite struktuur peab olema identne allikfailide struktuuriga ja täpselt samade veergudega. Andmed imporditakse siia koos kõikide võimalike andmekvaliteedi probleemidega (nt valed tüübid, tühjad väljad, duplikaadid). Selle eesmärk on tagada andmete jälgi ajamine (traceability), et vajadusel saaks tulemusi alati algallikaga võrrelda.</li>
-  <li>staging või silver skeem: Vahekiht andmete puhastamiseks, tüübitunnuste korrastamiseks ja duplikaatide eemaldamiseks.</li>
+  <li>staging või silver skeem (valikuline): Vahekiht andmete puhastamiseks, tüübitunnuste korrastamiseks ja duplikaatide eemaldamiseks.</li>
   <li>analytics või gold skeem: Lõplik andmemudel. Siin asuvad koos nii dimensiooni (dim_) kui ka fakti (fact_) tabelid.</li>
 </ul>
 
